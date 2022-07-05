@@ -1,0 +1,28 @@
+<%= form_with model: @post, local: true do |form| %>
+
+<%# 動画の投稿 %>
+<label class="form-image">    
+  <span class="image-file">画像</span>
+  <%= f.file_field :image, id:"image", class:"hidden" %>
+</label>
+
+<%# 画像の投稿 %>
+<div class="field">
+    <%= form.label :video %>
+    <%= form.file_field :video, :accept => 'video/*' %>
+</div>
+
+
+<p><%= form.label :title %><br>
+<%= form.text_field :title %> #titleの入力フォーム生成
+</p>
+
+<p><%= form.label :body %><br>
+<%= form.text_area :body %> #bodyの入力フォーム生成
+</p>
+
+<p><%= form.submit %> #送信ボタンを生成
+</p>
+
+<% end %>
+5

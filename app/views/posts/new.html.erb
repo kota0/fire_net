@@ -12,17 +12,33 @@
     <%= form.file_field :video, :accept => 'video/*' %>
 </div>
 
+<%# 地域１のプルダウン %>
+<%= f.collection_select(:area1_id, Area1.all, :id, :area1, {}, {class:"area1-select"}) %>
 
-<p><%= form.label :title %><br>
-<%= form.text_field :title %> #titleの入力フォーム生成
+<%# 地域2のプルダウン %>
+<%= f.collection_select(:area2_id, Area2.all, :id, :area2, {}, {class:"area2-select"}) %>
+
+<%# 目標 %>
+<p><%= form.label :mark %><br>
+<%= form.text_field :mark %> 
 </p>
 
-<p><%= form.label :body %><br>
-<%= form.text_area :body %> #bodyの入力フォーム生成
+<%# ケガ人のプルダウン %>
+<%= f.collection_select(:escape_id, Escape.all, :id, :escape, {}, {class:"escape-select"}) %>
+
+<%# 逃げ遅れのプルダウン %>
+<%= f.collection_select(:help_id, Help.all, :id, :help, {}, {class:"help-select"}) %>
+
+<%# 要請の有無のプルダウン %>
+<%= f.collection_select(:jujury_id, Jujury.all, :id, :Jujury, {}, {class:"jujury-select"}) %>
+
+<%# 具体的内容 %>
+<p><%= form.label :content %><br>
+<%= form.text_area :content %>
 </p>
 
-<p><%= form.submit %> #送信ボタンを生成
+<%# 送信ボタン %>
+<p><%= form.submit %> 
 </p>
 
 <% end %>
-5

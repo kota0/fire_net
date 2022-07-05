@@ -3,6 +3,9 @@ class PostsController < ApplicationController
     @post = Post.new 
   end
 
+  def index
+  end
+
   
 end
 

@@ -63,4 +63,4 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
-
+gem 'active_hash'

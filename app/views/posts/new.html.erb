@@ -1,44 +1,54 @@
-<%= form_with model: @post, local: true do |form| %>
+<p>表示の確認</p>
+
+<%= form_with model: @post, local: true do |f| %>
 
 <%# 動画の投稿 %>
 <label class="form-image">    
-  <span class="image-file">画像</span>
+  <span class="file">画像</span>
   <%= f.file_field :image, id:"image", class:"hidden" %>
-</label>
+</label><br>
 
 <%# 画像の投稿 %>
-<div class="field">
-    <%= form.label :video %>
-    <%= form.file_field :video, :accept => 'video/*' %>
-</div>
+<label class="form-video">
+  <span class="file">動画</span>
+  <%= f.file_field :video, :accept => 'video/*', id:"video" %><br>
+</label>
+
 
 <%# 地域１のプルダウン %>
-<%= f.collection_select(:area1_id, Area1.all, :id, :area1, {}, {class:"area1-select"}) %>
+<span class="posts">区・市</span>
+<%= f.collection_select(:area1_id, Area1.all, :id, :name, {}, {class:"area1-select"}) %><br>
+
 
 <%# 地域2のプルダウン %>
-<%= f.collection_select(:area2_id, Area2.all, :id, :area2, {}, {class:"area2-select"}) %>
+<span class="posts">町丁・番地</span>
+<%= f.collection_select(:area2_id, Area2.all, :id, :name, {}, {class:"area2-select"}) %><br>
+
 
 <%# 目標 %>
-<p><%= form.label :mark %><br>
-<%= form.text_field :mark %> 
-</p>
+<span class="posts">目標</span>
+<%= f.text_field :mark %><br>
+
 
 <%# ケガ人のプルダウン %>
-<%= f.collection_select(:escape_id, Escape.all, :id, :escape, {}, {class:"escape-select"}) %>
+<span class="posts">ケガ人の有無</span>
+<%= f.collection_select(:escape_id, Escape.all, :id, :name, {}, {class:"escape-select"}) %><br>
 
 <%# 逃げ遅れのプルダウン %>
-<%= f.collection_select(:help_id, Help.all, :id, :help, {}, {class:"help-select"}) %>
+<span class="posts">逃げ遅れの有無</span>
+<%= f.collection_select(:help_id, Help.all, :id, :name, {}, {class:"help-select"}) %><br>
 
 <%# 要請の有無のプルダウン %>
-<%= f.collection_select(:jujury_id, Jujury.all, :id, :Jujury, {}, {class:"jujury-select"}) %>
+<span class="posts">消防隊の要請の有無</span>
+<%= f.collection_select(:jujury_id, Jujury.all, :id, :name, {}, {class:"jujury-select"}) %><br>
 
 <%# 具体的内容 %>
-<p><%= form.label :content %><br>
-<%= form.text_area :content %>
-</p>
+<span class="posts">具体的な状況</span><br>
+<%= f.text_area :content %>
+
 
 <%# 送信ボタン %>
-<p><%= form.submit %> 
-</p>
+<p><%= f.submit "投稿する", class:"post-btn"%></p>
+
 
 <% end %>

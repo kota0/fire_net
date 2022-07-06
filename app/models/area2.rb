@@ -1,14 +1,16 @@
-class area2 < ActiveHash::Base
- self.date = [
+class Area2 < ActiveHash::Base
+ self.data = [
  { id: 1, name: '___'}
 
 
  ]
-end
+
 
 
 
 
 
 include ActiveHash::Associations
-  has_many :articles
+  has_many :posts
+
+end

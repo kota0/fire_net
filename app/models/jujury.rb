@@ -1,10 +1,10 @@
-class jujury < ActiveHash::Base
- self.date = [
+class Jujury < ActiveHash::Base
+ self.data = [
  { id: 1, name: '___'}
 
 
  ]
-end
+
 
 
 
@@ -13,4 +13,6 @@ end
 
 
 include ActiveHash::Associations
-has_many :articles
+  has_many :posts
+
+end

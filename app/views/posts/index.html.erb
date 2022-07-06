@@ -1,5 +1,8 @@
- <p>
-  <%= link_to @post.video_url.to_s do %>
-  <%= video_tag(@post.video.to_s) %>
-  <% end %>
- </p> %>
+
+<p>表示の確認</p>
+
+<p>
+<% @posts.each do |post| %>
+ <%= post.video_url %>
+<% end %>
+</p>

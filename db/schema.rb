@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2022_07_05_120558) do
   create_table "articles", charset: "utf8", force: :cascade do |t|
     t.integer "area1_id", null: false
     t.integer "area2_id", null: false
-    t.integer "jnjury_id", null: false
+    t.integer "injury_id", null: false
     t.integer "escape_id", null: false
     t.integer "help_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2022_07_05_120558) do
     t.integer "area1_id", null: false
     t.integer "area2_id", null: false
     t.text "mark"
-    t.integer "jnjury_id", null: false
+    t.integer "injury_id", null: false
     t.integer "escape_id", null: false
     t.integer "help_id", null: false
     t.text "content", null: false

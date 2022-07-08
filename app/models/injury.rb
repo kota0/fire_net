@@ -1,4 +1,4 @@
-class Help < ActiveHash::Base
+class Injury < ActiveHash::Base
  self.data = [
  { id: 1, name: '___'},
  { id: 2, name: 'あり'},
@@ -6,6 +6,7 @@ class Help < ActiveHash::Base
 
 
  ]
+
 
 
 

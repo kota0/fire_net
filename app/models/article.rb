@@ -6,5 +6,5 @@ class Article < ApplicationRecord
   validates :area2_id, numericality: { other_than: 1, message: "can't be blank"}
   validates :escape_id, numericality: { other_than: 1, message: "can't be blank"}
   validates :help_id, numericality: { other_than: 1, message: "can't be blank"}
-  validates :jujury_id, numericality: { other_than: 1, message: "can't be blank"} 
+  validates :injury_id, numericality: { other_than: 1, message: "can't be blank"} 
 end

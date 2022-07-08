@@ -40,7 +40,7 @@
 
 <%# 要請の有無のプルダウン %>
 <span class="posts">消防隊の要請の有無</span>
-<%= f.collection_select(:jujury_id, Jujury.all, :id, :name, {}, {class:"jujury-select"}) %><br>
+<%= f.collection_select(:injury_id, Injury.all, :id, :name, {}, {class:"injury-select"}) %><br>
 
 <%# 具体的内容 %>
 <span class="posts">具体的な状況</span><br>

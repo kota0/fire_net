@@ -6,10 +6,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
+      <%# ↑stylesheet_link_tag 'application'でapplication.cssを読み込んでいる %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+    <header class="header">
+            <h1 class="title"><a href="/"></a>Fire_Net</h1>
+     </header>
   <body>
   <header>
       <nav>
@@ -30,4 +33,9 @@
 
     <%= yield %>
   </body>
+  <footer>
+      <p>
+        Copyright Fire_Net 2022.
+      </p>
+    </footer>
 </html>

@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
- 
+
   def index
     @posts = Post.all
   end
@@ -25,5 +25,6 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:image, :video, :area1_id, :area2_id, :mark, :injury_id, :escape_id, :help_id, :content).merge(user_id: current_user.id)
   end
+
 end
 

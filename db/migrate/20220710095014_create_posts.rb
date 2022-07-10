@@ -1,8 +1,7 @@
 class CreatePosts < ActiveRecord::Migration[6.1]
   def change
     create_table :posts do |t|
-      t.timestamps
-      t.integer    :user_id
+      t.references :user,       foreign_key: true
       t.blob       :image
       t.blob       :video
       t.integer    :area1_id,   null: false
@@ -12,6 +11,8 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.integer    :escape_id,  null: false
       t.integer    :help_id,    null: false
       t.text       :content,    null: false
+      t.timestamps
     end
   end
 end
+

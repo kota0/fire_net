@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_08_111156) do
+ActiveRecord::Schema.define(version: 2022_07_10_095014) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -59,9 +59,7 @@ ActiveRecord::Schema.define(version: 2022_07_08_111156) do
   end
 
   create_table "posts", charset: "utf8", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.binary "image"
     t.binary "video"
     t.integer "area1_id", null: false
@@ -71,6 +69,9 @@ ActiveRecord::Schema.define(version: 2022_07_08_111156) do
     t.integer "escape_id", null: false
     t.integer "help_id", null: false
     t.text "content", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -89,4 +90,5 @@ ActiveRecord::Schema.define(version: 2022_07_08_111156) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "posts", "users"
 end

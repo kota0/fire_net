@@ -1,6 +1,11 @@
 class Post < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :state, :area, :escape, :help, :jujury
+  belongs_to :state
+  belongs_to :area
+  belongs_to :escape
+  belongs_to :help
+  belongs_to :injury
+
 
   validates :state_id, numericality: { other_than: 1, message: "can't be blank"}
   validates :area_id, numericality: { other_than: 1, message: "can't be blank"}

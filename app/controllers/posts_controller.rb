@@ -1,12 +1,15 @@
 class PostsController < ApplicationController
 
-  def index
-    @posts = Post.all
-  end
-
  
+  before_action :authenticate_user!, only: [:new, :index]
+
+
   def new
     @post = Post.new 
+  end
+
+  def index
+    @posts = Post.order("created_at DESC")
   end
 
   def create
@@ -18,12 +21,9 @@ class PostsController < ApplicationController
     end
   end
      
-
-  
-
   private
   def post_params
-    params.require(:post).permit(:image, :video, :area1_id, :area2_id, :mark, :injury_id, :escape_id, :help_id, :content).merge(user_id: current_user.id)
+    params.require(:post).permit(:image, :video, :state_id, :area_id, :mark, :injury_id, :escape_id, :help_id, :content).merge(user_id: current_user.id)
   end
 
 end

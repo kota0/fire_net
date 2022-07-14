@@ -4,8 +4,8 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.references :user,       foreign_key: true
       t.blob       :image
       t.blob       :video
-      t.integer    :area1_id,   null: false
-      t.integer    :area2_id,   null: false 
+      t.integer    :state_id,   null: false
+      t.integer    :area_id,   null: false 
       t.text       :mark
       t.integer    :injury_id,  null: false
       t.integer    :escape_id,  null: false

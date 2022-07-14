@@ -1,14 +1,14 @@
-class Injury < ActiveHash::Base
+class Area < ActiveHash::Base
   extend ActiveHash::Associations::ActiveRecordExtensions
  self.data = [
  { id: 1, name: '___'},
- { id: 2, name: 'あり'},
- { id: 3, name: 'なし'}
+ { id: 2, name: '街'},
+ { id: 3, name: '町'},
+ { id: 4, name: '村'},
+ { id: 5, name: '郡'}
 
 
  ]
-
-
 
 
 

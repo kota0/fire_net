@@ -1,11 +1,34 @@
 
 <div class="contents row">
-  <% @posts.each do |post| %>
+
+  <%= link_to( new_post_path, class: 'post-btn') do %>
+  <p>投稿する</p>
+  <% end%>
+
+   <% @posts.each do |post| %> 
+    
+    <div class="post">
+     <div class="post-box">
       <%# <%= link_to post_path(post.id) do %> 
       <%# <%= image_tag post.image, class: "posts-img" %> 
-        <%= post.mark%><br>
-      <%= post.content %>
-   <% end %>
+     <td> <%= post.mark %></td>
+     </div>
+      <div class="post-box">
+     <td> <%= post.content %></td>
+     </div>
+      <div class="post-box">
+     <td> <%= post.state.name %></td>
+     </div>
+     <div class="post-box">
+     <td> <%= post.area.name %></td>
+     </div>
+     <div class="post-box">
+     <td> <%= post.injury.name %></td>
+     </div>
+     <div class="post-box">
+     <td> <%= post.escape.name%></td>
+     </div>
+    </div>
+    <% end %> 
 </div>
 
- 

@@ -1,4 +1,3 @@
-<p>表示の確認</p>
 
 <%= form_with model: @post, local: true do |f| %>
 
@@ -17,12 +16,12 @@
 
 <%# 地域１のプルダウン %>
 <span class="posts">区・市</span>
-<%= f.collection_select(:area1_id, Area1.all, :id, :name, {}, {class:"area1-select"}) %><br>
+<%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"state-select"}) %><br>
 
 
 <%# 地域2のプルダウン %>
 <span class="posts">町丁・番地</span>
-<%= f.collection_select(:area2_id, Area2.all, :id, :name, {}, {class:"area2-select"}) %><br>
+<%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"area-select"}) %><br>
 
 
 <%# 目標 %>

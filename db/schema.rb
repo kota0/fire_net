@@ -40,20 +40,7 @@ ActiveRecord::Schema.define(version: 2022_07_10_095014) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "articles", charset: "utf8", force: :cascade do |t|
-    t.integer "area1_id", null: false
-    t.integer "area2_id", null: false
-    t.integer "injury_id", null: false
-    t.integer "escape_id", null: false
-    t.integer "help_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "comments", charset: "utf8", force: :cascade do |t|
-    t.text "content"
-    t.boolean "cheak_box"
-    t.bigint "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -62,8 +49,8 @@ ActiveRecord::Schema.define(version: 2022_07_10_095014) do
     t.bigint "user_id"
     t.binary "image"
     t.binary "video"
-    t.integer "area1_id", null: false
-    t.integer "area2_id", null: false
+    t.integer "state_id", null: false
+    t.integer "area_id", null: false
     t.text "mark"
     t.integer "injury_id", null: false
     t.integer "escape_id", null: false

@@ -1,0 +1,10 @@
+ <header class="header">
+            <h1 class="title"><a href="/"></a>Fire_Net</h1><br>
+           
+            <% @posts.each do |post| %> 
+
+             <h2 class="main"> <%= link_to(root_path, class: 'main-name') do %>
+              <p>第"#"方面 <%= post.state.name %> ・  <%= post.area.name %> 被害状況</p>
+              <% end%>
+             <% end%>
+ </header>

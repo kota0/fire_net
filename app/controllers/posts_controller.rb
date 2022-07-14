@@ -13,13 +13,20 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(post_params)
-    if post.save
+    @post = Post.new(post_params)
+    if @post.save
       redirect_to root_path
     else
       render :new
     end
   end
+
+  # def show 
+  #   @post = Posts.find(params[:id])
+  #   @comments = @post.comment.include（:user）
+  #   @comment = comment.new
+   
+  # end
      
   private
   def post_params

@@ -41,6 +41,9 @@ ActiveRecord::Schema.define(version: 2022_07_10_095014) do
   end
 
   create_table "comments", charset: "utf8", force: :cascade do |t|
+    t.text "comment"
+    t.boolean "cheak_box"
+    t.bigint "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

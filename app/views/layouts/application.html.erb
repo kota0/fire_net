@@ -10,15 +10,13 @@
       <%# ↑stylesheet_link_tag 'application'でapplication.cssを読み込んでいる %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-    <header class="header">
-            <h1 class="title"><a href="/"></a>Fire_Net</h1>
-     </header>
+   
   <body>
   <header>
       <nav>
           <% if user_signed_in? %>
             <strong><%= link_to current_user.name, new_user_registration_path %></strong>
-            <%# <%= link_to 'プロフィール変更', edit_user_registration_path %>
+          
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
           <% else %>
             <%= link_to 'サインアップ', new_user_registration_path %>

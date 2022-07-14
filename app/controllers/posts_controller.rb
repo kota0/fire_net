@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+
  
   before_action :authenticate_user!, only: [:new, :index]
+
 
   def new
     @post = Post.new 
@@ -23,5 +25,6 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:image, :video, :state_id, :area_id, :mark, :injury_id, :escape_id, :help_id, :content).merge(user_id: current_user.id)
   end
+
 end
 

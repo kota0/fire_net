@@ -5,11 +5,12 @@ class PostsController < ApplicationController
 
 
   def new
-    @post = Post.new 
+    @post = Post.new  
   end
 
   def index
     @posts = Post.order("created_at DESC")
+    @post = Post.new 
   end
 
   def create
@@ -22,8 +23,9 @@ class PostsController < ApplicationController
   end
 
   def show 
-    @comment = Comment.new
-    @comments = @posts.comment.include（:user）
+   @post = Post.find(params[:id])
+   @comment = Comment.new
+   @comments = Comment.all
   end
      
   private

@@ -1,20 +1,17 @@
+<%= render 'layouts/header' %>
 
 <div class="contents row">
-
   <%= link_to( new_post_path, class: 'post-btn') do %>
   <p>投稿する</p>
   <% end%>
 
    <% @posts.each do |post| %> 
-    
+
+  <%= link_to  post_path(post.id) do%> 
     <div class="post">
      <div class="post-box">
       <%# <%= link_to post_path(post.id) do %> 
       <%# <%= image_tag post.image, class: "posts-img" %> 
-     <td> <%= post.mark %></td>
-     </div>
-      <div class="post-box">
-     <td> <%= post.content %></td>
      </div>
       <div class="post-box">
      <td> <%= post.state.name %></td>
@@ -22,13 +19,17 @@
      <div class="post-box">
      <td> <%= post.area.name %></td>
      </div>
+      <td> <%= post.mark %></td>
+     </div>
      <div class="post-box">
      <td> <%= post.injury.name %></td>
      </div>
      <div class="post-box">
      <td> <%= post.escape.name%></td>
      </div>
+      <div class="post-box">
+     <td> <%= post.content %></td>
     </div>
     <% end %> 
+  <% end %> 
 </div>
-

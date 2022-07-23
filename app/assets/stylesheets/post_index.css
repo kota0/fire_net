@@ -1,0 +1,15 @@
+body {
+ font-weight: 400px;
+}
+
+main {
+  padding: 50px;
+}
+
+nav {
+  display: block;
+  position: fixed;
+  background-color: #ffffff;
+  top: 0;
+  left:0;
+}

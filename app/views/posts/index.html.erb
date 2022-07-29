@@ -6,12 +6,16 @@
  <link rel="stylesheet" href= "post_index.css" />
   <script src="post_index.js"></script>
  
+
  </head>
 
  <%= render 'layouts/header' %>
 
- <body>
- <div id="navArea" >
+
+ 
+<body>
+<div id="navArea" >
+
   <nav>
    <div class= "inner">
     <ul>
@@ -32,13 +36,17 @@
   <div id="mask">
 
   </div>
+
  </div>
+</div>
 
 
 
 
- <script src="post_index.js"></script>
-  <div id="mask"> 
+
+ <script src="post_index.js"></script> %>
+   <div id="mask">
+
     <main>
       <div class="contents row">
         <%= link_to( new_post_path, class: 'post-btn') do %>

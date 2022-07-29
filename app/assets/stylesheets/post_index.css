@@ -20,6 +20,7 @@ nav {
   opacity: 0; 
 }
 
+
 .open nav {
   left: 0;
   opacity: 1;
@@ -51,6 +52,7 @@ nav .inner ul li a{
 
 nav .inner ul li a :hover {
   background-color: #e4e4e4;
+
 }
 
 .toggle-btn {
@@ -120,7 +122,3 @@ nav .inner ul li a :hover {
   opacity: 0.8;
   cursor: pointer;
 }
-
-
-  
-

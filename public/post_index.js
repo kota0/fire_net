@@ -1,12 +1,8 @@
 let nav = document.querySelector("#navArea");
-let btn = document.querySelector(".toggle-btn");
+let btm = document.querySelector(".toggle-btm");
 let mask = document.querySelector("#mask");
 
 btn.onclick = () => {
-  nav.classList.toggle("open");
-};
-
-mask.onclick = () => {
   nav.classList.toggle("open");
 };
 

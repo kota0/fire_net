@@ -1,27 +1,23 @@
 body {
-  font-weight: 400;
+ font-weight: 400px;
 }
 
 main {
   padding: 50px;
 }
 
-main h1 {
-  font-weight: 400;
-  text-align: center;
-}
-
 nav {
+  width: 220px;
   display: block;
   position: fixed;
   background-color: #ffffff;
-  width: 220px;
   top: 0;
-  left: -300px;
+  left:0;
+  left:-300px; 
   bottom: 0;
-  transition: all 0.5s;
+  transition: all 0;
   z-index: 3;
-  opacity: 0;
+  opacity: 0; 
 }
 
 .open nav {
@@ -33,7 +29,7 @@ nav .inner {
   padding: 25px;
 }
 
-nav .inner ul {
+nav.inner ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -44,17 +40,17 @@ nav .inner ul li {
   border-bottom: 1px solid #333;
 }
 
-nav .inner ul li a {
+nav .inner ul li a{
   display: block;
+  text-decoration: none;
   color: #333;
   font-size: 14px;
   padding: 1rem;
-  text-decoration: none;
   transition-duration: 0.2s;
-}
+} 
 
-nav .inner ul li a:hover {
-  background: #e4e4e4;
+nav .inner ul li a :hover {
+  background-color: #e4e4e4;
 }
 
 .toggle-btn {
@@ -82,27 +78,13 @@ nav .inner ul li a:hover {
 .toggle-btn span:nth-child(1) {
   top: 4px;
 }
+
 .toggle-btn span:nth-child(2) {
   top: 14px;
 }
+
 .toggle-btn span:nth-child(3) {
   bottom: 4px;
-}
-
-.open .toggle-btn span {
-  background-color: #fff;
-}
-
-.open .toggle-btn span:nth-child(1) {
-  transform: translateY(10px) rotate(-315deg);
-}
-
-.open .toggle-btn span:nth-child(2) {
-  opacity: 0;
-}
-
-.open .toggle-btn span:nth-child(3) {
-  transform: translateY(-10px) rotate(315deg);
 }
 
 #mask {
@@ -110,15 +92,6 @@ nav .inner ul li a:hover {
   transition: all 0.5s;
 }
 
-.open #mask {
-  display: block;
-  background: #000;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  position: fixed;
-  opacity: 0.8;
-  z-index: 2;
-  cursor: pointer;
-}
+
+
+

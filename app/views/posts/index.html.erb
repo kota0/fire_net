@@ -1,61 +1,59 @@
 
- <%# <script src="post_index.js"></script> %>
   <%= render 'layouts/header' %> 
+  <%# <script src="post_index.js"></script> %>
 
-<body>
-<div id="navArea" >
-  <nav>
-   <div class= "inner">
-    <ul>
-     <li><a href="#">第○方面</a><li>
-     <li><a href="#">第○方面</a><li>
-     <li><a href="#">第○方面</a><li>
-    </ul> 
-   </div>  
-  </nav>
+<%# <body>
+  <div id="navArea" >
+    <nav>
+    <div class= "inner">
+      <ul>
+      <li><a href="#">第○方面</a><li>
+      <li><a href="#">第○方面</a><li>
+      <li><a href="#">第○方面</a><li>
+      </ul> 
+    </div>  
+    </nav>
 
-  <div class="toggle-btn">
-   <span></span>
-   <span></span>
-   <span></span>
-  </div>
+    <div class="toggle-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-  <div id="mask">
-  </div>
-</div>
+    <div id="mask">
+    </div>
+  </div> %>
 
-   <div id="mask">
-    <main>
-      <div class="contents row">
-        <%= link_to( new_post_path, class: 'post-btn') do %>
-        <p>投稿する</p>
-        <% end%>
-
-        <% @posts.each do |post| %> 
-
-        <%= link_to  post_path(post.id) do%> 
-          <div class="post">
-          <div class="post-box">
+  
+<main>
+ <div class="contents row">
+   <%= link_to( new_post_path, class: 'post-btn') do %>
+     <p>投稿する</p>
+   <% end%>
+   <% @posts.each do |post| %> 
+   <%= link_to  post_path(post.id) do%> 
+ <div class="post">
+       <div class="post-box">
             <%# <%= link_to post_path(post.id) do %> 
             <%# <%= image_tag post.image, class: "posts-img" %> 
-          </div>
-            <div class="post-box">
+       </div>
+       <div class="post-box">
           <td> <%= post.state.name %></td>
-          </div>
-          <div class="post-box">
+       </div>
+       <div class="post-box">
           <td> <%= post.area.name %></td>
-          </div>
+       </div>
             <td> <%= post.mark %></td>
-          </div>
-          <div class="post-box">
+       </div>
+       <div class="post-box">
           <td> <%= post.injury.name %></td>
-          </div>
-          <div class="post-box">
+       </div>
+       <div class="post-box">
           <td> <%= post.escape.name%></td>
-          </div>
-            <div class="post-box">
+        </div>
+        <div class="post-box">
           <td> <%= post.content %></td>
-          </div>
+        </div>
           <% end %> 
         <% end %> 
         </div>

@@ -31,41 +31,41 @@
 </div>
 
 
-
-<%# 地域１のプルダウン %>
-<span class="posts">区・市</span>
-<%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"state-select"}) %><br>
-
-
-<%# 地域2のプルダウン %>
-<span class="posts">町丁・番地</span>
-<%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"area-select"}) %><br>
+<div class="detail">
+    <%# 地域１のプルダウン %>
+    <span class="posts">区・市</span>
+    <%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"state-select"}) %><br>
 
 
-<%# 目標 %>
-<span class="posts">目標</span>
-<%= f.text_field :mark %><br>
+    <%# 地域2のプルダウン %>
+    <span class="posts">町丁・番地</span>
+    <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"area-select"}) %><br>
 
 
-<%# ケガ人のプルダウン %>
-<span class="posts">ケガ人の有無</span>
-<%= f.collection_select(:escape_id, Escape.all, :id, :name, {}, {class:"escape-select"}) %><br>
-
-<%# 逃げ遅れのプルダウン %>
-<span class="posts">逃げ遅れの有無</span>
-<%= f.collection_select(:help_id, Help.all, :id, :name, {}, {class:"help-select"}) %><br>
-
-<%# 要請の有無のプルダウン %>
-<span class="posts">消防隊の要請の有無</span>
-<%= f.collection_select(:injury_id, Injury.all, :id, :name, {}, {class:"injury-select"}) %><br>
-
-<%# 具体的内容 %>
-<span class="posts">具体的な状況</span><br>
-<%= f.text_area :content %>
+    <%# 目標 %>
+    <span class="posts">目標</span>
+    <%= f.text_field :mark %><br>
 
 
-<%# 送信ボタン %>
-<p><%= f.submit "投稿する", class:"post-btn"%></p>
+    <%# ケガ人のプルダウン %>
+    <span class="posts">ケガ人の有無</span>
+    <%= f.collection_select(:escape_id, Escape.all, :id, :name, {}, {class:"escape-select"}) %><br>
 
+    <%# 逃げ遅れのプルダウン %>
+    <span class="posts">逃げ遅れの有無</span>
+    <%= f.collection_select(:help_id, Help.all, :id, :name, {}, {class:"help-select"}) %><br>
+
+    <%# 要請の有無のプルダウン %>
+    <span class="posts">消防隊の要請の有無</span>
+    <%= f.collection_select(:injury_id, Injury.all, :id, :name, {}, {class:"injury-select"}) %><br>
+
+    <%# 具体的内容 %>
+    <span class="posts">具体的な状況</span><br>
+    <%= f.text_area :content %>
+
+
+    <%# 送信ボタン %>
+    <p><%= f.submit "投稿する", class:"post-btn"%></p>
+</div>
 
 <% end %>

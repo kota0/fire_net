@@ -22,3 +22,13 @@ h1 {
   font-size: 20px;
   margin: 5px;
  }
+
+ .detail {
+ text-align: center;
+ }
+
+
+ .detail span {
+  font-size: 20px;
+  margin-right: 30px;
+ }

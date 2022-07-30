@@ -29,6 +29,18 @@ nav {
   opacity: 1;
 }
 
+
+nav .support ul {
+ text-align: left;
+ list-style: none;
+}
+
+nav .support ul li  a { 
+ font-size: 20px;
+ padding: 1rem;
+
+}
+
 nav .inner {
   padding: 25px;
 }
@@ -47,10 +59,11 @@ nav .inner ul li {
 nav .inner ul li a {
   display: block;
   color: #333;
-  font-size: 14px;
+  font-size: 16px;
   padding: 1rem;
   text-decoration: none;
   transition-duration: 0.2s;
+  letter-spacing:4px;
 }
 
 nav .inner ul li a:hover {
@@ -90,6 +103,7 @@ nav .inner ul li a:hover {
 }
 
 .open .toggle-btn span {
+  left: 200px;
   background-color: #fff;
 }
 

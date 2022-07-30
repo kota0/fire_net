@@ -16,15 +16,17 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+document.addEventListener('turbolinks:load', () => {
 
-let nav = document.querySelector("#navArea");
-let btn = document.querySelector(".toggle-btn");
-let mask = document.querySelector("#mask");
+    let nav = document.querySelector("#navArea");
+    let btn = document.querySelector(".toggle-btn");
+    let mask = document.querySelector("#mask");
 
-btn.onclick = () => {
-  nav.classList.toggle("open");
-};
+    btn.onclick = () => {
+      nav.classList.toggle("open");
+    };
 
-mask.onclick = () => {
-  nav.classList.toggle("open");
-};
+    mask.onclick = () => {
+      nav.classList.toggle("open");
+    };
+   })

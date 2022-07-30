@@ -1,8 +1,8 @@
 
- <header class="header">
-      <div class="title">
-        <a>Fire_Net</a>
-      </div><br>
+ <header> 
+  <div class="title">
+    <a>Fire_Net</a>
+  </div><br>
 
   <div id="navArea" >
 
@@ -41,12 +41,4 @@
     <div id="mask">
     </div>
   </div>
-
-           
-            <% @posts.each do |post| %> 
-
-             <h2 class="main"> <%= link_to(root_path, class: 'main-name') do %>
-              <p>第"#"方面 <%= post.state.name %> ・  <%= post.area.name %> 被害状況</p>
-              <% end%>
-             <% end%>
  </header>

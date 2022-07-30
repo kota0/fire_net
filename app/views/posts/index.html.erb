@@ -1,32 +1,17 @@
 
   <%= render 'layouts/header' %> 
-  <%# <script src="post_index.js"></script> %>
+   <div class="areas">        
+    <% @posts.each do |post| %> 
 
-<%# <body>
-  <div id="navArea" >
-    <nav>
-    <div class= "inner">
-      <ul>
-      <li><a href="#">第○方面</a><li>
-      <li><a href="#">第○方面</a><li>
-      <li><a href="#">第○方面</a><li>
-      </ul> 
-    </div>  
-    </nav>
-
-    <div class="toggle-btn">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <div id="mask">
-    </div>
-  </div> %>
+      <h2 class="main"> <%= link_to(root_path, class: 'main-name') do %>
+      <p>第"#"方面 <%= post.state.name %> ・  <%= post.area.name %> 被害状況</p>
+      <% end%>
+      <% end%>
+   </div>
 
   
 <main>
- <div class="contents row">
+ <div class="contents_row">
    <%= link_to( new_post_path, class: 'post-btn') do %>
      <p>投稿する</p>
    <% end%>

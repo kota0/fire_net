@@ -1,20 +1,35 @@
 
- <header class="header">
+ <header> 
   <div class="title">
     <a>Fire_Net</a>
   </div><br>
 
-  <body>
-  <script src="post_index.js"></script>
   <div id="navArea" >
+
     <nav>
-    <div class= "inner">
-      <ul>
-      <li><a href="#">第○方面</a><li>
-      <li><a href="#">第○方面</a><li>
-      <li><a href="#">第○方面</a><li>
-      </ul> 
-    </div>  
+      <div class="support">
+        <ul>
+          <li><a href="#"><button type="button" class="btn btn-danger">対応中</button></li></a>
+          <li><a href="#"><button type="button" class="btn btn-primary">対応済み</button><li></a>       
+        </ul> 
+       </div>
+
+      <div class= "inner">
+        <ul>
+        <li><a href="#">第1方面</a><li>
+        <li><a href="#">第2方面</a><li>
+        <li><a href="#">第1方面</a><li>
+        <li><a href="#">第2方面</a><li>
+        <li><a href="#">第3方面</a><li>
+        <li><a href="#">第4方面</a><li>
+        <li><a href="#">第5方面</a><li>
+        <li><a href="#">第6方面</a><li>
+        <li><a href="#">第7方面</a><li>
+        <li><a href="#">第8方面</a><li>
+        <li><a href="#">第9方面</a><li>
+        <li><a href="#">第10方面</a><li>
+        </ul> 
+      </div>  
     </nav>
 
     <div class="toggle-btn">
@@ -26,12 +41,4 @@
     <div id="mask">
     </div>
   </div>
-
-           
-            <% @posts.each do |post| %> 
-
-             <h2 class="main"> <%= link_to(root_path, class: 'main-name') do %>
-              <p>第"#"方面 <%= post.state.name %> ・  <%= post.area.name %> 被害状況</p>
-              <% end%>
-             <% end%>
  </header>

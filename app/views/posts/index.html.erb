@@ -1,48 +1,53 @@
 
-  <%= render 'layouts/header' %> 
-   <div class="areas">        
-    <% @posts.each do |post| %> 
+ 
+ <header>
+  <%= render 'layouts/header' %>
+ </header> 
 
-      <h2 class="main"> <%= link_to(root_path, class: 'main-name') do %>
-      <p>第"#"方面 <%= post.state.name %> ・  <%= post.area.name %> 被害状況</p>
-      <% end%>
-      <% end%>
-   </div>
+<div class="main-page">
+    <div class="areas_box">        
+        <% @posts.each do |post| %> 
+        <%= link_to(root_path, class: 'main-name') do %>
+          <p>第"#"方面 <%= post.state.name %> ・  <%= post.area.name %> 被害状況</p>
+          <% end%>
 
-  
-<main>
- <div class="contents_row">
-   <%= link_to( new_post_path, class: 'post-btn') do %>
-     <p>投稿する</p>
-   <% end%>
-   <% @posts.each do |post| %> 
-   <%= link_to  post_path(post.id) do%> 
- <div class="post">
-       <div class="post-box">
-            <%# <%= link_to post_path(post.id) do %> 
-            <%# <%= image_tag post.image, class: "posts-img" %> 
-       </div>
-       <div class="post-box">
-          <td> <%= post.state.name %></td>
-       </div>
-       <div class="post-box">
-          <td> <%= post.area.name %></td>
-       </div>
-            <td> <%= post.mark %></td>
-       </div>
-       <div class="post-box">
-          <td> <%= post.injury.name %></td>
-       </div>
-       <div class="post-box">
-          <td> <%= post.escape.name%></td>
-        </div>
-        <div class="post-box">
-          <td> <%= post.content %></td>
-        </div>
-          <% end %> 
+    <div class="posts-box">
+      <%= link_to  post_path(post.id) do%>
+       <% @posts.each do |post| %> 
+          <div class="images-box">
+                
+                <%# <%= link_to post_path(post.id) do %> 
+                 <%= image_tag post.image, class: "posts-img" %>            </div>
+          <div class="post-box">
+              <td> <%= post.state.name %></td>
+          </div>
+          <div class="post-box">
+              <td> <%= post.area.name %></td>
+          </div>
+                <td> <%= post.mark %></td>
+          </div>
+          <div class="post-box">
+              <td> <%= post.injury.name %></td>
+          </div>
+          <div class="post-box">
+              <td> <%= post.escape.name%></td>
+            </div>
+            <div class="post-box">
+              <td> <%= post.content %></td>
+            </div>
         <% end %> 
-        </div>
-      </main>
+      <% end%>
     </div>
-  </body>
-</html>
+</div>
+
+      
+
+ <div class="contents_row">
+    <%= link_to( new_post_path, class: 'post-btn') do %>
+     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#1e90ff" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+     </svg>
+    <% end%>
+ </div>
+
+      </body>

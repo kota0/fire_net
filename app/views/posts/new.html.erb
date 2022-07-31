@@ -25,47 +25,63 @@
         <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z"/>
       </svg><br>
       <span class="file">動画を投稿</span><br>
-      <%= f.file_field :image, :accept => 'video/*', id:"video" %><br>
+      <%= f.file_field :image, :accept => 'video/*', id:"video", class:"hidden" %><br>
     </label>
   </div><br>
 </div>
 
+<h2>※災害の詳細情報を入力してください</h2>
 
-<div class="detail">
+<table>
+  <tr>
     <%# 地域１のプルダウン %>
-    <span class="posts">区・市</span>
-    <%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"state-select"}) %><br>
+        <th><span class="posts">区・市</span></th>
+        <td><%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"select-box"}) %></td><br>
+  </tr>
 
-
+  <tr>
     <%# 地域2のプルダウン %>
-    <span class="posts">町丁・番地</span>
-    <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"area-select"}) %><br>
+         <th><span class="posts">町丁・番地</span></th>
+         <td><%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"select-box"}) %></td><br>
+  </tr>
 
-
+  <tr>
     <%# 目標 %>
-    <span class="posts">目標</span>
-    <%= f.text_field :mark %><br>
+        <th><span class="posts">目標・目印の建物</span></th>
+        <td><%= f.text_field :mark ,class:"mark_box"%><br>
+  </tr>
 
-
+  <tr>
     <%# ケガ人のプルダウン %>
-    <span class="posts">ケガ人の有無</span>
-    <%= f.collection_select(:escape_id, Escape.all, :id, :name, {}, {class:"escape-select"}) %><br>
+        <th><span class="posts">ケガ人の有無</span></th>
+        <td><%= f.collection_select(:escape_id, Escape.all, :id, :name, {}, {class:"select-box"}) %></td><br>
+  </tr>
 
+  <tr>
     <%# 逃げ遅れのプルダウン %>
-    <span class="posts">逃げ遅れの有無</span>
-    <%= f.collection_select(:help_id, Help.all, :id, :name, {}, {class:"help-select"}) %><br>
-
+        <th><span class="posts">逃げ遅れの有無</span></th>
+        <td><%= f.collection_select(:help_id, Help.all, :id, :name, {}, {class:"select-box"}) %></td><br>
+  </tr>
+      
+  <tr>
     <%# 要請の有無のプルダウン %>
-    <span class="posts">消防隊の要請の有無</span>
-    <%= f.collection_select(:injury_id, Injury.all, :id, :name, {}, {class:"injury-select"}) %><br>
-
+        <th><span class="posts">消防隊の要請の有無</span></th>
+        <td><%= f.collection_select(:injury_id, Injury.all, :id, :name, {}, {class:"select-box"}) %></td><br>
+  </tr>
+    
+  <tr>
     <%# 具体的内容 %>
-    <span class="posts">具体的な状況</span><br>
-    <%= f.text_area :content %>
+        <th><span class="posts">具体的な状況</span></th>
+  <tr>
+</table>
 
-
-    <%# 送信ボタン %>
-    <p><%= f.submit "投稿する", class:"post-btn"%></p>
-</div>
+ <div class="contents-box">
+    <%= f.text_area :content ,class:"content_box" %>
+ </div>
+ 
+  <%# 送信ボタン %>
+  <div class="blue-btn">
+    <%= f.submit "投稿する", class:"post-btn"%>
+  </div>
 
 <% end %>

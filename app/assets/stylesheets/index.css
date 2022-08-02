@@ -6,3 +6,16 @@
 .contents_row {
   text-align: center;
 }
+
+.video-box {
+  padding: 20px;
+}
+
+.images-box {
+  padding: 20px;
+}
+
+.images-box .post-img {
+  height: 280px;
+  width: 500px;
+}

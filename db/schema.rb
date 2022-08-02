@@ -53,8 +53,6 @@ ActiveRecord::Schema.define(version: 2022_07_19_024559) do
 
   create_table "posts", charset: "utf8", force: :cascade do |t|
     t.bigint "user_id"
-    t.binary "image"
-    t.binary "video"
     t.integer "state_id", null: false
     t.integer "area_id", null: false
     t.text "mark"

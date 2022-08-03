@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 //= require jquery3
 //= require jquery_ujs
-//= require_tree .
+
 
 
 import Rails from "@rails/ujs"
@@ -12,21 +12,11 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
+ Rails.start()
+ Turbolinks.start()
+ ActiveStorage.start()
 
-document.addEventListener('turbolinks:load', () => {
+ import "./hamburger"
+ import "./area"
 
-    let nav = document.querySelector("#navArea");
-    let btn = document.querySelector(".toggle-btn");
-    let mask = document.querySelector("#mask");
 
-    btn.onclick = () => {
-      nav.classList.toggle("open");
-    };
-
-    mask.onclick = () => {
-      nav.classList.toggle("open");
-    };
-   })

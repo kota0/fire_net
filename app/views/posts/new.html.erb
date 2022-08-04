@@ -36,13 +36,13 @@
   <tr>
     <%# 地域１のプルダウン %>
         <th><span class="posts">区・市</span></th>
-        <td><%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"select-box"}) %></td><br>
+        <td><%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"tokyo-state-box"}) %></td><br>
   </tr>
 
   <tr>
     <%# 地域2のプルダウン %>
          <th><span class="posts">町丁・番地</span></th>
-         <td><%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"select-box"}) %></td><br>
+         <td><%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"tokyo-area-box"}) %></td><br>
   </tr>
 
   <tr>

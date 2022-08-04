@@ -1,7 +1,10 @@
-$(document).on('change', '#tokyo-area-box', function() {
+window.onload = function(){ 
+
   //選択肢たカテゴリーid情報を取得
-     let TokyoStateId = $('#post_state_id').val();
-     let TokyoAreaId = $('#post_area_id').val();
+  let TokyoStateId = $('.tokyo-state-box').val();
+    
+  
+    
   
 
   //カテゴリーが初期値でない場合
@@ -10,10 +13,11 @@ $(document).on('change', '#tokyo-area-box', function() {
     $('.tokyo-state-box option').css('display', 'block');
     $('#tokyo-state-box').css('display', 'block');
 
-    //カテゴリー選択によって、サイズボックスの選択肢を変更
-   if (TokyoStateId == 3) 
+    //state-boxのid3を取得すると、area-boxのid5から10、30以上を消す
+   if (TokyoStateId == 3) {
    $('.tokyo-area-box option[value]').each(function(i) {
-      $('.tokyo-area-box option[value = ['i=<39'].css('display', 'none');
-      )};
-      
-  
+    $('.tokyo-area-box option[value =' (i) >=5&&i<20 ,']').css('display', 'none');
+      }
+      )}
+       }
+         };

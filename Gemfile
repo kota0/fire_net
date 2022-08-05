@@ -65,8 +65,6 @@ gem 'image_processing'
 
 gem 'active_hash'
 
-gem 'jquery-rails'
-
 gem 'activestorage-validator'
 
 

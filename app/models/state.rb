@@ -54,7 +54,7 @@ class State < ActiveHash::Base
  { id: 50, name: '日の出町'},
  { id: 51, name: '檜原村'},
  { id: 52, name: '奥多摩町'},
- 
+
  ]
 
 

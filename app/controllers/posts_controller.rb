@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.order("created_at DESC")
+    @posts = Post.where(direction_id:params[:direction_id]).order("created_at DESC")
     @post = Post.new 
   end
 

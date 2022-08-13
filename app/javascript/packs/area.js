@@ -8,6 +8,7 @@ $(function () {
 
 
       
+
   switch (TokyoStateId) {
 
       // 指定なし
@@ -30,12 +31,14 @@ $(function () {
       //中央区
       case '2':
         $('.tokyo-area-box option[value]').each(function (i) {
+
           if (i < 60 || i >= 96) {
               $('.tokyo-area-box option[value = ' + (i) + ']').css('display', 'none');
           }
           i++;
           })
       break;
+
 
       // 港区
       case '3':
@@ -47,7 +50,18 @@ $(function () {
           })
       break;
 
+
       // 新宿区
+      case '3':
+        $('.tokyo-area-box option[value]').each(function (i) {
+          if (i < 30 || i >= 45) {
+              $('.tokyo-area-box option[value = ' + (i) + ']').css('display', 'none');
+          }
+          i++;
+          })
+      break;
+
+
       case '4':
         $('.tokyo-area-box option[value]').each(function (i) {
           if (i < 30 || i >= 45) {
@@ -177,6 +191,7 @@ $(function () {
           })
       break;
       
+
       // 豊島区
       case '16':
         $('.tokyo-area-box option[value]').each(function (i) {
@@ -219,7 +234,7 @@ $(function () {
           i++;
           })
       break;
-      
+
 
       // 練馬区
       case '20':
@@ -242,6 +257,7 @@ $(function () {
           })
       break;
 
+      
       // 葛飾区
       case '22':
         $('.tokyo-area-box option[value]').each(function (i) {
@@ -564,13 +580,9 @@ $(function () {
       break;
       
 
-
           }
           })
         });
-
-
-
 
 
 

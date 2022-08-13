@@ -11,11 +11,11 @@ $(function () {
   switch (TokyoStateId){
      case '0':
         $('.tokyo-area-box option[value ]').css('display', 'none');
-
      break;
            
-    
-     case '1':
+      
+
+    case '1':
         $('.tokyo-area-box option[value]').each(function (i) {
           if (i < 30 || i >= 45) {
               $('.tokyo-area-box option[value = ' + (i) + ']').css('display', 'none');
@@ -26,16 +26,14 @@ $(function () {
 
       case '2':
         $('.tokyo-area-box option[value]').each(function (i) {
-          if (i < 10 || i >= 20) {
+          if (i < 30 || i >= 40) {
               $('.tokyo-area-box option[value = ' + (i) + ']').css('display', 'none');
           }
           i++;
           })
       break;
 
-
       case '3':
-
         $('.tokyo-area-box option[value]').each(function (i) {
           if (i < 30 || i >= 45) {
               $('.tokyo-area-box option[value = ' + (i) + ']').css('display', 'none');
@@ -43,7 +41,6 @@ $(function () {
           i++;
           })
       break;
-
 
       case '4':
         $('.tokyo-area-box option[value]').each(function (i) {
@@ -73,7 +70,6 @@ $(function () {
           })
       break;
 
-
       case '7':
         $('.tokyo-area-box option[value]').each(function (i) {
           if (i < 30 || i >= 45) {
@@ -82,7 +78,6 @@ $(function () {
           i++;
           })
       break;
-
 
       case '8':
         $('.tokyo-area-box option[value]').each(function (i) {
@@ -93,7 +88,6 @@ $(function () {
           })
       break;
 
-
       case '9':
         $('.tokyo-area-box option[value]').each(function (i) {
           if (i < 30 || i >= 45) {
@@ -102,7 +96,6 @@ $(function () {
           i++;
           })
       break;
-
 
       case '10':
         $('.tokyo-area-box option[value]').each(function (i) {
@@ -113,7 +106,6 @@ $(function () {
           })
       break;
 
-
       case '11':
         $('.tokyo-area-box option[value]').each(function (i) {
           if (i < 30 || i >= 45) {
@@ -122,7 +114,6 @@ $(function () {
           i++;
           })
       break;
-
 
       case '12':
         $('.tokyo-area-box option[value]').each(function (i) {
@@ -133,7 +124,6 @@ $(function () {
           })
       break;
 
-
       case '13':
         $('.tokyo-area-box option[value]').each(function (i) {
           if (i < 30 || i >= 45) {
@@ -142,7 +132,6 @@ $(function () {
           i++;
           })
       break;
-
 
       case '14':
         $('.tokyo-area-box option[value]').each(function (i) {
@@ -161,8 +150,7 @@ $(function () {
           i++;
           })
       break;
-
-
+      
       case '16':
         $('.tokyo-area-box option[value]').each(function (i) {
           if (i < 30 || i >= 45) {
@@ -172,8 +160,7 @@ $(function () {
           })
       break;
 
-
-     case '81':
+      case '17':
         $('.tokyo-area-box option[value]').each(function (i) {
           if (i < 30 || i >= 45) {
               $('.tokyo-area-box option[value = ' + (i) + ']').css('display', 'none');
@@ -181,7 +168,6 @@ $(function () {
           i++;
           })
       break;
-      
 
       case '18':
         $('.tokyo-area-box option[value]').each(function (i) {
@@ -533,13 +519,9 @@ $(function () {
       break;
 
 
-
           }
           })
         });
-
-
-
 
 
 

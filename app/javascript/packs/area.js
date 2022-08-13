@@ -2,6 +2,7 @@ $(function () {
   $('#post_state_id').on('change', function () {
       let TokyoStateId = $('.tokyo-state-box ').val();
 
+
       $('.tokyo-area-box').val('');
       $('.tokyo-area-box option').css('display', 'block');
       $('#post_area_id').css('display', 'block');
@@ -179,6 +180,7 @@ $(function () {
           }
           })
         });
+
 
 
 

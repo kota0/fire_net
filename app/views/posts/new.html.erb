@@ -25,7 +25,7 @@
         <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z"/>
       </svg><br>
       <span class="file">動画を投稿</span><br>
-      <%= f.file_field :image, :accept => 'video/*', id:"video", class:"hidden" %><br>
+      <%= f.file_field :video, class:"hidden" %><br>
     </label>
   </div><br>
 </div>
@@ -36,13 +36,13 @@
   <tr>
     <%# 地域１のプルダウン %>
         <th><span class="posts">区・市</span></th>
-        <td><%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"select-box"}) %></td><br>
+        <td><%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"tokyo-state-box"}) %></td><br>
   </tr>
 
   <tr>
     <%# 地域2のプルダウン %>
          <th><span class="posts">町丁・番地</span></th>
-         <td><%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"select-box"}) %></td><br>
+         <td><%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"tokyo-area-box"}) %></td><br>
   </tr>
 
   <tr>

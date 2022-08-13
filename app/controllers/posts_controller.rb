@@ -9,13 +9,13 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.order("created_at DESC")
+    @posts = Post.where(direction_id:params[:direction_id]).order("created_at DESC")
     @post = Post.new 
   end
 
   def create
     @post = Post.new(post_params)
-    if @post.save
+    if @post.save(context: :create_image)
       redirect_to root_path
     else
       render :new
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
      
   private
   def post_params
-    params.require(:post).permit(:image, :video, :state_id, :area_id, :mark, :injury_id, :escape_id, :help_id, :content).merge(user_id: current_user.id)
+    params.require(:post).permit(:video, :state_id, :area_id, :mark, :injury_id, :escape_id, :help_id, :content, :image, :direction_id).merge(user_id: current_user.id)
   end
 
 end

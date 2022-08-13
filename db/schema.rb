@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2022_08_09_044540) do
 
   create_table "posts", charset: "utf8", force: :cascade do |t|
     t.bigint "user_id"
+    t.integer "direction_id", null: false
     t.integer "state_id", null: false
     t.integer "area_id", null: false
     t.text "mark"

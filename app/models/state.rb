@@ -2,7 +2,7 @@ class State < ActiveHash::Base
   extend ActiveHash::Associations::ActiveRecordExtensions
  self.data = [
  { id: 0, name: '___'},
- { id: 1, name: '千代田区', direction_id:"1"},
+ { id: 1, name: '千代田区'},
  { id: 2, name: '中央区'},
  { id: 3, name: '港区'},
  { id: 4, name: '新宿区'},
@@ -51,10 +51,9 @@ class State < ActiveHash::Base
  { id: 47, name: '羽村市'},
  { id: 48, name: 'あきる野市'},
  { id: 49, name: '西東京市'},
- { id: 50, name: '稲穂町'},
- { id: 51, name: '日の出市'},
- { id: 52, name: '檜原村'},
- { id: 53, name: '奥多摩町'},
+ { id: 50, name: '日の出町'},
+ { id: 51, name: '檜原村'},
+ { id: 52, name: '奥多摩町'},
  
  ]
 

@@ -24,9 +24,9 @@ class Post < ApplicationRecord
 
 
  
-  validates :image, presence: true, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..5.megabytes }, on: create_image
+  # validates :image, presence: true, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..5.megabytes }, on: create_image
   
-  validates :video, presence: true, blob: { content_type: ['video/mp4']}
+  # validates :video, presence: true, blob: { content_type: ['video/mp4']}
   validate :required_either_image_or_video
 
   

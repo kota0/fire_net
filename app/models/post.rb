@@ -6,7 +6,6 @@ class Post < ApplicationRecord
   belongs_to :escape
   belongs_to :help
   belongs_to :injury
-  belongs_to :direction
   has_many   :Comments
 
   belongs_to :user

@@ -12,7 +12,7 @@
           <% end%>
 
     <div class="posts-box">
-      <%= link_to  post_path(post.id) do%>
+      <%= link_to( new_post_path, class: 'post-btn', data: {"turbolinks" => false}) do %>
 
           <div class="images-box">
            <% if post.image.attached? %>

@@ -13,7 +13,7 @@ class Post < ApplicationRecord
   has_one_attached :image
   has_one_attached :video
 
-  with_options presence: true, numericality: { other_than: 1, message: "can't be blank"} do
+  with_options presence: true, numericality: { other_than: 0, message: "が入力されていません"} do
     validates :state_id
     validates :area_id
     validates :escape_id

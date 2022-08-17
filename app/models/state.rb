@@ -51,9 +51,10 @@ class State < ActiveHash::Base
  { id: 47, name: '羽村市', direction_id:"9"},
  { id: 48, name: 'あきる野市', direction_id:"9"},
  { id: 49, name: '西東京市', direction_id:"8"},
- { id: 50, name: '日の出村', direction_id:"9"},
- { id: 51, name: '檜原村', direction_id:"9"},
- { id: 52, name: '奥多摩町', direction_id:"9"},
+ { id: 50, name: '瑞穂市', direction_id:"9"},
+ { id: 51, name: '日の出村', direction_id:"9"},
+ { id: 52, name: '檜原村', direction_id:"9"},
+ { id: 53, name: '奥多摩町', direction_id:"9"},
  ]
 
 

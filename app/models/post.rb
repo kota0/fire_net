@@ -23,17 +23,18 @@ class Post < ApplicationRecord
 
 
  
-  # validates :image, presence: true, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..5.megabytes }, on: create_image
+   validates :image, presence: true, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..(5.megabytes) }
+  #  validates :video, presence: true, blob: { content_type: ['video/mp4']},
+  # validates :image, required_either_image_or_video 
   
-  # validates :video, presence: true, blob: { content_type: ['video/mp4']}
-  validate :required_either_image_or_video
-
-  
-
-
-  # def required_either_image_or_video
-  #   return if image.present? ^ video.present?
-  #   errors.add(:base, '画像または動画のどちらか一方で投稿可能です')
-  # end
   
 end
+
+
+
+  #  def required_either_image_or_video
+  #   return if image.present? ^ video.present?
+  #   errors.add(:base, '画像または動画のどちらか一方で投稿可能です')
+  #  end
+  
+

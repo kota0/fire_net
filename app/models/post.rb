@@ -31,9 +31,9 @@ class Post < ApplicationRecord
   
 
 
-  def required_either_image_or_video
-    return if image.present? ^ video.present?
-    errors.add(:base, '画像または動画のどちらか一方で投稿可能です')
-  end
+  # def required_either_image_or_video
+  #   return if image.present? ^ video.present?
+  #   errors.add(:base, '画像または動画のどちらか一方で投稿可能です')
+  # end
   
 end

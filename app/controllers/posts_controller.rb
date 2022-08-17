@@ -9,15 +9,15 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.where(direction_id:params[:direction_id])
-    states.map(&:id)
-    Post.where(state_id: state_id_list).order("created_at DESC")
+    states = State.where(direction_id: params[:direction_id])
+    state_id_list =states.map(&:id)
+    @posts = Post.where(state_id: state_id_list).order("created_at DESC")
     @post = Post.new 
   end
 
   def create
     @post = Post.new(post_params)
-    if @post.save(context: :create_image)
+    if @post.save
       redirect_to root_path
     else
       render :new

@@ -8,23 +8,28 @@ class PostsController < ApplicationController
     @post = Post.new  
   end
 
-  def index
-    states = State.where(direction_id: params[:direction_id])
-    state_id_list =states.map(&:id)
-    @posts = Post.where(state_id: state_id_list).order("created_at DESC")
-    @posts = Post.new 
-  end
-
   # def index
-  #   if params[:direction_id]
-  #     # パラメータとして direction_id を渡しているとき
-  #     states = State.where(direction_id: params[:direction_id]) # 絞り込んだState
-  #   else
-  #     # direction_id が渡されなかった時（デフォルト状態)
-  #     states = State.all # 絞り込まない、すべての State
-  #   end
+  #   @post_all = Post.all
+  #   states = State.where(direction_id: params[:direction_id])
+  #   state_id_list =states.map(&:id)
+  #   @posts = Post.where(state_id: state_id_list).order("created_at DESC")
+  #   @post = Post.new 
+   
+  # end
+
+ 
   
-  
+  def index
+    @post = Post.new
+
+    if params[:direction_id]
+      states = State.where(direction_id: params[:direction_id]) # 絞り込んだState
+      state_id_list =states.map(&:id)
+      @posts = Post.where(state_id: state_id_list).order("created_at DESC") 
+    else
+      @posts = Post.all 
+    end
+  end
 
   def create
     @post = Post.new(post_params)

@@ -6,7 +6,7 @@
 
 <div class="main-page">
     <div class="areas_box">        
-     <% @posts.each do |post| %> 
+    <% @posts.each do |post| %> 
         <%= link_to(root_path, class: 'main-name') do %>
           <p>第"#"方面 <%= post.state.name %> ・  <%= post.area.name %> 被害状況</p>
           <% end%>

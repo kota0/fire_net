@@ -8,16 +8,6 @@ class PostsController < ApplicationController
     @post = Post.new  
   end
 
-  # def index
-  #   @post_all = Post.all
-  #   states = State.where(direction_id: params[:direction_id])
-  #   state_id_list =states.map(&:id)
-  #   @posts = Post.where(state_id: state_id_list).order("created_at DESC")
-  #   @post = Post.new 
-   
-  # end
-
- 
   
   def index
     @post = Post.new
@@ -27,7 +17,7 @@ class PostsController < ApplicationController
       state_id_list =states.map(&:id)
       @posts = Post.where(state_id: state_id_list).order("created_at DESC") 
     else
-      @posts = Post.all 
+      @posts = Post.all.order("created_at DESC")
     end
   end
 

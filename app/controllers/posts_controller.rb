@@ -8,14 +8,25 @@ class PostsController < ApplicationController
     @post = Post.new  
   end
 
+  
   def index
-    @posts = Post.where(direction_id:params[:direction_id]).order("created_at DESC")
-    @post = Post.new 
+    @post = Post.new
+
+    if params[:direction_id]
+      states = State.where(direction_id: params[:direction_id]) # 絞り込んだState
+      state_id_list =states.map(&:id)
+      @posts = Post.where(state_id: state_id_list).order("created_at DESC") 
+    else
+      @posts = Post.all.order("created_at DESC")
+    end
   end
 
   def create
     @post = Post.new(post_params)
-    if @post.save(context: :create_image)
+      state_id = @post.state_id
+      state = State.find_by(id: state_id)
+
+    if @post.save!
       redirect_to root_path
     else
       render :new
@@ -30,7 +41,7 @@ class PostsController < ApplicationController
      
   private
   def post_params
-    params.require(:post).permit(:video, :state_id, :area_id, :mark, :injury_id, :escape_id, :help_id, :content, :image, :direction_id).merge(user_id: current_user.id)
+    params.require(:post).permit(:video, :state_id, :area_id, :mark, :injury_id, :escape_id, :help_id, :content, :image).merge(user_id: current_user.id)
   end
 
 end

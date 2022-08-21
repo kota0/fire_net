@@ -13,6 +13,18 @@
     <%= form_with model: [@post, @comment] do |f| %>
       <%= f.text_area :comment , class: "comment-text"%>
       <%= f.submit "コメントをする", class: "comment-submit" %>
+
+       <div>
+               <td> <%= check_box_tag :test1 %></td>
+               <td><%= label_tag :test1, "対応中" %></td>
+               <td> <%= check_box_tag :test1 %></td>
+               <td><%= label_tag :test1, "対応済み" %></td>
+               <td> <%= check_box_tag :test1 %></td>
+               <td><%= label_tag :test1, "未対応" %></td>
+            </div>
+ 
+
+  
     <% end %>
   <% end %>
 </div>

@@ -1,44 +1,24 @@
-.main-page {
-  position:relative;
-  top: 60px;
+.container  {
+  padding-top: 40px;
 }
 
-.main-page .areas_box p {
+
+.areas_box p {
   text-align: center;
   font-size: 30px;
 }
 
-.main-page .areas_box .view_box {
-  margin-left: 80px;
+.view_box, .posts-box {
+  display: inline-block;
+  vertical-align:middle;
 }
 
-.posts-box .post-box {
-  display: flex;
-  justify-content: flex-end;
+.view_box .post-img {
+  height: 280px;
+  width: 500px;
 }
-
-
-
-
-
-.areas {
-  text-align: center;
-}
-
 
 .contents_row {
   text-align: center;
-}
-
-.video-box {
-  padding: 20px;
-}
-
-.images-box {
-  padding: 20px;
-}
-
-.images-box .post-img {
-  height: 280px;
-  width: 500px;
+  font-size: 30px;
 }

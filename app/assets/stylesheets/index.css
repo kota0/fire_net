@@ -1,3 +1,26 @@
+.main-page {
+  position:relative;
+  top: 60px;
+}
+
+.main-page .areas_box p {
+  text-align: center;
+  font-size: 30px;
+}
+
+.main-page .areas_box .view_box {
+  margin-left: 80px;
+}
+
+.posts-box .post-box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+
+
 .areas {
   text-align: center;
 }

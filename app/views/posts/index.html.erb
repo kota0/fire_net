@@ -10,19 +10,29 @@
       <%= link_to(post_path(post.id), method: :get) do %>
           <p>第<%= post.state.direction_id %>方面 <%= post.state.name %> ・  <%= post.area.name %> 被害状況</p>
           
+     <div class="view_box">
+        <div class="images-box">
+          <% if post.image.attached? %>
+            <td><%= image_tag post.image, class: "post-img" %></td>  
+          <% end %> 
+        </div>
+        
+        <div class= "video-box">
+          <% if post.video.attached? %> 
+            <td> <video src="<%= rails_blob_path(post.video) %> "type="video/mp4"  width="500" height="280"  controls ></video></td>
+          <% end %>
+        </div>
+     </div>
+
+
+
+
+
+
+
+
 
     <div class="posts-box">
-          <div class="images-box">
-           <% if post.image.attached? %>
-               <%# <td><%= image_tag post.image.variant(resize: "500x280!", crop:"500x280+0+0"), class: "post-img"</td>  %> 
-               <td><%= image_tag post.image, class: "post-img" %></td>  
-           <% end %> 
-         </div>
-         <div class= "video-box">
-         <% if post.video.attached? %> 
-           <td> <video src="<%= rails_blob_path(post.video) %> "type="video/mp4"  width="500" height="280"  controls ></video></td>
-         <% end %>
-         </div>
           <div class="post-box">
               <td> <%= post.state.name %></td>
           </div>
@@ -40,10 +50,8 @@
             <div class="post-box">
               <td> <%= post.content %></td>
             </div>
-           
          <% end %>
         <% end %> 
-      
     </div>
 </div>
 
@@ -57,4 +65,7 @@
     <% end%>
  </div>
 
-      </body>
+
+ <footer>
+  <%= render 'layouts/footer' %>
+</footer>

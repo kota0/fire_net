@@ -1,7 +1,11 @@
+<div class=header-box>
+<%= render 'layouts/header' %> 
+</div>
+
 <div class="main-wrapper">
   <div class="container">
-    <div class="areas_box">
-       <%# <% @posts.each do |post| %> %>
+    <div class="areas_box">  
+       <pre><p>第<%= @post.state.direction_id %>方面 <%= @post.state.name %> ・ <%= @post.area.name %>  被害状況</p></pre>
           <div class="view_box">
             <% if @post.image.attached? %>
               <td><%= image_tag @post.image, class: "post-img" %></td>
@@ -24,42 +28,43 @@
             <div><pre>・詳細内容</pre></div>
             <div class="box"> <%= @post.content %></div>
           </div>
-        <%# <% end %> %>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-<div id="comments">
-  <h4>＜コメント一覧＞</h4>
-    <% @comments.each do |comment| %>
-      <div class="comment">
-        <p><%= comment.comment%></p>
       </div>
+    </div>
+</div>
+
+
+
+
+
+<div class=comment-box>
+  <div id="comments">
+    <h4>《コメント一覧》</h4>
+      <% @comments.each do |comment| %>
+        <div class="comment">
+          <p><%= comment.comment%></p>
+        </div>
+      <% end %>
+  </div>
+
+
+
+  <div class="comment-form">
+    <% if user_signed_in? %>
+      <%= form_with model: [@post, @comment] do |f| %>
+        <%= f.text_area :comment , class: "comment-text"%><br>
+        <%= f.submit "送信", class: "comment-submit" %>  
+      <% end %>
     <% end %>
 </div>
 
-<div class="comment-form">
-  <% if user_signed_in? %>
-    <%= form_with model: [@post, @comment] do |f| %>
-      <%= f.text_area :comment , class: "comment-text"%>
-      <%= f.submit "コメントをする", class: "comment-submit" %>
 
-       <div>
-               <td> <%= check_box_tag :test1 %></td>
-               <td><%= label_tag :test1, "対応中" %></td>
-               <td> <%= check_box_tag :test1 %></td>
-               <td><%= label_tag :test1, "対応済み" %></td>
-               <td> <%= check_box_tag :test1 %></td>
-               <td><%= label_tag :test1, "未対応" %></td>
-            </div>
+  <div class="chack_box">
+    <td> <%= check_box_tag :test1 %></td>
+    <td><%= label_tag :test1, "対応中" %></td>
+    <td> <%= check_box_tag :test1 %></td>
+    <td><%= label_tag :test1, "対応済み" %></td>
+    <td> <%= check_box_tag :test1 %></td>
+    <td><%= label_tag :test1, "未対応" %></td>
+  </div>
  
-
-  
-    <% end %>
-  <% end %>
-</div>
+  <%= render 'layouts/footer' %>

@@ -1,3 +1,38 @@
+<div class="main-wrapper">
+  <div class="container">
+    <div class="areas_box">
+       <%# <% @posts.each do |post| %> %>
+          <div class="view_box">
+            <% if @post.image.attached? %>
+              <td><%= image_tag @post.image, class: "post-img" %></td>
+            <% end %>
+
+            <% if @post.video.attached? %>
+              <td>
+                <video src="<%= rails_blob_path(@post.video) %> " type="video/mp4" width="500" height="280" controls></video>
+              </td>
+            <% end %>
+          </div>
+
+          <div class="posts-box">
+            <h1><span>《被害状況》</span></h1>
+            <div><pre>・所在      <%= @post.state.name %> <%= @post.area.name %></div></pre>
+            <div><pre>・番地/目印      <%= @post.mark %></div></pre>
+            <div><pre>・ケガ人の人数     <%= @post.injury.name %></div></pre>
+            <div><pre>・逃げ遅れの人数     <%= @post.escape.name%></div></pre>
+            <div><pre>・消防隊の要請      <%= @post.help.name%></div></pre>
+            <div><pre>・詳細内容</pre></div>
+            <div class="box"> <%= @post.content %></div>
+          </div>
+        <%# <% end %> %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
 <div id="comments">
   <h4>＜コメント一覧＞</h4>

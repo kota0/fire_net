@@ -7,7 +7,7 @@
     <div class="bar_box">
       <div class= "right_bar">
         <div class="title">
-          <a><span>FIRE</span>.Net</span></a>
+          <a><span>FIRE</span>.Net</a>
         </div>
       </div>
 
@@ -16,24 +16,24 @@
         <nav>
             <div class="support">
               <ul>
-                <li><a href="#"><button type="button" class="btn btn-danger">対応中</button></li></a>
-                <li><a href="#"><button type="button" class="btn btn-primary">対応済み</button><li></a>       
+                <li><a href="#"><button type="button" class="btn btn-danger">対応中</button></a></li>
+                <li><a href="#"><button type="button" class="btn btn-primary">対応済み</button></a><li>    
               </ul> 
             </div>
 
             <div class= "inner">
               <ul>
-              <li><a href="posts">全方面</a><li>
-              <li><a href="posts?direction_id=1">第1方面</a><li>
-              <li><a href="posts?direction_id=2">第2方面</a><li>
-              <li><a href="posts?direction_id=3">第3方面</a><li>
-              <li><a href="posts?direction_id=4">第4方面</a><li>
-              <li><a href="posts?direction_id=5">第5方面</a><li>
-              <li><a href="posts?direction_id=6">第6方面</a><li>
-              <li><a href="posts?direction_id=7">第7方面</a><li>
-              <li><a href="posts?direction_id=8">第8方面</a><li>
-              <li><a href="posts?direction_id=9">第9方面</a><li>
-              <li><a href="posts?direction_id=10">第10方面</a><li>
+              <li><%= link_to "全方面", controller: "posts", action: "index" %><li>
+              <li><%= link_to "第1方面", controller: "posts", action: "index", direction_id: 1 %><li>
+              <li><%= link_to "第2方面", controller: "posts", action: "index", direction_id: 2 %><li>
+              <li><%= link_to "第3方面", controller: "posts", action: "index", direction_id: 3 %><li>
+              <li><%= link_to "第4方面", controller: "posts", action: "index", direction_id: 4 %><li>
+              <li><%= link_to "第5方面", controller: "posts", action: "index", direction_id: 5 %><li>
+              <li><%= link_to "第6方面", controller: "posts", action: "index", direction_id: 6 %><li>
+              <li><%= link_to "第7方面", controller: "posts", action: "index", direction_id: 7 %><li>
+              <li><%= link_to "第8方面", controller: "posts", action: "index", direction_id: 8 %><li>
+              <li><%= link_to "第9方面", controller: "posts", action: "index", direction_id: 9 %><li>
+              <li><%= link_to "第10方面", controller: "posts", action: "index", direction_id: 10 %><li>
               </ul> 
             </div>  
         </nav>

@@ -1,5 +1,8 @@
-.header {
-  display: none;
+.back-im {
+  background-image: url('images/fire_log_image.jpg');
+  background-position: center;
+  background: cover;
+  z-index: 1;
 }
 
 /* 大親要素 */

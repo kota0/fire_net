@@ -1,0 +1,45 @@
+.header {
+  display: none;
+}
+
+/* 大親要素 */
+.login-content { 
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  margin-top: 300px;
+  margin-left: 300px;
+  margin-right: 400px;
+}
+
+/* 左側の要素 */
+.login_left-bar {
+  border: solid ;
+  border-radius: 20px; 
+  height: 450px;
+  width: 450px;
+  padding: 30px;
+}
+
+.login_left-bar p {
+  font-size: 20px;
+ }
+
+ .login_left-bar h3 {
+  font-size: 100px;
+ }
+
+.login_left-bar span{
+ color: red;
+}
+
+.login_left-bar.left-inner {
+  text-align: center;
+}
+
+/* 右側の要素 */
+.login_rigit-bar {
+  
+}
+
+

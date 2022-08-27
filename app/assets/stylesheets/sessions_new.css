@@ -1,0 +1,79 @@
+/* .back-im {
+  background-image: url('fire_log_image.jpg');
+  background-position: center;
+  background: cover;
+  z-index: 1;
+} */
+
+/* 大親要素 */
+.login-content { 
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  margin-top: 270px;
+  margin-left: 300px;
+  margin-right: 400px;
+}
+
+/* 左側の要素 */
+.login_left-bar {
+  border: solid ;
+  border-radius: 20px; 
+  height: 450px;
+  width: 450px;
+  padding: 30px;
+}
+
+.login_left-bar p {
+  font-size: 20px;
+ }
+
+ .login_left-bar h3 {
+  font-size: 100px;
+ }
+
+.login_left-bar span{
+ color: red;
+}
+
+.login_left-bar.left-inner {
+  text-align: center;
+}
+
+/* 右側の要素 */
+.login_rigit-bar {
+  font-size: 35px;
+}
+
+.field #user_email{
+ height: 40px;
+ width: 400px;
+}
+
+.field #user_password {
+  height: 40px;
+  width: 400px;
+}
+
+
+.actions input[name="commit"] {
+  border: none;
+}
+
+.btn_btn {
+   display       : inline-block; 
+  padding-left: 40px;
+  border-radius : 12%;
+  font-size     : 18pt;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 12px 12px;
+  background    : #4da6ff;
+  color         : #ffffff;
+  line-height   : 1em;
+  opacity       : 1.2;
+  transition    : .3s;
+}
+.btn_btn:hover {
+  opacity       : 0.5;
+}

@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
       state_id = @post.state_id
       state = State.find_by(id: state_id)
-
+binding.pry
     if @post.save!
       redirect_to root_path
     else
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
      
   private
   def post_params
-    params.require(:post).permit(:video, :state_id, :area_id, :mark, :injury_id, :escape_id, :help_id, :content, :images).merge(user_id: current_user.id)
+    params.require(:post).permit(:video, :state_id, :area_id, :mark, :injury_id, :escape_id, :help_id, :content, images: []).merge(user_id: current_user.id)
   end
 
 end

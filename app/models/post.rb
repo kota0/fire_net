@@ -23,20 +23,18 @@ class Post < ApplicationRecord
 
 
  
-<<<<<<< HEAD
+
    validates :images,  presence: true, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..(5.megabytes) }
-   validates :images_length
-=======
-   validates :images, presence: true, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..(5.megabytes) }
->>>>>>> 522d3b906641e58e92fe70d2ec8f5eb3c8e9b61d
+   validate :images_length
+
   #  validates :video, presence: true, blob: { content_type: ['video/mp4']},
   # validates :image, required_either_image_or_video ]
 
   private
 
   def images_length
-    if avatars.length > 4
-      avatars.purge
+    if images.length > 4
+      images.purge
       errors.add(:images, "は4枚以内にしてください")
     end
   end

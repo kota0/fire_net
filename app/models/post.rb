@@ -10,7 +10,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_many :comments
-  has_one_attached :image
+  has_many_attached :images
   has_one_attached :video
 
   with_options presence: true, numericality: { other_than: 0, message: "が入力されていません"} do
@@ -23,7 +23,7 @@ class Post < ApplicationRecord
 
 
  
-   validates :image, presence: true, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..(5.megabytes) }
+   validates :images, presence: true, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..(5.megabytes) }
   #  validates :video, presence: true, blob: { content_type: ['video/mp4']},
   # validates :image, required_either_image_or_video 
   

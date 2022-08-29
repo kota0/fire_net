@@ -10,6 +10,7 @@
           <p>第<%= post.state.direction_id %>方面 <%= post.state.name %> ・ <%= post.area.name %>被害状況</p>
 
        <div class="view_box">
+       <% if post.images.attached? %>
          <% if post.images.length < 2 %>
                <% post.images.each do |image| %>
                <%= image_tag image, class: "post-img"%>
@@ -25,7 +26,8 @@
                 <div class="swiper-button-next swiper-button-white"></div>
                 <div class="swiper-pagination"></div>
             </div>
-          <% end %>
+           <% end %>
+        <% end%>
 
 
 

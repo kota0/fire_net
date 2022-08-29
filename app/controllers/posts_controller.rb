@@ -25,7 +25,6 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
       state_id = @post.state_id
       state = State.find_by(id: state_id)
-binding.pry
     if @post.save!
       redirect_to root_path
     else

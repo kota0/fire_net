@@ -8,6 +8,7 @@
      <% @posts.each do |post| %>
         <%= link_to(post_path(post.id), method: :get, class:"post-path") do %>
           <p>第<%= post.state.direction_id %>方面 <%= post.state.name %> ・ <%= post.area.name %>被害状況</p>
+        <% end %>
 
        <div class="view_box">
        <% if post.images.attached? %>
@@ -15,15 +16,16 @@
                <% post.images.each do |image| %>
                <%= image_tag image, class: "post-img"%>
                <% end %>
+
            <% else %>
             <div class="swiper-container">
-              <div class= "swiper-wrapper img-index">
+              <div class= "swiper-wrapper_img-index">
                <% post.images.each do |image| %>
-               <%= image_tag image, class: "swiper-slide index-img" %>
+               <%= image_tag image, class: "post-img" %>
                <% end %>
              </div>
-                <div class="swiper-button-prev swiper-button-white"></div>
-                <div class="swiper-button-next swiper-button-white"></div>
+                <div class="swiper-button-prev swiper-button-black"></div>
+                <div class="swiper-button-next swiper-button-black"></div>
                 <div class="swiper-pagination"></div>
             </div>
            <% end %>
@@ -48,7 +50,7 @@
             <div><pre>・詳細内容</pre></div>
             <div class="box"> <%= post.content %></div>
           </div>
-        <% end %>
+       
       <% end %>
     </div>
   </div>

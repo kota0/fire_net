@@ -20,7 +20,7 @@
 }
 
 
-.swiper-container, .posts-box {
+.posts-img .posts-box {
   display: inline-block;
   vertical-align:middle;
   padding-bottom: 30px;

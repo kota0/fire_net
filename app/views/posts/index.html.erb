@@ -14,16 +14,58 @@
               <%= image_tag image, class: "post-img" %>
             <% end %>
           <% else %>
-            <div class="swiper-container">
-                <div class="swiper-wrapper img-index">
+          <div class="swiper-container swiper<%= @posts.index(post) + 1 %>"> 
+             <div class="swiper-wrapper img-index">
                   <% post.images.each do |image| %>
                   <%= image_tag image, class: "swiper-slide posts-img" %>
                   <% end %>
                 </div>
-              <div class="swiper-button-prev swiper-button-black"></div>
+              <div class="swiper-button-prev swiper-button-blackz"></div>
               <div class="swiper-button-next swiper-button-black"></div>
               <div class="swiper-pagination"></div>
-            </div>
+            
+
+              <div class="swiper-wrapper1 img-index">
+                  <% post.images.each do |image| %>
+                  <%= image_tag image, class: "swiper-slide posts-img" %>
+                  <% end %>
+                </div>
+              <div class="swiper-button-prev swiper-button-blackz"></div>
+              <div class="swiper-button-next swiper-button-black"></div>
+              <div class="swiper-pagination"></div>
+            
+
+           
+              <div class="swiper-wrapper2 img-index">
+                  <% post.images.each do |image| %>
+                  <%= image_tag image, class: "swiper-slide posts-img" %>
+                  <% end %>
+                </div>
+              <div class="swiper-button-prev swiper-button-blackz"></div>
+              <div class="swiper-button-next swiper-button-black"></div>
+              <div class="swiper-pagination"></div>
+         
+            
+              <div class="swiper-wrapper3 img-index">
+                  <% post.images.each do |image| %>
+                  <%= image_tag image, class: "swiper-slide posts-img" %>
+                  <% end %>
+                </div>
+              <div class="swiper-button-prev swiper-button-blackz"></div>
+              <div class="swiper-button-next swiper-button-black"></div>
+              <div class="swiper-pagination"></div>
+          
+
+          
+                <div class="swiper-wrapper4 img-index">
+                  <% post.images.each do |image| %>
+                  <%= image_tag image, class: "swiper-slide posts-img" %>
+                  <% end %>
+                </div>
+              <div class="swiper-button-prev swiper-button-blackz"></div>
+              <div class="swiper-button-next swiper-button-black"></div>
+              <div class="swiper-pagination"></div>
+           </div>
           <% end %>
         <% end %>
 
@@ -71,3 +113,4 @@
 <footer>
   <%= render 'layouts/footer' %>
 </footer>
+

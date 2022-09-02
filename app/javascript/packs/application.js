@@ -21,5 +21,5 @@ import "channels"
 
  import "./hamburger"
  import "./area"
-
+ import "./swiper"
 

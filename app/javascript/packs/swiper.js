@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", function(){
-  var mySwiper = new Swiper('.swiper-container', {
+  const swiper = new Swiper('.swiper-container', {
     // Optional parameters
+   slidesPerView: 1,
+	 spaceBetween: 2,
+	 initialSlide: 1,
     loop: true,
-
+    centeredSlides: true,
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',

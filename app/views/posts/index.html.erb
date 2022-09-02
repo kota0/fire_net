@@ -1,56 +1,60 @@
-
-  <%= render 'layouts/header' %>
-
+<%= render 'layouts/header' %>
 
 <div class="main-wrapper">
   <div class="container">
     <div class="areas_box">
-     <% @posts.each do |post| %>
-        <%= link_to(post_path(post.id), method: :get, class:"post-path") do %>
+      <% @posts.each do |post| %>
+        <%= link_to(post_path(post.id), method: :get, class: "post-path") do %>
           <p>第<%= post.state.direction_id %>方面 <%= post.state.name %> ・ <%= post.area.name %>被害状況</p>
         <% end %>
 
-       <div class="view_box">
-       <% if post.images.attached? %>
-         <% if post.images.length < 2 %>
-               <% post.images.each do |image| %>
-               <%= image_tag image, class: "post-img"%>
-               <% end %>
-
-           <% else %>
-            <div class="swiper-container">
-              <div class= "swiper-wrapper_img-index">
-               <% post.images.each do |image| %>
-               <%= image_tag image, class: "post-img" %>
-               <% end %>
-             </div>
-                <div class="swiper-button-prev swiper-button-black"></div>
-                <div class="swiper-button-next swiper-button-black"></div>
-                <div class="swiper-pagination"></div>
-            </div>
-           <% end %>
-        <% end%>
-
-
-
-            <% if post.video.attached? %>
-              <td>
-                <video src="<%= rails_blob_path(post.video) %> " type="video/mp4" width="500" height="280" controls></video>
-              </td>
+        <% if post.images.attached? %>
+          <% if post.images.length < 2 %>
+            <% post.images.each do |image| %>
+              <%= image_tag image, class: "post-img" %>
             <% end %>
-          </div>
+          <% else %>
+            <div class="swiper-container">
+                <div class="swiper-wrapper img-index">
+                  <% post.images.each do |image| %>
+                  <%= image_tag image, class: "swiper-slide posts-img" %>
+                  <% end %>
+                </div>
+              <div class="swiper-button-prev swiper-button-black"></div>
+              <div class="swiper-button-next swiper-button-black"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+          <% end %>
+        <% end %>
 
-          <div class="posts-box">
-            <h1><span>《被害状況》</span></h1>
-            <div><pre>・所在      <%= post.state.name %> <%= post.area.name %></div></pre>
-            <div><pre>・番地/目印      <%= post.mark %></div></pre>
-            <div><pre>・ケガ人の人数     <%= post.injury.name %></div></pre>
-            <div><pre>・逃げ遅れの人数     <%= post.escape.name%></div></pre>
-            <div><pre>・消防隊の要請      <%= post.help.name%></div></pre>
-            <div><pre>・詳細内容</pre></div>
-            <div class="box"> <%= post.content %></div>
+        <% if post.video.attached? %>
+          <td>
+            <video src="<%= rails_blob_path(post.video) %> " type="video/mp4" width="500" height="280" controls></video>
+          </td>
+        <% end %>
+
+        <div class="posts-box">
+          <h1><span>《被害状況》</span></h1>
+          <div>
+            <pre>・所在      <%= post.state.name %> <%= post.area.name %></div>
+          <div>
+            <pre>・番地/目印      <%= post.mark %></div>
+          </pre>
+          <div>
+            <pre>・ケガ人の人数     <%= post.injury.name %></div>
+          </pre>
+          <div>
+            <pre>・逃げ遅れの人数     <%= post.escape.name %></div>
+          </pre>
+          <div>
+            <pre>・消防隊の要請      <%= post.help.name %></div>
+          </pre>
+          <div>
+            <pre>・詳細内容</pre>
           </div>
-       
+          <div class="box"> <%= post.content %></div>
+        </div>
+
       <% end %>
     </div>
   </div>

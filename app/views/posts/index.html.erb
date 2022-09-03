@@ -8,66 +8,24 @@
           <p>第<%= post.state.direction_id %>方面 <%= post.state.name %> ・ <%= post.area.name %>被害状況</p>
         <% end %>
 
-        <% if post.images.attached? %>
-          <% if post.images.length < 2 %>
-            <% post.images.each do |image| %>
-              <%= image_tag image, class: "post-img" %>
-            <% end %>
-          <% else %>
-          <div class="swiper-container swiper<%= @posts.index(post) + 1 %>"> 
-             <div class="swiper-wrapper img-index">
+          <% if post.images.attached? %>
+              <% if post.images.length < 2 %>
                   <% post.images.each do |image| %>
-                  <%= image_tag image, class: "swiper-slide posts-img" %>
+                    <%= image_tag image, class: "post-img" %>
                   <% end %>
-                </div>
-              <div class="swiper-button-prev swiper-button-blackz"></div>
-              <div class="swiper-button-next swiper-button-black"></div>
-              <div class="swiper-pagination"></div>
-            
-
-              <div class="swiper-wrapper1 img-index">
-                  <% post.images.each do |image| %>
-                  <%= image_tag image, class: "swiper-slide posts-img" %>
-                  <% end %>
-                </div>
-              <div class="swiper-button-prev swiper-button-blackz"></div>
-              <div class="swiper-button-next swiper-button-black"></div>
-              <div class="swiper-pagination"></div>
-            
+                <% else %>
+                  <div class="previews">
+                    <div class="slider">
+                     <% post.images.each do |image| %>
+                     <%= image_tag image, class: "slick-posts-img" %>
+                    <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
 
            
-              <div class="swiper-wrapper2 img-index">
-                  <% post.images.each do |image| %>
-                  <%= image_tag image, class: "swiper-slide posts-img" %>
-                  <% end %>
-                </div>
-              <div class="swiper-button-prev swiper-button-blackz"></div>
-              <div class="swiper-button-next swiper-button-black"></div>
-              <div class="swiper-pagination"></div>
-         
-            
-              <div class="swiper-wrapper3 img-index">
-                  <% post.images.each do |image| %>
-                  <%= image_tag image, class: "swiper-slide posts-img" %>
-                  <% end %>
-                </div>
-              <div class="swiper-button-prev swiper-button-blackz"></div>
-              <div class="swiper-button-next swiper-button-black"></div>
-              <div class="swiper-pagination"></div>
           
-
-          
-                <div class="swiper-wrapper4 img-index">
-                  <% post.images.each do |image| %>
-                  <%= image_tag image, class: "swiper-slide posts-img" %>
-                  <% end %>
-                </div>
-              <div class="swiper-button-prev swiper-button-blackz"></div>
-              <div class="swiper-button-next swiper-button-black"></div>
-              <div class="swiper-pagination"></div>
-           </div>
-          <% end %>
-        <% end %>
 
         <% if post.video.attached? %>
           <td>
@@ -113,4 +71,3 @@
 <footer>
   <%= render 'layouts/footer' %>
 </footer>
-

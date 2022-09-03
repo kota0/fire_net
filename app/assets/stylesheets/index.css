@@ -4,8 +4,6 @@
   padding-top: 40px;  
 }
 
-.areas_box {
-}
 
 .areas_box p {
   text-align: center;
@@ -20,34 +18,38 @@
 }
 
 
-.posts-img .posts-box {
+ .posts-box {
   display: inline-block;
   vertical-align:middle;
   padding-bottom: 30px;
 } 
 
 
+.slick-posts-img .posts-box {
+  display: inline-block;
+  vertical-align:middle;
+  padding-bottom: 30px;
+}
 
-.areas_box .post-img {
+.post-img {
   height: 300px;
   width: 500px;
 }
 
-.swiper-container {
-  height: 300px;
-  width: 500px;
+.slider div {
+	height: 300px;
+}
+.slider img {
+	width: 500px;
 }
 
-/* .swiper-slide, .posts-img {
-  position: absolute;
+
+.prev-arrow {
+  left: -40px;
 }
-
-.swiper-button-prev {
-  left: 10px;
-} */
-
-
-
+.next-arrow {
+  right: -40px;
+}
 
 .contents_row {
   text-align: center;

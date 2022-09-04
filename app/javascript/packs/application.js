@@ -4,6 +4,7 @@
 // that code so it'll be compiled.
 //= require jquery3
 //= require jquery_ujs
+//= require_tree .
  require("jquery")
  require("./slick")
 
@@ -23,5 +24,6 @@ import '@fortawesome/fontawesome-free/js/all';
 
  import "./hamburger"
  import "./area"
+ import "./slick"
 
 

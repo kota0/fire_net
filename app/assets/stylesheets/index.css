@@ -31,16 +31,14 @@
   padding-bottom: 30px;
 }
 
-.post-img {
+.slick-posts-img {
   height: 300px;
   width: 500px;
 }
 
-.slider div {
-	height: 300px;
-}
-.slider img {
-	width: 500px;
+.post-img {
+  height: 300px;
+  width: 500px;
 }
 
 
@@ -79,3 +77,10 @@
 }
 
 
+.slider {
+    visibility: hidden;
+}
+
+.slider .slick-initialized {
+    visibility: visible;
+}

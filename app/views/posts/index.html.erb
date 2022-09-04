@@ -16,16 +16,16 @@
                 <% else %>
                   <div class="previews">
                     <div class="slider">
-                     <% post.images.each do |image| %>
-                     <%= image_tag image, class: "slick-posts-img" %>
-                    <% end %>
+                     <div> 
+                      <% post.images.each do |image| %>
+                      <%= image_tag image, class: "slick-posts-img" %>
+                      <% end %>
+                     </div>
                     </div>
                   </div>
                 <% end %>
               <% end %>
 
-           
-          
 
         <% if post.video.attached? %>
           <td>

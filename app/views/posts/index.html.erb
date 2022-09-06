@@ -11,16 +11,16 @@
           <% if post.images.attached? %>
               <% if post.images.length < 2 %>
                   <% post.images.each do |image| %>
-                    <%= image_tag image, class: "post-img" %>
+                  <%= image_tag image, class: "post-img" %>
                   <% end %>
                 <% else %>
                   <div class="previews">
                     <div class="slider">
-                     <div> 
                       <% post.images.each do |image| %>
-                      <%= image_tag image, class: "slick-posts-img" %>
-                      <% end %>
-                     </div>
+                       <div> 
+                        <%= image_tag image, class: "slick-posts-img" %>
+                       </div>
+                     <% end %>
                     </div>
                   </div>
                 <% end %>

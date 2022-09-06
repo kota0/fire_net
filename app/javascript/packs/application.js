@@ -26,4 +26,3 @@ import '@fortawesome/fontawesome-free/js/all';
  import "./area"
  import "./slick"
 
-

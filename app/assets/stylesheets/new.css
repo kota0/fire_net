@@ -26,9 +26,10 @@ h1 {
   font-size: 20px;
   padding: 10px;
  }
-  #previwe {
-    height: 100px;
-    width: 170px;
+
+  #preview img {
+    height:200px;
+    width: 400x;
   }
 
  .img-upload .video .file {

@@ -25,5 +25,4 @@ import '@fortawesome/fontawesome-free/js/all';
  import "./hamburger"
  import "./area"
  import "./slick"
- import "./image"
 

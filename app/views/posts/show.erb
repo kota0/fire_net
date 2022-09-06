@@ -6,10 +6,29 @@
   <div class="container">
     <div class="areas_box">  
        <pre><p>第<%= @post.state.direction_id %>方面 <%= @post.state.name %> ・ <%= @post.area.name %>  被害状況</p></pre>
-          <div class="view_box">
-            <% if @post.image.attached? %>
-              <td><%= image_tag @post.image, class: "post-img" %></td>
-            <% end %>
+        
+            <% if @post.images.attached? %>
+              <% if @post.images.length < 2 %>
+                  <% @post.images.each do |image| %>
+                  <%= image_tag image, class: "post-img" %>
+                  <% end %>
+                <% else %>
+                  <div class="previews">
+                    <div class="slider">
+                      <% @post.images.each do |image| %>
+                       <div> 
+                        <%= image_tag image, class: "slick-posts-img" %>
+                       </div>
+                     <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+
+
+
+
+
 
             <% if @post.video.attached? %>
               <td>

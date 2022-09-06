@@ -6,6 +6,7 @@
 
 
 .areas_box p {
+  margin-top: 75px;
   text-align: center;
   font-size: 30px;
   color: black;
@@ -18,16 +19,78 @@
 }
 
 
-.view_box, .posts-box {
+ .posts-box {
   display: inline-block;
   vertical-align:middle;
   padding-bottom: 30px;
+} 
+
+
+
+
+.slick-posts-img {
+  height: 300px;
+  width: 500px;
+  
 }
 
-.view_box .post-img {
+
+
+.slider {
+  display: inline-block;
+  vertical-align:middle;
+  visibility: hidden;
   height: 300px;
   width: 500px;
 }
+
+.slider.slick-initialized {
+  visibility: visible;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: #000;
+}
+
+.previews{
+  display: inline-block;
+  vertical-align:middle;
+}
+
+.slick-arrow{ z-index:2!important; }
+
+.post-img {
+  height: 300px;
+  width: 500px;
+  position: relative;
+}
+
+.slide-arrow {
+  bottom: 0;
+  cursor: pointer;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  width: 30px;
+}
+.prev-arrow {
+  left: -40px;
+}
+.next-arrow {
+  right: -40px;
+}
+
+/* 
+.slick-arrow{
+  z-index:2!important;
+  width:80px!important;
+  height:60px!important;
+  background-color: brown;
+}
+
+.slider.w500 {
+  max-width: 500px;
+} */
 
 .contents_row {
   text-align: center;

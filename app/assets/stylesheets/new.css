@@ -26,6 +26,10 @@ h1 {
   font-size: 20px;
   padding: 10px;
  }
+  #previwe {
+    height: 100px;
+    width: 170px;
+  }
 
  .img-upload .video .file {
   font-size: 20px;

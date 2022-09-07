@@ -32,15 +32,22 @@ h1 {
   padding: 10px;
  }
 
-  #preview img {
+ #preview-images{
+  text-align: center;
+ }
+
+
+  #preview-images img {
     height:200px;
     width: 400x;
     padding: 20px;
   }
 
-  #preview video {
+  #preview-videos video {
+    text-align: center;
     height:200px;
     width: 400x;
+    padding: 20px;
   }
 
  .img-upload .video .file {

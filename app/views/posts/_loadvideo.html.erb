@@ -4,7 +4,7 @@
     var allPreview = document.getElementById('videos');
     var newPreview = document.createElement("p");
     allPreview.querySelector("p").remove();
-    newPreview.setAttribute("id","preview");
+    newPreview.setAttribute("id","preview-videos");
     allPreview.insertBefore(newPreview, allPreview.firstChild);
     document.getElementById("videos").style.display = "";
     for (i = 0; i < obj.files.length; i++) {
@@ -12,7 +12,7 @@
         fileReader.onload = (function (e) {
             var video = new video();
             video.src = e.target.result;
-            document.getElementById('preview').appendChild(video);
+            document.getElementById('preview-videos').appendChild(video);
         });
       fileReader.readAsDataURL(obj.files[i]);
     }

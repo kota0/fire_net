@@ -19,13 +19,6 @@
           <%= f.file_field :images, id:"image", multiple: true, class:"hidden", onchange: "loadImage(this);" %>
        </label>
      </div>
-
-     </label>
-          <div id="images" style="display: none;">
-            <p id="preview"></p>
-          </div>
-          <%= render "loadimage" %>
-     </div>
    
 
     <%# 動画の投稿 %>
@@ -37,7 +30,7 @@
           <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z"/>
          </svg><br>
         <span class="file">動画を投稿</span><br>
-        <%= f.file_field :video, class:"hidden", onchange: "loadVideo(this);" %>
+        <%= f.file_field :video, class:"hidden", onchange: "changeFile();" %>
       </label>
     </div>
   </div>
@@ -47,21 +40,8 @@
     <%= render "loadimage" %>
   </div>
 
-  <div id="videos" style="display: none;">
-    <p id="preview-videos"></p>
-    <%= render "loadvideo" %>
-  </div>
+  <div id="msg"><p></p></div>
 
-
-
-          <div id="videos" style="display: none;">
-            <p id="preview"></p>
-          </div>
-          <%= render "loadvideo" %>
-    </div>
-  </div>
-
-    
   <h2>※災害の詳細情報を入力してください</h2>
 
   <table>

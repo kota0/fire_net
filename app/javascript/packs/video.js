@@ -1,9 +1,5 @@
 function changeFile(file){
 
-  let fileBox = document.getElementById('post-video');
-  fileBox.addEventListener('change', changeFile);
-  const msg = document.getElementById('msg');
-
   const isVideoExt = (file) => {
     fileName = fileBox.substring(fileBox.lastIndexOf('.'))
     if (fileName.toUpperCase().match(/\.(mp4)$/i)) {
@@ -23,8 +19,10 @@ function changeFile(file){
     }
     return false
   }
-
-  
-  msg.innerText = '動画が選択されました';
+    msg.innerText = '動画が選択されました';
 }
+
+  let fileBox = document.getElementById('post-video');
+  fileBox.addEventListener('change', changeFile);
+  const msg = document.getElementById('msg');
 

@@ -1,5 +1,5 @@
 .new-box {
-  padding-top: 40px;  
+  padding-top: 140px;  
 }
 
 h1 {
@@ -8,6 +8,11 @@ h1 {
   font-weight: 100;
   letter-spacing: 20px;
   margin-bottom: 30px;
+}
+
+.image .video {
+  display: inline-block;
+  vertical-align:middle;
 }
 
 .img-upload {
@@ -27,12 +32,30 @@ h1 {
   padding: 10px;
  }
 
+ #preview-images{
+  text-align: center;
+ }
+
+
+  #preview-images img {
+    height:200px;
+    width: 400x;
+    padding: 20px;
+  }
+
+  #preview-videos video {
+    text-align: center;
+    height:200px;
+    width: 400x;
+    padding: 20px;
+  }
+
  .img-upload .video .file {
   font-size: 20px;
   padding: 10px;
  }
 
- .img-upload .video:hover{
+.img-upload .video:hover{
   box-shadow    : none;        /* カーソル時の影消去 */    
   opacity: 0.7; 
 }
@@ -138,3 +161,9 @@ display: none;
   border-radius: 30px 30px 30px 30px;
 }
 
+#msg {
+ text-align: center;
+ padding: 10px;
+ color: rgb(213, 96, 53);
+ font-size: 20px;
+}

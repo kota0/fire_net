@@ -157,3 +157,7 @@ nav .inner ul li a:hover {
   z-index: 2;
   cursor: pointer;
 }
+
+.left-bar {
+  z-index: 8 ;
+}

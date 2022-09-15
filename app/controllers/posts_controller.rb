@@ -41,7 +41,8 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(post_params[:status])
+    @post.update(status: post_params[:status])
+
     if @post.save
       redirect_to root_path
     else

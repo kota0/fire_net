@@ -35,8 +35,16 @@ class PostsController < ApplicationController
   def show 
    @post = Post.find(params[:id])
    @comment = Comment.new
-   @comments = Comment.all
-  end
+   @comments = @post.comments
+   @status_name = if    @post.status == "" 
+                    '未対応'
+                  elsif @post.status == 1 
+                    '対応中'
+                  elsif @post.status == 2 
+                    '対応済み'
+                  end
+   end
+
      
 
   def update

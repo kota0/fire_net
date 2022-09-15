@@ -4,7 +4,7 @@ class CreateComments < ActiveRecord::Migration[6.1]
         t.references   :user,          foreign_key: true
         t.references   :post,          foreign_key: true
         t.text         :comment
-        t.boolean      :cheak_box
+        t.integer      :status
         t.timestamps
     end        
  end

@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_024559) do
     t.bigint "user_id"
     t.bigint "post_id"
     t.text "comment"
-    t.boolean "cheak_box"
+    t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_024559) do
     t.integer "escape_id", null: false
     t.integer "help_id", null: false
     t.text "content", null: false
+    t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"

@@ -40,7 +40,8 @@ class PostsController < ApplicationController
      
 
   def update
-    @post.update(post_params)
+    @post = Post.find(params[:id])
+    @post.update(post_params[:status])
     if @post.save
       redirect_to root_path
     else

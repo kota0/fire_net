@@ -78,7 +78,8 @@
 }
 
 .contents_row {
-  color: aqua;
+  text-align: center;
+  position: relative;
 }
 
 .slide-arrow {
@@ -100,6 +101,7 @@
 .contents_row {
   text-align: center;
   font-size: 30px;
+  padding-top: 50px;
 }
 
 .posts-box {
@@ -139,6 +141,3 @@ footer p{
   margin: 8px;
 }
 
-.post-btn {
-  z-index: 99;
-}

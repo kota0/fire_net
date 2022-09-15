@@ -53,6 +53,17 @@
       <div>
         <pre>・対応状況： <%= @status_name %></pre>
       </div>
+      <div class="status_id">
+        <% if @post.status == nil %>
+            <div class="status_nil">未対応</div>
+        <% elsif @post.status == 1 %>
+            <div  class="status_1">対応中</div>
+        <% else %>
+          <% if @post.status == 2 %>
+            <div  class="status_2">対応済み</div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
@@ -63,12 +74,11 @@
     <% @comments.each do |comment| %>
       <div class="comment">
         <p><%= comment.comment %></p>
-        <p><%= comment.status %></p>
       </div>
     <% end %>
   </div>
 
-  <p>コメント入力フォーム(仮)</p>
+  <p>コメント入力フォーム</p>
   <div class="comment-form">
     <% if user_signed_in? %>
       <%= form_with model: [@post, @comment] do |f| %>
@@ -78,9 +88,15 @@
     <% end %>
   </div>
 
-  <p>対応状況変更フォーム(仮)</p>
+  <p>対応状況変更フォーム</p>
   <%= form_with model: @post do |f| %>
-    <%= f.select :status, [["未対応", ""],["対応中", 1], ["対応済み", 2]], include_blank: "対応状況を選択してください" %>
+    <%= f.select :status, [["未対応", nil ],["対応中", 1], ["対応済み", 2]], include_blank: "対応状況を選択してください" %>
     <%= f.submit "送信", class: "comment-submit" %>
   <% end %>
 </div>
+
+ <%= link_to root_path do %>
+ <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="left-square" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+ </svg>  
+ <% end %>

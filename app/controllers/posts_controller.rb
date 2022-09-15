@@ -36,7 +36,7 @@ class PostsController < ApplicationController
    @post = Post.find(params[:id])
    @comment = Comment.new
    @comments = @post.comments
-   @status_name = if    @post.status == "" 
+   @status_name = if @post.status == nil 
                     '未対応'
                   elsif @post.status == 1 
                     '対応中'
@@ -52,9 +52,9 @@ class PostsController < ApplicationController
     @post.update(status: post_params[:status])
 
     if @post.save
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
     else
-      render :show
+      redirect_back(fallback_location: root_path)
     end
   end
 

@@ -10,6 +10,7 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.integer    :escape_id,  null: false
       t.integer    :help_id,    null: false
       t.text       :content,    null: false
+      t.integer    :status
       t.timestamps
     end
   end

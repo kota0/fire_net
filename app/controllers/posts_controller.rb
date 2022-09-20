@@ -19,8 +19,12 @@ class PostsController < ApplicationController
     else
       @posts = Post.all.order("created_at DESC")
     end
-  end
 
+
+      @posts = Post.where(status: params[:status])
+
+  end
+  
   def create
     @post = Post.new(post_params)
       state_id = @post.state_id

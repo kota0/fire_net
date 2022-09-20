@@ -9,13 +9,13 @@
         <% end %>
        
         <div class="status_post">
-          <% if @post.status == nil %>
+          <% if post.status == nil %>
               <div class="post_nil">未対応</div>
-          <% elsif @post.status == 1 %>
+          <% elsif post.status == 1 %>
               <div  class="post_1">対応中</div>
           <% else %>
-            <% if @post.status == 2 %>
-              <div  class="post_2">対応済み</div>
+            <% if post.status == 2 %>
+              <div class="post_2">対応済み</div>
             <% end %>
           <% end %>
         </div>

@@ -32,6 +32,7 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new(post_params)
+      @post.status = 3 
       state_id = @post.state_id
       state = State.find_by(id: state_id)
     if @post.save!

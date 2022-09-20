@@ -18,7 +18,7 @@ class PostsController < ApplicationController
       @posts = Post.where(state_id: state_id_list).order("created_at DESC") 
     else
       if params[:status] # params[:status] が nil かどうかで分岐
-        @posts = Post.where(status: params[:status])
+         @posts = Post.where(status: params[:status])
       else
         @posts = Post.all.order("created_at DESC")
       end

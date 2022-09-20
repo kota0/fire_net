@@ -54,9 +54,9 @@
         <pre>・対応状況： <%= @status_name %></pre>
       </div>
       <div class="status_id">
-        <% if @post.status == nil %>
+        <% if @post.status == 3 %>
             <div class="status_nil">未対応</div>
-        <% elsif @post.status == 1 %>
+        <% elsif @post.status ==1 %>
             <div  class="status_1">対応中</div>
         <% else %>
           <% if @post.status == 2 %>

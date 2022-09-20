@@ -17,11 +17,16 @@ class PostsController < ApplicationController
       state_id_list =states.map(&:id)
       @posts = Post.where(state_id: state_id_list).order("created_at DESC") 
     else
-      @posts = Post.all.order("created_at DESC")
+      if params[:status] # params[:status] が nil かどうかで分岐
+        @posts = Post.where(status: params[:status])
+      else
+        @posts = Post.all.order("created_at DESC")
+      end
     end
 
-
-      @posts = Post.where(status: params[:status])
+     
+     
+     
 
   end
   
@@ -40,7 +45,7 @@ class PostsController < ApplicationController
    @post = Post.find(params[:id])
    @comment = Comment.new
    @comments = @post.comments
-   @status_name = if @post.status == nil 
+   @status_name = if @post.status == 3 
                     '未対応'
                   elsif @post.status == 1 
                     '対応中'

@@ -32,3 +32,45 @@ text-align: center;
 .comment-box p {
   font-size: 30px;
 }
+
+.status_id {
+  position: absolute;
+  top: 120px;
+  left: 330px;
+  font-size: 40px;
+}
+
+.status_nil {
+  padding: 0.2em 0.8em;
+  margin: 2em 0;
+  color: #00a719;
+  background: #bcffc5;
+  border-bottom: solid 6px #77ff00;
+  border-radius: 9px;
+}
+
+.status_1 {
+  padding: 0.2em 0.8em;
+  margin: 2em 0;
+  color: #da1900;
+  background: #ef9292;
+  border-bottom: solid 6px #d85252;
+  border-radius: 9px;
+}
+
+.status_2 {
+  padding: 0.2em 0.8em;
+  margin: 2em 0;
+  color: #0047b1;
+  background: #c6e4ff;
+  border-bottom: solid 6px #3471ab;
+  border-radius: 9px;
+}
+
+.left-square {
+  position: absolute;
+  position: fixed;
+  top: 110px;
+  left: 25px;
+  color: dimgray;
+}

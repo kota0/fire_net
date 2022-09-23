@@ -7,6 +7,19 @@
         <%= link_to(post_path(post.id), method: :get, class: "post-path") do %>
           <p>第<%= post.state.direction_id %>方面 <%= post.state.name %> ・ <%= post.area.name %>被害状況</p>
         <% end %>
+       
+        <div class="status_post">
+          <% if post.status == 3 %>
+              <div class="post_nil">未対応</div>
+          <% elsif post.status == 1 %>
+              <div  class="post_1">対応中</div>
+          <% else %>
+            <% if post.status == 2 %>
+              <div class="post_2">対応済み</div>
+            <% end %>
+          <% end %>
+        </div>
+
 
           <% if post.images.attached? %>
               <% if post.images.length < 2 %>
@@ -35,6 +48,7 @@
 
         <div class="posts-box">
           <h1><span>《被害状況》</span></h1>
+          
           <div>
             <pre>・所在      <%= post.state.name %> <%= post.area.name %></div>
           <div>

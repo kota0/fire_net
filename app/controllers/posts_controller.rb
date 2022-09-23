@@ -17,12 +17,22 @@ class PostsController < ApplicationController
       state_id_list =states.map(&:id)
       @posts = Post.where(state_id: state_id_list).order("created_at DESC") 
     else
-      @posts = Post.all.order("created_at DESC")
+      if params[:status] # params[:status] が nil かどうかで分岐
+         @posts = Post.where(status: params[:status])
+      else
+        @posts = Post.all.order("created_at DESC")
+      end
     end
-  end
 
+     
+     
+     
+
+  end
+  
   def create
     @post = Post.new(post_params)
+      @post.status = 3 
       state_id = @post.state_id
       state = State.find_by(id: state_id)
     if @post.save!
@@ -35,8 +45,16 @@ class PostsController < ApplicationController
   def show 
    @post = Post.find(params[:id])
    @comment = Comment.new
-   @comments = Comment.all
-  end
+   @comments = @post.comments
+   @status_name = if @post.status == 3 
+                    '未対応'
+                  elsif @post.status == 1 
+                    '対応中'
+                  elsif @post.status == 2 
+                    '対応済み'
+                  end
+   end
+
      
 
   def update
@@ -44,9 +62,9 @@ class PostsController < ApplicationController
     @post.update(status: post_params[:status])
 
     if @post.save
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
     else
-      render :show
+      redirect_back(fallback_location: root_path)
     end
   end
 

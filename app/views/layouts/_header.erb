@@ -16,25 +16,27 @@
         <nav>
             <div class="support">
               <ul>
-                <li><a href="#"><button type="button" class="btn btn-danger">対応中</button></a></li>
-                <li><a href="#"><button type="button" class="btn btn-primary">対応済み</button></a><li>    
+                <li><%= link_to "未対応", posts_path(status: 3 ), class:"btn btn-danger"  %></li>
+                <li><%= link_to "対応中", posts_path(status: 1), class:"btn btn-danger"  %></li>
+                <li><%= link_to "対応済み", posts_path(status: 2), class:"btn btn-primary" %></li>
               </ul> 
             </div>
 
             <div class= "inner">
               <ul>
-              <li><%= link_to "全方面", root_path %><li>
-              <li><%= link_to "第1方面", controller: "posts", action: "index", direction_id: 1 %><li>
-              <li><%= link_to "第2方面", controller: "posts", action: "index", direction_id: 2 %><li>
-              <li><%= link_to "第3方面", controller: "posts", action: "index", direction_id: 3 %><li>
-              <li><%= link_to "第4方面", controller: "posts", action: "index", direction_id: 4 %><li>
-              <li><%= link_to "第5方面", controller: "posts", action: "index", direction_id: 5 %><li>
-              <li><%= link_to "第6方面", controller: "posts", action: "index", direction_id: 6 %><li>
-              <li><%= link_to "第7方面", controller: "posts", action: "index", direction_id: 7 %><li>
-              <li><%= link_to "第8方面", controller: "posts", action: "index", direction_id: 8 %><li>
-              <li><%= link_to "第9方面", controller: "posts", action: "index", direction_id: 9 %><li>
-              <li><%= link_to "第10方面", controller: "posts", action: "index", direction_id: 10 %><li>
-              </ul> 
+                <li><%= link_to "全方面", root_path %><li>
+                <li><%= link_to "第1方面", posts_path(direction_id: 1) %><li>
+                <li><%= link_to "第2方面", posts_path(direction_id: 2) %><li>
+                <li><%= link_to "第3方面", posts_path(direction_id: 3) %><li>
+                <li><%= link_to "第4方面", posts_path(direction_id: 4) %><li>
+                <li><%= link_to "第5方面", posts_path(direction_id: 5) %><li>
+                <li><%= link_to "第6方面", posts_path(direction_id: 6) %><li>
+                <li><%= link_to "第7方面", posts_path(direction_id: 7) %><li>
+                <li><%= link_to "第8方面", posts_path(direction_id: 8) %><li>
+                <li><%= link_to "第9方面", posts_path(direction_id: 9) %><li>
+                <li><%= link_to "第10方面", posts_path(direction_id: 10) %><li>
+              </ul>
+
             </div>  
         </nav>
 

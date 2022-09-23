@@ -13,6 +13,9 @@ describe '新規投稿' do
 
     context '新規登録できないとき' do
       it 'stateが未指定では投稿できない' do
+        @post.state = ''
+        @post.valid?
+        binding.pry
       end
 
       it 'areaが未指定では投稿できない' do

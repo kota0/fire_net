@@ -4,6 +4,6 @@ FactoryBot.define do
     email                 {Faker::Internet.free_email}
     password              {Faker::Internet.password(min_length: 6)}
     password_confirmation {password}
-    user_type             {}
+    user_type             {'1'}
   end
 end 

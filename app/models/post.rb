@@ -13,6 +13,7 @@ class Post < ApplicationRecord
   has_many_attached :images
   has_one_attached :video
 
+#  投稿画面のバリデーション
   with_options presence: true, numericality: { other_than: 0, message: "が入力されていません"} do
     validates :state_id
     validates :area_id
@@ -20,6 +21,7 @@ class Post < ApplicationRecord
     validates :help_id
     validates :injury_id
   end
+    
 
 
  

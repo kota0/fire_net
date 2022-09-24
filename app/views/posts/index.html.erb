@@ -20,7 +20,7 @@
           <% end %>
         </div>
 
-
+        <div class="image_video">
           <% if post.images.attached? %>
               <% if post.images.length < 2 %>
                   <% post.images.each do |image| %>
@@ -39,12 +39,13 @@
                 <% end %>
               <% end %>
 
-
-        <% if post.video.attached? %>
-          <td>
-            <video src="<%= rails_blob_path(post.video) %> " type="video/mp4" width="500" height="280" controls></video>
-          </td>
-        <% end %>
+      
+          <% if post.video.attached? %>
+            <td >
+              <video src="<%= rails_blob_path(post.video) %> " type="video/mp4" width="600" height="340", muted: :true, controls></video>
+            </td>
+          <% end %>
+       </div>
 
         <div class="posts-box">
           <h1><span>《被害状況》</span></h1>

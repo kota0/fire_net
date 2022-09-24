@@ -22,15 +22,24 @@ class Post < ApplicationRecord
     validates :injury_id
   end
 
+# 画像か動画どちらか一方のみ保存のバリデーション
+   validate :required_either_images_or_video
+
+
 # 画像選択のバリデーション
     validate :images, :image_type, :image_size, :image_length
+
+
+# 動画のバリデーション
+    validate :video_type
+
 
    private
 
     def image_type
       images.each do |image|
         if !image.blob.content_type.in?(%('image/jpeg image/png'))
-          image.purge
+          image.attachments.clear
           errors.add(:images, 'はjpegまたはpng形式でアップロードしてください')
         end
       end
@@ -39,7 +48,7 @@ class Post < ApplicationRecord
     def image_size
       images.each do |image|
         if image.blob.byte_size > 5.megabytes
-          image.purge
+          images.attachments.clear
           errors.add(:images, "は1つのファイル5MB以内にしてください")
         end
       end
@@ -47,42 +56,25 @@ class Post < ApplicationRecord
   
     def image_length
       if images.length > 4
-        images.purge
+        images.attachments.clear
         errors.add(:images, "は4枚以内にしてください")
       end
     end
+
+    def video_type
+      if video.attached?
+        if !video.blob.content_type.in?(%('video/mp4'))
+          video.attachments.clear
+          errors.add(:images, 'はmp4形式でアップロードしてください')
+        end
+      end
+    end
+  
+
+
+  def required_either_images_or_video
+    return if images.present? ^ video.present?
+    errors.add(:base, '画像または動画のどちらか一方を入力してください')
+   end
   end
-  
 
-
-
-
-
-
-
-
-
-
-
-    # validates :images,  presence: true, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..(5.megabytes) }
-    # validate :images_length
-
-  #  validates :video, presence: true, blob: { content_type: ['video/mp4']},
-  # validates :image, required_either_image_or_video ]
-
-
-  # def images_length
-  #   if images.length > 4
-  #     images.purge
-  #     errors.add(:images, "は4枚以内にしてください")
-  #   end
-  # end
-  
-
-
-
-
-  #  def required_either_image_or_video
-  #   return if image.present? ^ video.present?
-  #   errors.add(:base, '画像または動画のどちらか一方で投稿可能です')
-  #  end

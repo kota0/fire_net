@@ -1,7 +1,6 @@
 
 <%= render 'layouts/header' %> 
 
-
 <%= form_with model: @post, local: true do |f| %>
 
 <div class="new-box">
@@ -34,6 +33,9 @@
       </label>
     </div>
   </div>
+
+<%= render 'layouts/error_form', locals: { post: @post } %>
+
 
   <div id="images" style="display: none;">
     <p id="preview-images"></p>
@@ -97,4 +99,6 @@
     </div>
 
   <% end %>
+
+  
 </div>

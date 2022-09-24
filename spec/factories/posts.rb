@@ -1,15 +1,16 @@
 FactoryBot.define do
   factory :post do
-    state                {'1'}
-    area                 {'1'}
-    escape               {'1'}
-    help                 {'1'}
-    injury               {'1'}
-    
+    state_id                { 2 }  
+    area_id                 { 2 } 
+    escape_id               { 2 }
+    help_id                 { 2 }
+    injury_id               { 2 }
+
     association :user 
 
     after(:build) do |post|
-      item.images.attach(io: File.open('spec/fixtures/test_image.jpg'), filename: 'test_image.jpg', content_type: 'image/jpg')
+      post.images.attach(io: File.open('public/test_image.png'), filename: 'test_image.png', content_type: 'image/png')
     end
+
   end
 end 

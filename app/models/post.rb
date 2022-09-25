@@ -27,7 +27,7 @@ class Post < ApplicationRecord
 
 
 # 画像選択のバリデーション
-    validate :images, :image_type, :image_size, :image_length
+    validate :images, :image_type, :image_length
 
 
 # 動画のバリデーション
@@ -38,18 +38,18 @@ class Post < ApplicationRecord
 
     def image_type
       images.each do |image|
-        if !image.blob.content_type.in?(%('image/jpeg image/png'))
+        if !image.blob.content_type.in?(%('image/jpeg image/jpg image/png'))
           image.attachments.clear
-          errors.add(:images, 'はjpegまたはpng形式でアップロードしてください')
+          errors.add(:images, 'はjpeg,jpg,png形式でアップロードしてください')
         end
       end
     end
   
     def image_size
       images.each do |image|
-        if image.blob.byte_size > 5.megabytes
+        if image.blob.byte_size > 2.megabytes
           images.attachments.clear
-          errors.add(:images, "は1つのファイル5MB以内にしてください")
+          errors.add(:images, "は1つのファイル2MB以内にしてください")
         end
       end
     end

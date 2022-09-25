@@ -3,11 +3,18 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   before do
     @post = FactoryBot.build(:post)
+
 end
 
 describe '新規投稿' do
     context '新規投稿できるとき' do
-      it '画像と動画のどちらかのみが添付されていて、state,area,escape,help,injuryが指定されていれば投稿できる' do
+      it '画像のみが添付されていて、state,area,escape,help,injuryが指定されていれば投稿できる' do
+        @post.video = nil
+        expect(@post).to be_valid
+      end
+
+      it '動画のみが添付されていて、state,area,escape,help,injuryが指定されていれば投稿できる' do
+        @post.images = nil
         expect(@post).to be_valid
       end
     end
@@ -44,23 +51,38 @@ describe '新規投稿' do
       end
 
       it '画像か動画どちらかが添付されていないと投稿できない' do
+        @post.images = nil
+        @post.video = nil
+        @post.valid?
+        expect(@post.errors.full_messages).to include("画像または動画のどちらか一方を入力してください")
       end
 
       it '画像か動画どちらも添付されていると投稿できない' do
+        @post.valid?
+        expect(@post.errors.full_messages).to include("画像または動画のどちらか一方を入力してください")
       end
 
       it '画像は４枚までしか投稿できない' do
+        @post.images.length > 4
+        @post.valid?
+        
       end
 
       it '画像のtypeは「image/png, image/jpg, image/jpeg」しか投稿できない' do
       end
 
-      it '画像は1.5megabytes以上は投稿できない' do
+      it '画像は2megabytes以上は投稿できない' do
+        @post.images == 'public/3mb_test.jpg'
+        @post.valid?
+        binding.pry
+        expect(@post.errors.full_messages).to include("")
       end
 
       it 'ユーザーが紐付いていなければ投稿できない' do
+        @post.user = nil
+        @post.valid?
+        expect(@post.errors.full_messages).to include("User must exist")
       end
-
     end
   end
 end

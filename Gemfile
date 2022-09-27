@@ -38,7 +38,7 @@ group :development do
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 2.0'
+  gem 'rack-mini-profiler', '~> 2.0', require: false
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -52,6 +52,11 @@ group :test do
   gem 'webdrivers'
 
   gem 'rspec-rails', '~> 4.0.0'
+  
+  gem 'factory_bot_rails'
+
+  gem 'faker'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -68,6 +73,9 @@ gem 'image_processing', '~> 1.2'
 gem 'active_hash'
 
 gem 'activestorage-validator'
+
+
+
 
 
 

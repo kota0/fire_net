@@ -35,7 +35,7 @@ class PostsController < ApplicationController
       @post.status = 3 
       state_id = @post.state_id
       state = State.find_by(id: state_id)
-    if @post.save!
+    if @post.save
       redirect_to root_path
     else
       render :new

@@ -46,6 +46,13 @@
   padding-top: 15px;
 }
 
+video {
+  height: 340px;
+  width: 600px;
+  
+
+}
+
 
 
 .slider {
@@ -75,6 +82,11 @@
   height: 340px;
   width: 600px;
   position: relative;
+}
+
+.image_video  {
+  display: inline-block;
+  vertical-align:middle;
 }
 
 .contents_row {

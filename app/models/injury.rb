@@ -1,9 +1,9 @@
 class Injury < ActiveHash::Base
   extend ActiveHash::Associations::ActiveRecordExtensions
  self.data = [
- { id: 1, name: '___'},
- { id: 2, name: 'あり'},
- { id: 3, name: 'なし'}
+ { id: 0, name: '___'},
+ { id: 1, name: 'あり'},
+ { id: 2, name: 'なし'}
 
 
  ]

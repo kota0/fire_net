@@ -27,7 +27,7 @@ class Post < ApplicationRecord
 
 
 # 画像選択のバリデーション
-    validate :images, :image_type, :image_length
+   validate :images, :image_type, :image_length, :image_size
 
 
 # 動画のバリデーション
@@ -65,7 +65,7 @@ class Post < ApplicationRecord
       if video.attached?
         if !video.blob.content_type.in?(%('video/mp4'))
           video.attachments.clear
-          errors.add(:images, 'はmp4形式でアップロードしてください')
+          errors.add(:video, 'はmp4形式でアップロードしてください')
         end
       end
     end

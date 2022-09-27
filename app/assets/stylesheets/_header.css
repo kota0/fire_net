@@ -161,3 +161,25 @@ nav .inner ul li a:hover {
 .left-bar {
   z-index: 8 ;
 }
+
+.btn-unsupported {
+  width: 135px;
+  margin: 5px;
+  background-color:#00b300;
+  color: #fff;
+}
+
+.btn-danger {
+  width: 135px;
+  margin: 5px;
+  background-color: #dc3545;
+  color: #fff;
+
+}
+
+.btn-primary {
+  width: 135px;
+  margin: 5px;
+  background-color: #0d6efd;
+  color: #fff;
+} 

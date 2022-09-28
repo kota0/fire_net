@@ -1,6 +1,7 @@
 
 <!DOCTYPE HTML>
 <html>
+<meta name="turbolinks-visit-control">
 
 <body>
  <header> 
@@ -10,10 +11,15 @@
           <a><span>FIRE</span>.Net</a>
         </div>
       </div>
-
+    
+   
       <div class= "left_bar">
         <div id="navArea" >
         <nav>
+            <div class="top_title">
+              <a><span>FIRE</span>.Net</a>
+            </div>
+
             <div class="support">
               <ul>
                 <li><%= link_to "未対応", posts_path(status: 3 ), class:"btn btn-unsupported" %></li>
@@ -22,7 +28,7 @@
               </ul> 
             </div>
 
-            <div class= "inner">
+          <div class= "inner">
               <ul>
                 <li><%= link_to "全方面", root_path %><li>
                 <li><%= link_to "第1方面", posts_path(direction_id: 1) %><li>
@@ -36,10 +42,11 @@
                 <li><%= link_to "第9方面", posts_path(direction_id: 9) %><li>
                 <li><%= link_to "第10方面", posts_path(direction_id: 10) %><li>
               </ul><br>
-
-               <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-
-            </div>  
+            
+            <div class="out-btn">
+               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'log_out_btn'%>
+            </div>
+          </div>  
         </nav>
 
         <div class="toggle-btn">

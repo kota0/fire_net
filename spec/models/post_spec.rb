@@ -75,10 +75,10 @@ describe '新規投稿' do
         expect(@post.errors.full_messages).to include('Images はjpeg,jpg,png形式でアップロードしてください')
       end
 
-      it '画像は2megabytes以上は投稿できない' do
-        @post.images.first.byte_size = 2 * 1024 * 1024 + 1
+      it '画像は5megabytes以上は投稿できない' do
+        @post.images.first.byte_size = 5 * 1024 * 1024 + 1
         @post.valid?
-        expect(@post.errors.full_messages).to include('Images は1つのファイル2MB以内にしてください')
+        expect(@post.errors.full_messages).to include('Images は1つのファイル5MB以内にしてください')
       end
 
       it '動画のtypeは「video/mp4」しか投稿できない' do

@@ -47,9 +47,9 @@ class Post < ApplicationRecord
   
     def image_size
       images.each do |image|
-        if image.blob.byte_size > 2.megabytes
+        if image.blob.byte_size > 5.megabytes
           images.attachments.clear
-          errors.add(:images, "は1つのファイル2MB以内にしてください")
+          errors.add(:images, "は1つのファイル5MB以内にしてください")
         end
       end
     end

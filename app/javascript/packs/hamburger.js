@@ -1,5 +1,5 @@
 
-document.addEventListener('turbolinks:load', () => {
+  document.addEventListener('turbolinks:load', () => {
 
     let nav = document.querySelector("#navArea");
     let btn = document.querySelector(".toggle-btn");
@@ -12,4 +12,6 @@ document.addEventListener('turbolinks:load', () => {
     mask.onclick = () => {
       nav.classList.toggle("open");
     };
-   })
+  });
+
+

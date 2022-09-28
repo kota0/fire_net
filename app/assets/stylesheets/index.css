@@ -1,7 +1,11 @@
-
 .container  {
   text-align: center;
   padding-top: 40px;  
+}
+
+.areas_box {
+  margin:  0 auto;
+  margin-left: 150px;
 }
 
 
@@ -10,7 +14,7 @@
   text-align: center;
   font-size: 30px;
   color: black;
-  background: repeating-linear-gradient(-45deg, rgb(255, 201, 143), rgb(255, 201, 143), 2px, white 2px, white 4px);
+  background: repeating-linear-gradient(-45deg, rgb(98, 98, 97), rgb(207, 207, 207), 2px, white 2px, white 4px);
   border-radius: 20px;
 }
 
@@ -18,12 +22,19 @@
   text-decoration: none;
 }
 
+.post-path p {
+  font-size: 35px;
+  font-weight: 600;
+  width: 1000px;
+  margin-top: 80px;
+}
 
  .posts-box {
   display: inline-block;
   vertical-align:middle;
   padding-bottom: 30px;
-  font-size: 20px;
+  font-size: 25px;
+  margin: 20px;
 } 
 
 .posts-box h1 {
@@ -42,8 +53,6 @@
 .slick-posts-img {
   height: 340px;
   width: 600px;
-  padding-bottom: 30px;
-  padding-top: 15px;
 }
 
 video {
@@ -84,7 +93,7 @@ video {
   position: relative;
 }
 
-.image_video  {
+.image_video {
   display: inline-block;
   vertical-align:middle;
 }
@@ -118,11 +127,12 @@ video {
 
 .posts-box {
   text-align: left;
-  padding-left: 70px;
+  padding-left: 100px;
 }
 
 .posts-box h1 {
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: 500;
   color: black;
 }
 
@@ -154,9 +164,8 @@ footer p{
 }
 
 .status_post {
-  
-  top: 135px;
-  left: 280px;
+  position: relative; 
+  left: 265px;
   font-size: 20px;
 }
 
@@ -164,10 +173,11 @@ footer p{
 .post_nil {
   padding: 0.2em 1em;
   margin: 2em 0;
-  color: #00a719;
-  background: #bcffc5;
-  border-bottom: solid 6px #77ff00;
+  color: #01550d;
+  background: #87f896;
+  border-bottom: solid 6px #448d03;
   border-radius: 9px;
+  width: 500px;
 }
 
 .post_1 {
@@ -177,6 +187,7 @@ footer p{
   background: #ef9292;
   border-bottom: solid 6px #d85252;
   border-radius: 9px;
+  width: 500px;
 }
 
 .post_2 {
@@ -186,6 +197,7 @@ footer p{
   background: #c6e4ff;
   border-bottom: solid 6px #3471ab;
   border-radius: 9px;
+  width: 500px;
 }
 
 .left-square {
@@ -195,3 +207,4 @@ footer p{
   left: 25px;
   color: dimgray;
 }
+

@@ -15,13 +15,13 @@ class PostsController < ApplicationController
     if params[:direction_id]
       states = State.where(direction_id: params[:direction_id])
       state_id_list =states.map(&:id)
-      @posts = Post.where(state_id: state_id_list).page(params[:page]).per(5).order("created_at DESC")
+      @posts = Post.where(state_id: state_id_list).order("created_at DESC").page(params[:page]).per(5)
     else
       if params[:status] # params[:status] が nil かどうかで分岐
-         @posts = Post.where(status: params[:status]).page(params[:page]).per(5).order("created_at DESC")
+         @posts = Post.where(status: params[:status]).order("created_at DESC").page(params[:page]).per(5)
 
       else
-        @posts = Post.all.page(params[:page]).per(5).order("created_at DESC")
+        @posts = Post.all.order("created_at DESC").page(params[:page]).per(5)
       end
     end
 

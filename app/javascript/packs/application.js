@@ -26,6 +26,15 @@ import '@fortawesome/fontawesome-free/js/all';
  import "./area"
  import "./slick"
  import "./video"
+ import"stylesheets/index"
+ import"stylesheets/new"
+ import"stylesheets/show"
+ import"stylesheets/registrations_new"
+ import"stylesheets/sessions_new"
+ import"stylesheets/_footer"
+ import"stylesheets/_header"
+ 
+
 
 
  

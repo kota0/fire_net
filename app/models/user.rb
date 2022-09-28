@@ -14,7 +14,6 @@ class User < ApplicationRecord
   validates :user_type, presence: true, numericality: {greater_than: 0,less_than: 3}
 
 
-  has_many :users
   has_many :posts
   has_many :comments
 end

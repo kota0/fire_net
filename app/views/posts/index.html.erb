@@ -6,8 +6,7 @@
       <% @posts.each do |post| %>
         <%= link_to(post_path(post.id), method: :get, class: "post-path") do %>
           <p>第<%= post.state.direction_id %>方面 <%= post.state.name %> ・ <%= post.area.name %>被害状況</p>
-        <% end %>
-       
+     
         <div class="status_post">
           <% if post.status == 3 %>
               <div class="post_nil">未対応</div>
@@ -38,7 +37,8 @@
                   </div>
                 <% end %>
               <% end %>
-
+        
+        <% end %>
       
           <% if post.video.attached? %>
             <td >
@@ -75,11 +75,17 @@
   </div>
 </div>
 
+
+
+
 <div class="contents_row">
   <%= link_to(new_post_path, class: 'post-btn', data: { "turbolinks" => false }) do %>
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#1e90ff" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1e90ff" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
     </svg>
   <% end %>
 </div>
 
+<div class="Pagination">
+  <%= paginate @posts %>
+</div>

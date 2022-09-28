@@ -22,9 +22,9 @@
 
             <div class="support">
               <ul>
-                <li><%= link_to "未対応", posts_path(status: 3 ), class:"btn btn-unsupported" %></li>
-                <li><%= link_to "対応中", posts_path(status: 1), class:"btn btn-danger" %></li>
-                <li><%= link_to "対応済み", posts_path(status: 2), class:"btn btn-primary" %></li>
+                <li><%= link_to "未対応", posts_path(status: 3 ), class:"btn btn-unsupported",data: {"turbolinks" => false} %></li>
+                <li><%= link_to "対応中", posts_path(status: 1), class:"btn btn-danger",data: {"turbolinks" => false} %></li>
+                <li><%= link_to "対応済み", posts_path(status: 2), class:"btn btn-primary",data: {"turbolinks" => false} %></li>
               </ul> 
             </div>
 

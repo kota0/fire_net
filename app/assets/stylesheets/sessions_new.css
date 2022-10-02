@@ -43,6 +43,7 @@
 /* 右側の要素 */
 .login_rigit-bar {
   font-size: 35px;
+  margin-left: 50px; /* 幅は適当 */
 }
 
 .field #user_email{

@@ -208,3 +208,7 @@ footer p{
   color: dimgray;
 }
 
+.pagination {
+  margin-top: 50px;
+  justify-content: center;
+}

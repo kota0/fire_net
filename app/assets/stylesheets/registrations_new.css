@@ -72,11 +72,11 @@ h5 {
   text-align: center;
 }
 
-.alert {
+#error_explanation {
   text-align: center;
   color: red;
 }
 
-.alert ul {
+#error_explanation ul {
   list-style-type: none;
 }

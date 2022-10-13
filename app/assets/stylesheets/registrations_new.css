@@ -71,3 +71,12 @@ h5 {
 .page_login {
   text-align: center;
 }
+
+.alert {
+  text-align: center;
+  color: red;
+}
+
+.alert ul {
+  list-style-type: none;
+}

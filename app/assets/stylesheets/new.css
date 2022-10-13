@@ -167,3 +167,12 @@ display: none;
  color: rgb(213, 96, 53);
  font-size: 20px;
 }
+
+.alert {
+  text-align: center;
+  color: red;
+}
+
+.alert ul {
+  list-style-type: none;
+}

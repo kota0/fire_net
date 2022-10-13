@@ -76,4 +76,4 @@ gem 'activestorage-validator'
 
 gem 'kaminari'
 
-
+gem 'rails-i18n'

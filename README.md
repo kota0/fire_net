@@ -1,48 +1,60 @@
-## テーブル設計
+## Fire_Net
+---
+## アプリケーション概要
+---
+東京都の地震・台風などの災害発生時に画像や動画を通じて消防団と消防署の正確な情報を共有することができる。
 
-## usersテーブル
+## URl
+---
+https://fire-net.herokuapp.com/posts?status=3
 
-|Column | Type | Options |
-| --- | --- | --- |
-| name | string | null: false |
-| email | string | null: false, unique :true |
-| encrypted_password | string | null: false |
-| user_type | boolean | 
-
-
-### Association
-- has_many :posts
-- has_many :comments
-
-## postsテーブル
-
-| Column | Type | Options |
-| --- | --- | --- |
-| users | references | null: false ,foreign_key: true |
-| state_id | string | null: false |
-| area_id | integer | null: false |
-| mark | integer | null: false |
-| injury_id | integer | null: false |
-| escape_id | integer | null: false |
-| help_id | integer | null: false |
-| content | text | null: false |
-| status | integer | 
+## テスト用アカウント
+---
+- test@test.com-
+- パスワード test123 
 
 
-### Association
-- belongs_to :user
-- has_many :comments
-- has_many_attached :images
-- has_one_attached :video 
+## 利用方法
+---
+### 1.災害情報の投稿
+---
+- ログインページから新規登録を行う。消防職員と消防団員によって一部機能が変わるのでuser_typeによって分ける。（user_typeが1の場合は消防職員、２の場合は消防団員）
+- トップページ（一覧ページ）の新規投稿ボタンから災害の情報（画像or動画、住所、目標物、けが人の有無、逃げ遅れの有無、消防隊の要請の有無、具体的な状況）を入力し投稿する。
+- 画像と動画のどちらか一方のみを投稿可能。画像は複数投稿可能（４枚まで）
+### 2.対応状況の表示
+---
+- 投稿された災害情報に対して消防隊、消防団が対応しているかを表示する。対応の有無を変更させる機能は消防職員（user_type1）にのみ付与されている。（新規投稿時は未対応の表示）
+- 対応状況は「未対応」「対応中」「対応済み」で表示される。（新規投稿時は未対応）
+- 投稿の詳細ページではコメント機能があり消防隊と消防団がメッセージが送れる。
+### 3.サイドバーから投稿されてた内容の絞り込み機能
+---
+- 東京都を所在によって10の方面に分け、それぞれ絞り込むことができる。
+- 災害の対応状況によって絞り込むことができる（未対応、対応中、対応済み）
+## アプリケーションを作成した背景
+---
+### 現状の課題
+---
+現職務で消防士として働く中で、地震や大風などの大規模災害が発生した際に災害情報の収集が困難であり、情報がないことが原因で人命救助や災害対応に大きな遅れが生じていることに
+現状の課題を感じた。（例：町の被害状況は消防車での巡行で確認、被害状況を無線で報告するため詳細に伝わりにくい）また、近年災害が発生するとSNSなどでデマの被害情報が拡散されるという問題が散見されることから、災害発生時の情報の信頼性にも課題があると感じた。
+### 現状の課題解決のために
+---
+「百聞は一見に如かず」という言葉があるように、現状は無線での音声による交信での災害状況の報告から、画像と動画を用いて、情報を視覚化して共有できるようにした。視覚化できる機能は他のSNSアプリでも可能ですが、近年ニュースでも取り上げられる、災害時のデマ情報が発生しないように地域に根付き災害対応に積極的な消防団員をターゲットに配布する仕様にすることで災害時の情報の信用性を保てると考えた。また、消防団はその地域住み地域特性も理解していることから危険な場所など、より有効な情報収集にも有効だと感じた。
 
-## commentsテーブル
-| Column | Type | Options | 
-| --- | --- | --- |
-| user | references | null: false,foreign_key: true |
-| post | references | null: false ,foreign_key: true |
-| text | comment |
+---
+## 洗い出した要件
+https://docs.google.com/spreadsheets/d/1m9Ur0GMBWFAwdpKpjUSvRNd3u86QMEyXCN1fmaPmE2o/edit#gid=1785908763
 
 
-### Association
-- belongs_to :user
-- belongs_to :post
+---
+## 実装した機能についての画像やその説明
+---
+### ・ログインページ
+https://i.gyazo.com/860108382a32a4e6cb34a0a0ca996eb9.png
+
+### ・投稿一覧ページ
+
+### ・投稿ページ
+
+### ・詳細ページ
+
+###

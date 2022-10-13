@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+
+    attributes:
+      user:
+        Name: 名前
+
+      post:
+        state_id: 所在（区・市）
+        area_id: 所在（町丁・番地）
+        escape_id: ケガ人の有無
+        help_id: 逃げ遅れの有無
+        injury_id: 消防隊の要請の有無
+        images: 画像
+        video: ビデオ

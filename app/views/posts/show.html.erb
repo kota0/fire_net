@@ -39,13 +39,13 @@
         <pre>・番地/目印：&nbsp;<%= @post.mark %></pre>
       </div>
       <div>
-        <pre>・ケガ人の人数：&nbsp;&nbsp;&nbsp;&nbsp;<%= @post.injury.name %></pre>
+        <pre>・ケガ人の人数：&nbsp;&nbsp;&nbsp;&nbsp;<%= @post.escape.name %></pre>
       </div>
       <div>
-        <pre>・逃げ遅れの人数：&nbsp;&nbsp;&nbsp;<%= @post.escape.name %></pre>
+        <pre>・逃げ遅れの人数：&nbsp;&nbsp;&nbsp;<%= @post.help.name %></pre>
       </div>
       <div>
-        <pre>・消防隊の要請：&nbsp;&nbsp;&nbsp;&nbsp;<%= @post.help.name %></pre>
+        <pre>・消防隊の要請：&nbsp;&nbsp;&nbsp;&nbsp;<%= @post.injury.name %></pre>
       </div>
       <div>
         <pre>・詳細内容：&nbsp;&nbsp;&nbsp;&nbsp;<%= @post.content %></pre>
@@ -97,7 +97,6 @@
       <%= f.submit "送信", class: "comment-submit" %>
     <% end %> 
     </div>
-  </div>
  <%end%>
 
  <%= link_to root_path do %>

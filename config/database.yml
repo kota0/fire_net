@@ -50,12 +50,6 @@ test:
 #
 production:
   <<: *default
-  # database: fire_net_production
-  # username: fire_net
-  # password: <%= ENV['FIRE_NET_DATABASE_PASSWORD'] %>
-
- database: <%= ENV['RDS_DB_NAME'] %>
-  username: <%= ENV['RDS_USERNAME'] %>
-  password: <%= ENV['RDS_PASSWORD'] %>
-  host: <%= ENV['RDS_HOSTNAME'] %>
-  port: <%= ENV['RDS_PORT'] %>
+  database: fire_net_production
+  username: fire_net
+  password: <%= ENV['FIRE_NET_DATABASE_PASSWORD'] %>

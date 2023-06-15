@@ -8,7 +8,7 @@ development:
   username: root
   password:
   host: localhost
-  database: fire_net
+  database: fire_net_test
 
 test:
   <<: *default
@@ -16,7 +16,7 @@ test:
   username: root
   password:
   host: localhost
-  database: fire_net
+  database: fire_net_test
 
 production:
   <<: *default

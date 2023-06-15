@@ -1,81 +1,148 @@
-/* .back-im {
-  background-image: url('fire_log_image.jpg');
-  background-position: center;
-  background: cover;
-  z-index: 1;
-} */
-
-/* 大親要素 */
-.login-content { 
-  display: flex;
-  justify-content: space-around;
-  position: relative;
-  margin-top: 270px;
-  margin-left: 300px;
-  margin-right: 400px;
+.login-content {
+  background-color: #eeeeee;
+  margin: auto;
 }
 
-/* 左側の要素 */
-.login_left-bar {
-  border: solid ;
-  border-radius: 20px; 
-  height: 450px;
-  width: 450px;
+.notice {
+  display: none;
+}
+
+.alert {
+  display: none;
+}
+
+.login-title {
+  margin: auto;
+}
+
+.login-right-wrapper {
+  max-height: 100vh;
   padding: 30px;
+  margin: auto;
+  overflow: scroll;
 }
 
-.login_left-bar p {
-  font-size: 20px;
- }
-
- .login_left-bar h3 {
-  font-size: 100px;
- }
-
-.login_left-bar span{
- color: red;
+.login-right-inner h2 {
+  font-size: 6rem;
 }
 
-.login_left-bar.left-inner {
+.login-right-inner p {
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: 600;
   text-align: center;
 }
 
-/* 右側の要素 */
-.login_rigit-bar {
-  font-size: 35px;
-  margin-left: 50px; /* 幅は適当 */
+.login-right-inner span{
+  color: red;
 }
 
-.field #user_email{
- height: 40px;
- width: 400px;
+.login_input {
+  margin-top: 35px;
 }
 
-.field #user_password {
-  height: 40px;
-  width: 400px;
+.login-reregistration {
+  margin-top: 30px;
 }
 
-
-.actions input[name="commit"] {
-  border: none;
-}
-
+/* ログインボタン */
 .btn_btn {
-   display       : inline-block; 
+  display       : inline-block; 
   padding-left: 40px;
-  border-radius : 12%;
+  border-radius : 5%;
   font-size     : 18pt;
   text-align    : center;
   cursor        : pointer;
-  padding       : 12px 12px;
+  padding       : 14px 26px;
   background    : #4da6ff;
   color         : #ffffff;
   line-height   : 1em;
   opacity       : 1.2;
   transition    : .3s;
 }
+
 .btn_btn:hover {
   opacity       : 0.5;
 }
 
+.actions input[name="commit"] {
+  border: none;
+}
+
+@media screen and (max-width: 795px) {
+  /* 左側の画像 */
+  .login-left-wrapper {
+    display: none;
+  }
+
+  .login-image {
+    display: none;
+  }
+
+  /* 右側のレイアウト */
+  .login-right-inner h2 {
+    margin-top: 30px;
+    font-size: 4rem;
+  }
+
+  .login-field {
+    margin: auto;
+    width: 240px;
+  }
+
+  .login-field #user_email {
+    height: 35px;
+    width: 240px;
+  }
+
+  .login-field #user_password {
+    height: 35px;
+    width: 240px;
+  }
+  .btn_btn {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (min-width: 796px) {
+  .login-content {
+    display: flex;
+  }
+  
+  /* 左側の画像 */
+  .login-left-wrapper {
+    max-width: 700px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .login-image {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: 80% 80%;
+    opacity: 0.8;
+  }
+
+  /* 右側のレイアウト */
+  .login-right-wrapper {
+    width: 800px;
+  }
+
+  .login-field {
+    margin: auto;
+    width: 360px;
+  }
+
+  .login-field #user_email {
+    height: 35px;
+    width: 360px;
+  }
+
+  .login-field #user_password {
+    height: 35px;
+    width: 360px;
+  }
+  .btn_btn {
+    margin-top: 50px;
+  }
+}

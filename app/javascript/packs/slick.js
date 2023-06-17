@@ -1,4 +1,4 @@
-$(function() {
+window.addEventListener('turbolinks:load', function() {
   $('.slider').slick({
     speed: 500,
     fade: true,
@@ -6,6 +6,5 @@ $(function() {
     dots: true,
     infinite: true,
     cssEase: 'linear'
-   
-  })
+  });
 });

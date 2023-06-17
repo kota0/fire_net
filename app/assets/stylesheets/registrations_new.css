@@ -1,44 +1,25 @@
-/* .sing_up {
-  border: solid 1px;
-} */
-
-h4 {
-  text-align: center;
-  font-size: 90px;
-  margin-top: 50px;
+.sing_up-wrapper {
+  background-color: #eeeeee;
 }
 
-h4 span {
+.sing_up-title {
+  text-align: center;
+}
+
+.sing_up-title span {
   color: red;
 }
 
-h5 {
+.sing_up-text {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.sing_up-from {
   text-align: center;
 }
 
-.sing_up_content {
-  text-align: center;
-
-}
-
-
-.sing_up_content .field {
- padding: 20px;
-}
-
-.sing_up_content .field .label_wh {
-  height: 40px;
-  width: 400px;
-}
-
-.field
-
-.sing_up_content .label_tag {
-  font-size: 30px;
-}
-
-.sing_up_content .field p span {
-  font-size: 20px;
+.sing_up-field_word span {
   color: tomato;
 }
 
@@ -50,23 +31,23 @@ h5 {
 
 
 .sing_in_btn {
-    display       : inline-block;
-    border-radius : 50%;
-    font-size     : 19pt;
-    text-align    : center;
-    cursor        : pointer;
-    padding       : 17px 28px;
-    background    : #3a96f2;
-    color         : #ffffff;
-    line-height   : 1em;
-    opacity       : 0.8;
-    transition    : .3s;
-   }
+  display       : inline-block;
+  margin-top    : 10px;
+  border-radius : 5%;
+  font-size     : 14px;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 6px 20px;
+  background    : #3a96f2;
+  color         : #ffffff;
+  line-height   : 1em;
+  opacity       : 0.8;
+  transition    : .3s;
+}
 
-  .sing_in_btn:hover {
-    opacity       : 0.5;         /* カーソル時透明度 */
-  }
-
+.sing_in_btn:hover {
+  opacity       : 0.5;
+}
 
 .page_login {
   text-align: center;
@@ -79,4 +60,78 @@ h5 {
 
 #error_explanation ul {
   list-style-type: none;
+}
+
+@media screen and (max-width: 767px) {
+  .sing_up-wrapper {
+    padding: 50px;
+  }
+
+  .sing_up-title {
+    font-size: 45px;
+    font-weight: 600;
+  }
+
+  .sing_up-text {
+    font-size: 12px;
+  }
+
+  .sing_up-field {
+    margin-top: 20px;
+   }
+
+   .sing_up-label {
+    height: 20px;
+    width: 180px;
+  }
+
+  .sing_up-field_text {
+    font-size: 16px;
+  }
+
+  .sing_up-field_word {
+    font-size: 4px;
+  }
+
+  .sing_up-field_word span {
+    font-size: 4px;
+  }
+
+  .sing_in_btn {
+    font-size : 14px;
+    padding : 6px 20px;
+   }
+}
+@media screen and (min-width: 768px) {
+  .sing_up-wrapper {
+    padding: 50px;
+  }
+
+  .sing_up-title {
+    font-size: 90px;
+    font-weight: 600;
+  }
+
+  .sing_up-field_text {
+    font-size: 24px;
+    margin: 10px;
+  }
+
+  .sing_up-field {
+    margin-top: 30px;
+   }
+
+   .sing_up-label {
+    height: 30px;
+    width: 400px;
+  }
+
+  .sing_up-field_word span {
+    font-size: 20px;
+  }
+
+  .sing_in_btn {
+    font-size : 24px;
+    padding : 12px 28px;
+   }
 }

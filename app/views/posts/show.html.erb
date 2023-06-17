@@ -89,8 +89,15 @@
     <% end %>
   </div>
 
- <% if current_user.user_type == 1 %>
-  <div class="status-id">
+  <% if user_signed_in? %>
+  <p>ログイン中のユーザー: <%= current_user.user_type %></p>
+<% else %>
+  <p>ログインしていません</p>
+<% end %>
+
+
+ <div class="status-id">
+  <% if current_user.user_type == 1 %>
     <p>《対応状況変更フォーム》</p>
     <%= form_with model: @post do |f| %>
       <%= f.select :status, [["未対応", 3 ],["対応中", 1], ["対応済み", 2]], class: "status-text", include_blank: "対応状況を選択してください" %><br>

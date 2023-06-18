@@ -1,85 +1,84 @@
 <%= render 'layouts/header' %>
 
-<div class="main-wrapper">
-  <div class="container">
+<div class="post">
+  <div class="post-wrapper">
   <%# 題名 %>
-    <div class="areas_box">
-      <% @posts.each do |post| %>
-        <%= link_to(post_path(post.id), method: :get, class: "post-path") do %>
-          <p>第<%= post.state.direction_id %>方面 <%= post.state.name %> ・ <%= post.area.name %>被害状況</p>
+    <% @posts.each do |post| %>
+    <%= link_to(post_path(post.id), method: :get, class: "post-path") do %>
+      <div class="post-area">
+        <p class="area-title">第<%= post.state.direction_id %>方面 <%= post.state.name %> ・ <%= post.area.name %>被害状況</p>
+      </div>
+     
   
   <%#ステータス %>
-        <div class="status_post">
+        <div class="post-status">
           <% if post.status == 3 %>
-              <div class="post_nil">未対応</div>
+              <div class="post-status-pending">未対応</div>
           <% elsif post.status == 1 %>
-              <div  class="post_1">対応中</div>
+              <div  class="post-status-in-progress">対応中</div>
           <% else %>
             <% if post.status == 2 %>
-              <div class="post_2">対応済み</div>
+              <div class="post-status-completed">対応済み</div>
             <% end %>
           <% end %>
+       <% end %>
         </div>
 
-<%# 画像の表示 %>
-        <div class="image_video">
-          <% if post.images.attached? %>
-              <% if post.images.length < 2 %>
+ <%# 画像の表示 %>
+    <div class="post-body">
+     <div class="post-body-wrapper">
+        <div class="post-media">
+              <% if post.images.attached? %>
+                <% if post.images.length < 2 %>
                   <% post.images.each do |image| %>
-                  <%= image_tag image, class: "post-img" %>
-                  <% end %>
-                <% else %>
-                  <div class="previews">
-                    <div class="slider">
-                      <% post.images.each do |image| %>
-                       <div> 
-                        <%= image_tag image, class: "slick-posts-img" %>
-                       </div>
-                     <% end %>
+                   <div class="post-media-image">
+                      <%= image_tag image, class: "post-image" %>
                     </div>
-                  </div>
+                  <% end %>
+            <% else %>
+
+            <%# <div class="post-media-slick"> %>
+              <div class="post-media-images">
+                <% post.images.each do |image| %>
+                  <%= image_tag image, class: "post-images-slick" %>
                 <% end %>
-              <% end %>
+              </div>
+              <%# </div> %>
+           <% end %>
         <% end %>
-<%# 動画の表示 %>
+
+          <%# 動画の表示 %>
           <% if post.video.attached? %>
-            <td >
-              <video src="<%= rails_blob_path(post.video) %> " type="video/mp4" width="600" height="340", muted: :true, controls></video>
-            </td>
+             <div class="post-media-video">
+              <video src="<%= rails_blob_path(post.video) %> " type="video/mp4" class= "post-video", muted: :true, controls></video>
+            </div>
           <% end %>
        </div>
 
-<%# 詳細内容の表示 %>
-        <div class="posts-box">
-          <h1><span>《被害状況》</span></h1>
-          
-          <div>
-            <pre>・所在      <%= post.state.name %> <%= post.area.name %></div>
-          <div>
-            <pre>・番地/目印      <%= post.mark %></div>
-          </pre>
-          <div>
-            <pre>・ケガ人の人数     <%= post.escape.name %></div>
-          </pre>
-          <div>
-            <pre>・逃げ遅れの人数     <%= post.help.name %></div>
-          </pre>
-          <div>
-            <pre>・消防隊の要請      <%= post.injury.name %></div>
-          </pre>
-          <div>
-            <pre>・詳細内容</pre>
-          </div>
-          <div class="box"> <%= post.content %></div>
+       <%# 詳細内容の表示 %>
+       <div class="post-detail">
+        <div class="post-detail-title">
+          <p><span>《被害状況》</span></p>
         </div>
-
-      <% end %>
+        <ul class="post-detail-text">
+          <li>所在          <%= post.state.name %> <%= post.area.name %></li>
+          <li>番地/目印      <%= post.mark %></li>
+          <li>ケガ人の人数    <%= post.escape.name %></li>
+          <li>逃げ遅れの人数  <%= post.help.name %></li>
+          <li>消防隊の要請    <%= post.injury.name %></li>
+          <li>詳細内容</li>
+          <div class="postーdetail-comment"><%= post.content %></div>
+        </div>
+      </div>
     </div>
-  </div>
+      <% end %>
+      </div>
+    </div>
+    </div>
 </div>
 
 <%# 新規投稿のボタン %>
-<div class="contents_row">
+<div class="post-button">
   <%= link_to(new_post_path, class: 'post-btn', data: { "turbolinks" => false }) do %>
     <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1e90ff" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>

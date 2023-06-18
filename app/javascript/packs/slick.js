@@ -1,5 +1,5 @@
 window.addEventListener('turbolinks:load', function() {
-  $('.slider').slick({
+  $('.post-media-images').slick({
     speed: 500,
     fade: true,
     arrows: true,

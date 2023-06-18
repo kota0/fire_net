@@ -1,6 +1,182 @@
-.container  {
+.post-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  /* padding: 50px; */
+}
+
+.post {
+  padding: 50px;
+}
+
+.post-area {
   text-align: center;
-  padding-top: 40px;  
+  margin: auto;
+  color: black;
+  max-width: 80%;
+}
+
+.area-title {
+  color: black;
+  font-size: 28px;
+  background: repeating-linear-gradient(-45deg, rgb(98, 98, 97), rgb(207, 207, 207), 2px, white 2px, white 4px);
+  border-radius: 12px;
+}
+
+.post-path {
+  text-decoration: none;
+}
+
+/* ステータス */
+.post-status {
+  margin: auto;
+  max-width: 400px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.post-status-pending {
+  padding: 0.2em 1em;
+  margin-top: 30px;
+  color: #01550d;
+  background: #9afda7;
+  /* border-bottom: solid 6px #448d03; */
+  border-radius: 8px;
+}
+
+.post-status-in-progress {
+  padding: 0.2em 1em;
+  margin-top: 30px;
+  color: #da1900;
+  background: #ef9292;
+  /* border-bottom: solid 6px #d85252; */
+  border-radius: 8px;
+}
+
+.post-status-completed {
+  padding: 0.2em 1em;
+  margin-top: 30px;
+  color: #0047b1;
+  background: #c6e4ff;
+  /* border-bottom: solid 6px #3471ab; */
+  border-radius: 8px;
+}
+
+.post-body-wrapper {
+  padding: 35px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* 画像&動画の実装 */
+
+/* 画像 サイズ*/
+.post-media {
+  margin: auto;
+}
+
+.post-media-image {
+  margin: auto;
+  width: 600px;
+}
+
+.post-image {
+  height: 320px;
+  max-width: 100%;
+  border-radius: 6px;
+}
+/* 画像（２枚以上） サイズ*/
+.post-media-images {
+  margin: auto;
+  height: 320px;
+  width: 600px;
+  display: inline-block;
+  vertical-align:middle;
+  visibility: hidden;
+}
+
+.post-media-images.slick-initialized {
+  visibility: visible;
+}
+
+.post-images-slick {
+  height: 320px;
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.slick-prev:before,.slick-next:before {
+  color: #000;
+}
+
+.slick-arrow { z-index:2!important; }
+
+.slide-arrow {
+  bottom: 0;
+  cursor: pointer;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  width: 30px;
+}
+.prev-arrow {
+  left: -40px;
+}
+.next-arrow {
+  right: -40px;
+}
+
+/* ビデオ サイズ */
+.post-media-video {
+  margin: auto;
+}
+
+.post-video {
+  height: 320px;
+  width: 600px;
+  border-radius:6px;
+}
+
+/* 説明文 */
+.post-detail {
+  max-width: 580px;
+}
+
+
+
+
+@media screen and (max-width: 767px) {
+  .post-wrapper {
+    padding: 50px;
+    margin: auto;
+    margin-top: 80px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .post-wrapper {
+    padding: 50px;
+    margin-top: 80px;
+  }
+
+  .post-body-wrapper {
+    column-gap: 30px;
+  }
+  
+
+}
+
+
+
+
+
+
+
+
+/* .container  {
+  text-align: center;
+  padding-top: 40px;
+  border-radius: 20px;
 }
 
 .areas_box {
@@ -86,7 +262,7 @@ video {
 
 .slick-arrow{ z-index:2!important; }
 
-.post-img {
+.post-image {
   height: 340px;
   width: 600px;
   position: relative;
@@ -162,6 +338,9 @@ footer p{
   margin: 8px;
 }
 
+
+ステータスに関するcss
+
 .status_post {
   position: relative; 
   left: 265px;
@@ -210,4 +389,17 @@ footer p{
 .pagination {
   margin-top: 50px;
   justify-content: center;
-}
+} */
+
+/* slick */
+/* .post-media-slick {
+  display: inline-block;
+  vertical-align:middle;
+} */
+
+/* .post-media-slick {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+} */

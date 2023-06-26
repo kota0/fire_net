@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   has_many   :Comments
 
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_many_attached :images
   has_one_attached :video
 

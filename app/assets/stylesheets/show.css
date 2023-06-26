@@ -398,6 +398,9 @@
   width: 40px;
   height: 40px;
   }
+  .area-break-word {
+    display: block;
+  }
 
   /* ステータス */
   .show-status {
@@ -721,3 +724,25 @@
   }
 }
 
+
+
+
+/* これは参考の投稿削除時の参考コードです */
+/* .alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-notice {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-alert {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+} */

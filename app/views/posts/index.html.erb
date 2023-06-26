@@ -8,7 +8,7 @@
   <%# 題名 %>
     <%= link_to(post_path(post.id), method: :get, class: "post-path") do %>
       <div class="post-area">
-        <p class="area-title">第<%= post.state.direction_id %>方面 &ensp; <%= post.state.name %> <%= post.area.name %><span class="area-constant">&ensp;被害状況</span></p>
+        <p class="area-title">第<%= post.state.direction_id %>方面 <span class="area-break-word"> &ensp; <%= post.state.name %> <%= post.area.name %> </span> <span class="area-constant">&ensp;被害状況</span></p>
       </div>
      
   

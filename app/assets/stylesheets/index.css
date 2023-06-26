@@ -282,6 +282,9 @@
       font-size: 14px;
       column-gap: 15px;
     }
+    .area-break-word {
+    display: block;
+    }
 
 
 

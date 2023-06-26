@@ -16,7 +16,6 @@
   margin: auto;
 }
 
-
 /* 題名 */
 .show-area {
   text-align: center;
@@ -38,6 +37,15 @@
 
 .show-path {
   text-decoration: none;
+}
+
+.left-square {
+  text-align: left;
+  color: rgb(109, 109, 109);
+}
+.right-square {
+  text-align: right;
+  opacity: 0;
 }
 
 /* ステータス */
@@ -74,8 +82,8 @@
 
 /* メディア */
 .show-media {
+  margin: auto;
   border-radius: 6px;
-  /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22); */
   }
 
 .show-media-image {
@@ -136,10 +144,11 @@
 /* 詳細 */
 .show-detail-wrapper {
   border: none;
-  padding: 20px 0px;
+  padding: 15px 0px;
   border-radius: 6px;
-  background-color: rgb(222, 222, 222);
+  background-color: rgb(241, 241, 241);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  overflow: scroll
 }
 
 .show-detail-list {
@@ -169,7 +178,7 @@
 }
 
 .show-detail-comment{
-    margin: auto;
+  margin: auto;
   }
 
 .show-detail-item:nth-child(n+2) {
@@ -189,16 +198,22 @@
 .add-height {
   height: 100%;
 }
-/* 右側
-  コメントの実装 */
+  /* コメントの実装 */
+  .comment {
+    height: 100%;
+  }
   .comment-wrapper {
     display: flex;
     flex-direction: column;
     margin: auto;
+    border-radius: 6px;
+    max-height: 100%;
+    background-color: rgb(241, 241, 241);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   }
   .comment-title {
-    border: solid #000;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    background-color: rgb(255, 255, 255);
     width: 70%;
     padding: 3px;
     border-radius: 6px;
@@ -206,34 +221,149 @@
     margin-top: 10px;
     text-align: center;
   }
-
-
-    .comment-index {
-    max-width: 100%;
-    background-color: rgb(229, 255, 189);
-    scroll-behavior: smooth;
-    overflow:scroll;
+  .comment-index {
+    background-color: rgb(206, 234, 255);
     border-radius: 8px;
     box-shadow: 0 5px 7px rgba(0, 0, 0, 0.22);
   }
 
-
-.left-square {
-  text-align: left;
-  color: rgb(109, 109, 109);
+  .comment-index-inner {
+  scroll-behavior: smooth;
+  margin: auto;
+  margin-top: 20px;
+  padding: 0px 20px;
+  overflow: scroll;
 }
-.right-square {
+
+/* コメント内部の詳細 */
+.comment-1 {
+  align-self: flex-start;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 8px;
+}
+
+.comment-2 {
+  align-self: flex-end;
+  list-style: none;
+  margin-top: 8px;
+}
+
+.comment-name {
+  font-size: 10px;
+  opacity: 0.9;
+}
+.comment-text {
+  line-height: 0.9em;
+  overflow-wrap: break-word;
+}
+.comment-time {
+  font-size: 8px;
+  opacity: 0.8;
+}
+.name-right {
   text-align: right;
-  opacity: 0;
+}
+.text-right {
+  text-align: right;
+}
+.time-right {
+  text-align: right;
 }
 
+/*以下、左側の緑コメント*/
+.text-left {
+  display: inline-block;
+  position: relative; 
+  padding: 10px;
+  max-width: 80%;
+  border-radius: 12px;
+  background: #30e852;
+  font-size: 16px;
+}
+
+.text-left :after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px; 
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #30e852;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+ .text-left p {
+  margin: 0;
+  padding: 0;
+}
+
+/*以下、右側の緑コメント*/
+.text-right p {
+  display: inline-block;
+  position: relative; 
+  margin: 0;
+  padding: 10px;
+  max-width: 80%;
+  border-radius: 12px;
+  background: #30e852;
+  font-size: 16px;
+}
+
+.text-right p:after {
+  content: "";
+  position: absolute;
+  top: 3px; 
+  right: -19px;
+  border: 8px solid transparent;
+  border-left: 18px solid #30e852;
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+  margin: 0;
+  padding: 0;
+}
+
+/* 入力フォーム */
+.comment-form-inner {
+  margin: auto;
+  margin: 7px;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  align-items: stretch;
+}
+.comment-submit {
+  width: 50px;
+  height: 30px;
+}
+.comment-form-text {
+  height: 30px;
+  width: 100%;
+}
+ .text-form {
+  width: 100%;
+  height: 30px;
+  opacity: 0.8;
+}
+
+::placeholder {
+  color: gray;
+  opacity: 1;
+}
+
+.comment-form-text::-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: gray;
+}
+
+.comment-form-text::-ms-input-placeholder { /* Microsoft Edge */
+  color: gray;
+}
 
 
 @media screen and (max-width: 599px) {
-      .show {
-    padding: 30px ;
+  .show {
+    padding: 20px ;
   }
-
   .show-wrapper {
     width: 100%;
     padding: 20px;
@@ -255,10 +385,10 @@
 
   /* 題名&ステータス */
   .show-area-title {
-    font-size: 24px;
-    padding: 0.2em 0.5em;
+    font-size: 18px;
+    padding: 0.2em 0.2em;
     margin: auto;
-    width: 80%;
+    width: 70%;
   }
   .left-square {
   width: 40px;
@@ -344,20 +474,13 @@
   .add-height {
     height: 100%;
   }
-
-  /* 右側
-    コメント機能 */
-  .comment-index {
-    height: 300px;
+    /* コメントの実装 */
+  .comment-index-inner {
+  height: 380px;
   }
-
-  .comment-index {
-    height: 400px;
+  .comment-wrapper {
+    padding: 10px 10px 5px 10px;
   }
-  
-
-
-
 }
 @media screen and (min-width:600px) and ( max-width:1023px) {
     .show {
@@ -469,33 +592,40 @@
   .add-height {
     height: 100%;
   }
-
-  /* 右側
-    コメント機能 */
-    .comment-wrapper {
-      margin: auto;
-    }
-
+  /* コメントの実装 */
   .comment-index {
-    height: 400px;
-    max-width: 750px;
+    width: 75%;
+    margin: auto;
   }
-  
+
+  .comment-index-inner {
+  height: 430px;
+}
+/* コメント入力フォーム */
+.comment-form {
+  width: 75%;
+  margin: auto;
+}
+.comment-wrapper {
+    padding: 15px 15px 10px 15px;
+  }
+
+
 }
 @media screen and (min-width: 1024px) {
   /* 全体 */
   .show {
-    padding: 50px ;
+    padding: 20px 50px ;
   }
 
   .show-wrapper {
     width: 100%;
-    padding: 30px;
+    padding: 20px;
   }
   .show-body-wrapper {
   margin: auto;
   max-width: 1024px;
-  margin-top: 20px;
+  margin-top: 15px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -523,20 +653,16 @@
   }
 
   /* ステータス */
-  .show-status {
-    margin-top: 20px;
-  }
-
   .show-status-pending {
-    margin-top: 20px;
+    margin-top: 15px;
   }
   
   .show-status-in-progress {
-    margin-top: 20px;
+    margin-top: 15px;
   }
   
   .show-status-completed {
-    margin-top: 20px;
+    margin-top: 15px;
   }
   /* 左側
     画像の実装 */
@@ -546,8 +672,8 @@
   }
 
   .show-image {
-    width: 554px;
-    height: 320px;
+  width: 554px;
+  height: 320px;
   }
 
   .show-media-images {
@@ -567,14 +693,12 @@
   /* 詳細 */
   .show-detail {
     width: 554px;
-    margin-top: 50px;
+    margin-top: 20px;
   }
   
   .show-detail-wrapper {
-    height: 320px;
-    overflow: scroll
+    height: 300px;
   }
-
 
   .detail-btn {
     font-size: 10px;
@@ -588,187 +712,12 @@
   .add-height {
     height: 100%;
   }
-
-  .comment-index {
-    height: 550px;
+  /* コメントの実装 */
+  .comment-index-inner {
+  height: 522px;
+}
+.comment-wrapper {
+    padding: 15px 15px 0px 15px;
   }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.comment-index {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.comment-1 {
-  align-self: flex-start;
-}
-
-.comment-2 {
-  align-self: flex-end;
-}
-
-
-
-
-
-
-
-/* .comment-box {
-text-align: center;
-}
-
-.comment-text {
-  height: 80px;
-  width: 800px;
-}
-
-.comment-submit {
-    display       : inline-block;
-    border-radius : 50%;
-    font-size     : 18pt;
-    text-align    : center;
-    cursor        : pointer;
-    padding       : 8px 44px;
-    background    : #ffa64d;
-    color         : #ffffff;
-    line-height   : 1em;
-    opacity       : 0.9;
-    transition    : .3s;
-    margin: 8px;
-  }
-
-  .comments {
-  padding: 5px;
-  margin-top: 10px;
-  font-size: 30px;
-  letter-spacing: 30px;
-  font-weight: 600;
-  margin-left: 35px;
-  }
-
-  
-  .comment-box .comment-form p {
-    font-size: 25px;
-  }
-
-  .area_box {
-    width: 800px;
-    margin:  0 auto;
-  }
-
-  .area_box pre p {
-  margin-top: 85px;
-  text-align: center;
-  font-size: 35px;
-  color: black;
-  background: repeating-linear-gradient(-45deg, rgb(98, 98, 97), rgb(207, 207, 207), 2px, white 2px, white 4px);
-  border-radius: 20px;
-  }
-
-  .comment-submit:hover {
-    opacity       : 1;
-  }
-
-.chack_box {
-  font-size: 20px;
-}
-
-.comment-box p {
-  font-size: 30px;
-}
-
-.shows-box_show {
-  text-align: left;
-  display: inline-block;
-  vertical-align:middle;
-  padding: 5px;
-  margin-top: 5px;
-  margin-left: 95px;
-  font-size: 30px;
-  letter-spacing: 5px;
-  font-weight: 400;
-} 
-
-.shows-box_show h1 {
-  letter-spacing: 80px;
-  font-size: 30px;
-  font-weight: 600;
-  padding: 35px;
-}
-
-.comment-box .status-id p{
-  margin-top: 40px;
-  font-size: 30px;
-  letter-spacing: 10px;
-  font-weight: 600;
-}
-
-#show_status {
-  text-align: center;
-  font-size: 25px;
-  height: 50px;
-  width: 400px;
-}
-
-
-.status_id {
-  position: absolute;
-  top: 110px;
-  left: 205px;
-  font-size: 40px;
-}
-
-.status_nil {
-  padding: 0.2em 0.8em;
-  margin: 2em 0;
-  color: #01550d;
-  background: #87f896;
-  border-bottom: solid 6px #448d03;
-  border-radius: 9px;
-}
-
-.status_1 {
-  padding: 0.2em 0.8em;
-  margin: 2em 0;
-  color: #da1900;
-  background: #ef9292;
-  border-bottom: solid 6px #d85252;
-  border-radius: 9px;
-}
-
-.status_2 {
-  padding: 0.2em 0.8em;
-  margin: 2em 0;
-  color: #0047b1;
-  background: #c6e4ff;
-  border-bottom: solid 6px #3471ab;
-  border-radius: 9px;
-}
-
-.left-square {
-  position: absolute;
-  position: fixed;
-  top: 110px;
-  left: 25px;
-  color: dimgray;
-}
-
- */
 

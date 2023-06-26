@@ -23,5 +23,4 @@ import '@fortawesome/fontawesome-free/js/all';
  import "./slick"
  import "./video"
  import "./detail"
- import "./comment"
- 
+ import './comment'

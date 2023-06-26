@@ -1,51 +1,52 @@
-<div class="sing_up">
-  <h4><span>FIRE</span>.Net</h4>
-  <h5>登録情報を入力してください</h5>
-
-  <div class="sing_up_content">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
-
-        <div class="field">
-          <%= f.label :name, class:"label_tag" %><br />
-          <a>※名前は全角ひらがな、全角カタカナ、漢字で入力してください</a><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"label_wh" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :email, class:"label_tag" %><br />
-          <a>※Emailには＠を含む必要があります</a><br>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"label_wh" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password, class:"label_tag" %>
-          <% if @minimum_password_length %>
-          <em>(半角英数字を含む<%= @minimum_password_length %> 文字以上入力してください)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password", class:"label_wh" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password, class:"label_tag" %><span>(もう一度入力してください)</span><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"label_wh" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :user_type, class:"label_tag" %><br />
-          <p>※<span>消防職員</span>の場合は&emsp;<span>1</span>&emsp;を入力してください</p>
-          <p>※<span>消防団員</span>の場合は&emsp;<span>2</span>&emsp;を入力してください</p>
-          <%= f.text_field :user_type, autofocus: true, autocomplete: "user_type" %>
-        </div>
+<div class="sing_up-wrapper">
+  <div class="sing-up-inner">
+    <h2 class="sing_up-title"><span>FIRE</span>.Net</h2>
+    <h3 class="sing_up-text">登録情報を入力してください</h3>
   </div>
 
+  <div class="sing_up-from">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="actions">
-      <%= f.submit "登録", class:"sing_in_btn" %>
-    </div>
-  <% end %>
+      <div class="sing_up-field">
+        <%= f.label :name, class:"sing_up-field_text" %><br />
+        <em class="sing_up-field_word">※名前は全角ひらがな、全角カタカナ、漢字で入力してください</em><br>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"sing_up-label" %>
+      </div>
+
+      <div class="sing_up-field">
+        <%= f.label :email, class:"sing_up-field_text" %><br />
+        <em class="sing_up-field_word">※Emailには＠を含む必要があります</em><br>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"sing_up-label" %>
+      </div>
+
+      <div class="sing_up-field">
+        <%= f.label :password, class:"sing_up-field_text" %>
+        <% if @minimum_password_length %><br>
+        <em class="sing_up-field_word">(半角英数字を含む<%= @minimum_password_length %> 文字以上入力してください)</em><br>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "new-password", class:"sing_up-label" %>
+      </div>
+
+      <div class="sing_up-field">
+        <%= f.label :password, class:"sing_up-field_text" %><em>(確認用)</em><br><em class="sing_up-field_word">(もう一度入力してください)</em><br>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"sing_up-label" %>
+      </div>
+
+      <div class="sing_up-field">
+        <%= f.label :user_type, class:"sing_up-field_text" %><br />
+        <em class="sing_up-field_word">※<span>消防職員</span>の場合は&emsp;<span>1</span>&emsp;を入力してください</em><br>
+        <em class="sing_up-field_word">※<span>消防団員</span>の場合は&emsp;<span>2</span>&emsp;を入力してください</em><br>
+        <%= f.text_field :user_type, autofocus: true, autocomplete: "user_type" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "登録", class:"sing_in_btn" %>
+      </div>
+    <% end %>
+  </div>
 
   <div class="page_login">
-  <%= render "devise/shared/links" %>
+    <%= render "devise/shared/links" %>
   </div>
 </div>

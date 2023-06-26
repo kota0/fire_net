@@ -1,6 +1,7 @@
 .login-content {
   background-color: #eeeeee;
   margin: auto;
+  overflow: scroll
 }
 
 .notice {
@@ -69,7 +70,7 @@
   border: none;
 }
 
-@media screen and (max-width: 795px) {
+@media screen and (max-width: 1023px) {
   /* 左側の画像 */
   .login-left-wrapper {
     display: none;
@@ -104,7 +105,7 @@
   }
 }
 
-@media screen and (min-width: 796px) {
+@media screen and (min-width: 1024px) {
   .login-content {
     display: flex;
   }

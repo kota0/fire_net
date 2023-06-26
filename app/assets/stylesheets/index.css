@@ -1,107 +1,118 @@
-.container  {
-  text-align: center;
-  padding-top: 40px;  
-}
-
-.areas_box {
-  margin:  0 auto;
-  margin-left: 150px;
-}
-
-
-.areas_box p {
+/* 全体 */
+.section-post {
   margin-top: 75px;
+}
+
+.post {
+  background-color: #f6f6f6;
+}
+
+.post-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.22);
+  height: auto;
+  border-radius: none;
+  background-color: white;
+  margin: auto;
+}
+
+.post-body {
+  margin: auto;
+}
+
+/* 題名 */
+.post-area {
   text-align: center;
-  font-size: 30px;
+  margin: auto;
+  border-radius: 12px;
   color: black;
-  background: repeating-linear-gradient(-45deg, rgb(98, 98, 97), rgb(207, 207, 207), 2px, white 2px, white 4px);
-  border-radius: 20px;
+}
+
+.area-title {
+  color: black;
+  color: #5d627b;
+  background: white;
+  border-top: solid 5px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 12px;
 }
 
 .post-path {
   text-decoration: none;
 }
 
-.post-path p {
-  font-size: 35px;
-  font-weight: 600;
-  width: 1000px;
-  margin-top: 80px;
+
+/* ステータス */
+.post-status {
+  margin: auto;
+  max-width: 70%;
+  text-align: center;
+  font-size: 20px;
 }
 
- .posts-box {
-  display: inline-block;
-  vertical-align:middle;
-  padding-bottom: 30px;
-  font-size: 25px;
-  margin: 20px;
-} 
-
-.posts-box h1 {
- font-size: 30px;
+.post-status-pending {
+  padding: 0.2em 1em;
+  color: #01550d;
+  background: #9afda7;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 8px;
 }
 
-.post-img {
-  height: 340px;
-  width: 600px;
-  position: absolute;
-  top: 30px;
+.post-status-in-progress {
+  padding: 0.2em 1em;
+  color: #da1900;
+  background: #ef9292;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 8px;
 }
 
-
-
-.slick-posts-img {
-  height: 340px;
-  width: 600px;
+.post-status-completed {
+  padding: 0.2em 1em;
+  color: #0047b1;
+  background: #c6e4ff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 8px;
 }
 
-video {
-  height: 340px;
-  width: 600px;
-  
-
+.add-height {
+  height: 100%;
 }
 
 
-
-.slider {
-  display: inline-block;
-  vertical-align:middle;
-  visibility: hidden;
-  height: 340px;
-  width: 600px;
+/* メディア */
+.post-media {
+  border-radius: 6px;
+  /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22); */
 }
 
-.slider.slick-initialized {
+.post-media-image {
+  width: 100%;
+}
+
+.post-image {
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+/* 画像（２枚以上） サイズ*/
+.post-images-slick {
+  width: 100%;
+  object-fit: cover;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.post-media-images.slick-initialized {
   visibility: visible;
 }
 
-.slick-prev:before, .slick-next:before {
+.slick-prev:before,.slick-next:before {
   color: #000;
 }
 
-.previews{
-  display: inline-block;
-  vertical-align:middle;
-}
-
-.slick-arrow{ z-index:2!important; }
-
-.post-img {
-  height: 340px;
-  width: 600px;
-  position: relative;
-}
-
-.image_video {
-  display: inline-block;
-  vertical-align:middle;
-}
-
-.contents_row {
-  text-align: center;
-  position: relative;
-}
+.slick-arrow { z-index:2!important; }
 
 .slide-arrow {
   bottom: 0;
@@ -118,97 +129,394 @@ video {
   right: -40px;
 }
 
-
-.contents_row {
-  text-align: center;
-  font-size: 30px;
-  padding-top: 50px;
+/* ビデオ サイズ */
+.post-media-video {
+  margin: auto;
 }
 
-.posts-box {
-  text-align: left;
-  padding-left: 100px;
-}
-
-.posts-box h1 {
-  font-size: 30px;
-  font-weight: 500;
-  color: black;
-}
-
-.box {
-  height: 80px;
-  width: 400px;
-  padding: 0.5em 1em;
-  margin: 5px, 2px;
-  font-weight: bold;
-  color: #000000;
-  background: #FFF;
-  border: solid 3px #000000;
-  border-radius: 10px;
-}
-
-footer {
-  position: relative;
-  bottom:0px;
+.post-video {
   width: 100%;
-  height: 50px;
-  background-color:rgb(226, 226, 226);
-  z-index: 10;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 }
 
-footer p{
-  text-align: center;
+/* 詳細 */
+.post-detail-wrapper {
+  border: none;
+  padding: 15px 12px;
+  border-radius: 6px;
+  background-color: rgb(222, 222, 222);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.post-detail-list {
+  display: flex;
+  flex-direction: column;
+  padding-left:0;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.post-detail-title {
+  border: solid #000;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  width: 80%;
+  padding: 5px;
+  border-radius: 6px;
+  margin: auto;
+}
+
+.post-detail-item {
+  display: flex;
+  list-style:none;
+}
+
+.post-detail-item:nth-child(n+2) {
+  margin-top: 10px;
+}
+
+.post-detail-label {
+  width: 110px;
+}
+
+.post-detail-info {
+  width:fit-content;
   font-size: 20px;
-  margin: 8px;
+  letter-spacing: 0.2em;
+  margin: auto;
+}
+.add-height {
+  height: 100%;
 }
 
-.status_post {
-  position: relative; 
-  left: 265px;
-  font-size: 20px;
+
+/* スマホ */
+@media screen and (max-width: 599px) {
+  /* 全体 */
+  .post {
+    padding: 20px 30px 10px 30px;
+  }
+  .post-wrapper {
+    padding: 30px;
+  }
+  .post-body-wrapper {
+    margin-top: 15px;
+  }
+
+  /* 題名 */
+  .post-area {
+    max-width: 95%;
+  }
+  .area-title {
+    font-size: 16px;
+    padding: 0.3em 0.8em;
+  }
+
+  .area-constant {
+    display: none;
+  }
+
+  /* ステータス */
+
+  .post-status {
+    font-size: 14px;
+  }
+    /* ステータス */
+    .post-status-pending {
+      margin-top: 15px;
+    }
+    
+    .post-status-in-progress {
+      margin-top: 15px;
+    }
+    
+    .post-status-completed {
+      margin-top: 15px;
+    }
+
+    /* メディア */
+    .post-media {
+      max-width: 450px;
+      margin: auto;
+    }
+  
+    .post-image {
+      width: 100%;
+      max-height: 255px;
+    }
+  
+    .post-images-slick {
+      width: 100%;
+      max-height: 255px;
+    }
+  
+    .post-video {
+      width: 100%;
+      max-height: 255px;
+    }
+  
+    /* 詳細 */
+    .post-detail {
+      margin-top: 15px;
+    }
+    
+    .post-detail-wrapper {
+      margin: auto;
+      padding: 12px;
+      max-width: 450px;
+      height: 265px;
+      overflow: scroll
+    }
+
+    .post-detail-info {
+      font-size: 16px;
+    }
+  
+    .post-detail-list {
+     max-width: 300px;
+     padding-left: 15px;
+    }
+  
+    .post-detail-item {
+      font-size: 14px;
+      column-gap: 15px;
+    }
+    .area-break-word {
+    display: block;
+    }
+
+
+
+    .post-detail-comment{
+      width: 95%;
+      margin: auto;
+      margin-top: 5px;
+      padding-left: 14px;
+      font-size: 12.5px;
+      line-height: 1.2;
+    }
+
+    .detail-btn {
+      font-size: 8.5px;
+      opacity: 0.8;
+    }
+  
+    .add-height {
+      height: 100%;
+    }
 }
 
+/* タブレット */
+@media screen and (min-width:600px) and ( max-width:1023px) {
+  /* 全体 */
+  .post {
+    padding: 30px 50px 10px 50px;
+  }
 
-.post_nil {
-  padding: 0.2em 1em;
-  margin: 2em 0;
-  color: #01550d;
-  background: #87f896;
-  border-bottom: solid 6px #448d03;
-  border-radius: 9px;
-  width: 500px;
+  .post-wrapper {
+    padding: 50px;
+  }
+
+  .post-body-wrapper {
+    margin: auto;
+    margin-top: 15px;
+  }
+  /* 題名 */
+  .post-area {
+    max-width: 95%;
+  }
+  .area-constant {
+    display: none;
+  }
+
+  .area-title {
+    font-size: 24px;
+    padding: 0.3em 0.8em;
+  }
+
+  /* ステータス */
+  .post-status {
+    font-size: 18px;
+  }
+
+  .post-status-pending {
+    margin-top: 15px;
+  }
+  
+  .post-status-in-progress {
+    margin-top: 15px;
+  }
+  
+  .post-status-completed {
+    margin-top: 15px;
+  }
+
+
+
+  /* メディア */
+  .post-media {
+    max-width: 750px;
+    margin: auto;
+  }
+
+  .post-image {
+    width: 100%;
+    max-height: 420px;
+  }
+
+  .post-media-images {
+    width: 100%;
+    max-height: 420px;
+  }
+
+  .post-images-slick {
+    width: 100%;
+    max-height: 420px;
+  }
+
+  .post-video {
+    width: 100%;
+    max-height: 420px;
+  }
+
+  /* 詳細 */
+  .post-detail {
+    margin-top: 20px;
+  }
+  
+  .post-detail-wrapper {
+    margin: auto;
+    max-width: 750px;
+    height: 280px;
+    overflow: scroll
+  }
+
+  .post-detail-list {
+   max-width: 400px;
+   padding-left: 20px;
+  }
+
+  .post-detail-item {
+    column-gap: 50px;
+  }
+
+  .post-detail-comment{
+    width: 95%;
+    margin: auto;
+  }
+
+  .post-detail-comment{
+    padding-left: 14px;
+  }
+
+  .add-height {
+    height: 100%;
+  }
 }
 
-.post_1 {
-  padding: 0.2em 1em;
-  margin: 2em 0;
-  color: #da1900;
-  background: #ef9292;
-  border-bottom: solid 6px #d85252;
-  border-radius: 9px;
-  width: 500px;
-}
+/* パソコン */
+@media screen and (min-width: 1024px) {
+  .post {
+    padding: 50px 40px 10px 40px;
+  }
 
-.post_2 {
-  padding: 0.2em 1em;
-  margin: 2em 0;
-  color: #0047b1;
-  background: #c6e4ff;
-  border-bottom: solid 6px #3471ab;
-  border-radius: 9px;
-  width: 500px;
-}
+  .post-wrapper {
+    max-width: 1100px;
+    padding: 40px;
+  }
 
-.left-square {
-  position: absolute;
-  position: fixed;
-  top: 110px;
-  left: 25px;
-  color: dimgray;
-}
+  .post-body-wrapper {
+    display: flex;
+    margin: auto;
+    max-width: 1020px;
+    column-gap: 32px;
+    margin-top: 35px;
+  }
 
-.pagination {
-  margin-top: 50px;
-  justify-content: center;
+
+  /* 題名 */
+  .post-area {
+    max-width: 80%;
+  }
+  .area-title {
+    font-size: 28px;
+    padding: 0.5em 1em;
+  }
+
+  /* ステータス */
+  .post-status-pending {
+    margin-top: 30px;
+  }
+  
+  .post-status-in-progress {
+    margin-top: 30px;
+  }
+  
+  .post-status-completed {
+    margin-top: 30px;
+  }
+
+
+
+  /* メディア */
+  .post-media {
+    width: 554px;
+    height: 310px;
+  }
+
+  .post-image {
+    width: 554px;
+    height: 310px;
+  }
+
+  .post-media-images {
+    width: 554px;
+  }
+
+  .post-images-slick {
+    height: 310px;
+  }
+
+  .post-video {
+    width: 554px;
+    height: 310px;
+  }
+
+
+
+
+
+  /* 詳細 */
+  .post-detail {
+    width: 434px;
+  }
+  
+  .post-detail-wrapper {
+    height: 310px;
+    overflow: scroll
+  }
+
+
+  .post-detail-list {
+   max-width: 280px;
+  }
+  .post-detail-item {
+   font-size: 18px;
+   column-gap: 30px;
+  }
+
+  .detail-btn {
+    font-size: 10px;
+    opacity: 0.8;
+  }
+
+  .post-detail-comment{
+    padding-left: 18px;
+    margin: auto;
+  }
+
+  .add-height {
+    height: 100%;
+  }
 }

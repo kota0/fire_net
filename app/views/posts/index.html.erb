@@ -1,89 +1,112 @@
 <%= render 'layouts/header' %>
 
-<div class="main-wrapper">
-  <div class="container">
-    <div class="areas_box">
-      <% @posts.each do |post| %>
-        <%= link_to(post_path(post.id), method: :get, class: "post-path") do %>
-          <p>第<%= post.state.direction_id %>方面 <%= post.state.name %> ・ <%= post.area.name %>被害状況</p>
+<section class="section-post">
+
+<% @posts.each do |post| %>
+  <div class="post">
+  <div class="post-wrapper">
+  <%# 題名 %>
+    <%= link_to(post_path(post.id), method: :get, class: "post-path") do %>
+      <div class="post-area">
+        <p class="area-title">第<%= post.state.direction_id %>方面 <span class="area-break-word"> &ensp; <%= post.state.name %> <%= post.area.name %> </span> <span class="area-constant">&ensp;被害状況</span></p>
+      </div>
      
-        <div class="status_post">
+  
+  <%#ステータス %>
+        <div class="post-status">
           <% if post.status == 3 %>
-              <div class="post_nil">未対応</div>
+              <div class="post-status-pending">未対応</div>
           <% elsif post.status == 1 %>
-              <div  class="post_1">対応中</div>
+              <div  class="post-status-in-progress">対応中</div>
           <% else %>
             <% if post.status == 2 %>
-              <div class="post_2">対応済み</div>
+              <div class="post-status-completed">対応済み</div>
             <% end %>
           <% end %>
+         <% end %>
         </div>
 
-        <div class="image_video">
+ <%# 画像の表示 %>
+    <div class="post-body">
+     <div class="post-body-wrapper">
+        <div class="post-media">
           <% if post.images.attached? %>
-              <% if post.images.length < 2 %>
-                  <% post.images.each do |image| %>
-                  <%= image_tag image, class: "post-img" %>
-                  <% end %>
-                <% else %>
-                  <div class="previews">
-                    <div class="slider">
-                      <% post.images.each do |image| %>
-                       <div> 
-                        <%= image_tag image, class: "slick-posts-img" %>
-                       </div>
-                     <% end %>
-                    </div>
+            <% if post.images.length < 2 %>
+               <% post.images.each do |image| %>
+                 <div class="post-media-image">
+                    <%= image_tag image, class: "post-image" %>
                   </div>
                 <% end %>
-              <% end %>
-        
-        <% end %>
-      
-          <% if post.video.attached? %>
-            <td >
-              <video src="<%= rails_blob_path(post.video) %> " type="video/mp4" width="600" height="340", muted: :true, controls></video>
-            </td>
+            <% else %>
+            
+            <div class="post-media-images">
+                <% post.images.each do |image| %>
+                  <%= image_tag image, class: "post-images-slick" %>
+                <% end %>
+            </div>
           <% end %>
-       </div>
+         <% end %>
 
-        <div class="posts-box">
-          <h1><span>《被害状況》</span></h1>
-          
-          <div>
-            <pre>・所在      <%= post.state.name %> <%= post.area.name %></div>
-          <div>
-            <pre>・番地/目印      <%= post.mark %></div>
-          </pre>
-          <div>
-            <pre>・ケガ人の人数     <%= post.escape.name %></div>
-          </pre>
-          <div>
-            <pre>・逃げ遅れの人数     <%= post.help.name %></div>
-          </pre>
-          <div>
-            <pre>・消防隊の要請      <%= post.injury.name %></div>
-          </pre>
-          <div>
-            <pre>・詳細内容</pre>
-          </div>
-          <div class="box"> <%= post.content %></div>
+          <%# 動画の表示 %>
+          <% if post.video.attached? %>
+             <div class="post-media-video">
+              <video src="<%= rails_blob_path(post.video) %> " type="video/mp4" class= "post-video", muted: :true, controls></video>
+            </div>
+          <% end %>
+      </div>
+
+       <%# 詳細内容の表示 %>
+    <div class="post-detail">
+      <div class="post-detail-wrapper">
+        <div class="post-detail-title">
+          <p class="post-detail-info">被害状況</p>
         </div>
-
-      <% end %>
+        <ul class="post-detail-list">
+          <li class="post-detail-item">
+            <span class="post-detail-label">・所在</span>
+            <span class="post-detail-value"><%= post.state.name %> <%= post.area.name %></span>
+          </li>
+          <li class="post-detail-item">
+            <span class="post-detail-label">・番地/目印</span>
+            <span class="post-detail-value"><%= post.mark %></span>
+          </li>
+          <li class="post-detail-item">
+            <span class="post-detail-label">・ケガ人</span>
+            <span class="post-detail-value"><%= post.escape.name %></span>
+          </li>
+          <li class="post-detail-item">
+            <span class="post-detail-label">・逃げ遅れ</span>
+            <span class="post-detail-value"><%= post.help.name %></span>
+          </li>
+          <li class="post-detail-item">
+            <span class="post-detail-label">・消防の要請</span>
+            <span class="post-detail-value"><%= post.injury.name %></span>
+          </li>
+          <li class="post-detail-item">
+            <span class="post-detail-text">・詳細内容&ensp;<span class="detail-btn">∨ すべて表示する</span></span>
+            
+          </li>
+            <div class="post-detail-comment"><%= post.content %></div>
+        </ul>
+      </div>
     </div>
+    </div>
+    </div>
+   </div>
+    </div>
+    </div>
+   <% end %>
+</div>
+
+<%# 新規投稿のボタン %>
+  <div class="post-button">
+    <%= link_to(new_post_path, class: 'post-btn', data: { "turbolinks" => false }) do %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1e90ff" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+      </svg>
+    <% end %>
   </div>
 </div>
 
-
-
-
-<div class="contents_row">
-  <%= link_to(new_post_path, class: 'post-btn', data: { "turbolinks" => false }) do %>
-    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1e90ff" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-    </svg>
-  <% end %>
-</div>
-
 <%= paginate @posts %>
+</section>

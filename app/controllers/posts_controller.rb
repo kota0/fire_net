@@ -66,6 +66,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      flash[:notice] = '投稿は正常に削除されました。'
+      redirect_to posts_path
+    else
+      flash[:alert] = '投稿の削除中にエラーが発生しました。'
+      render :show
+    end
+  end
+
+
   private
   def post_params
     params.require(:post).permit(:video, :state_id, :area_id, :mark, :injury_id, :escape_id, :help_id, :content, :status, images: []).merge(user_id: current_user.id)

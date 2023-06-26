@@ -4,7 +4,7 @@ window.changeFile = function changeFile() {
 
   fileBox.addEventListener("change", (e) => {
     const isVideoExt = () => {
-      const fileName = fileBox.substring(fileBox.lastIndexOf('.'))
+    const fileName = fileBox.substring(fileBox.lastIndexOf('.'))
       if (fileName.toUpperCase().match(/\.(mp4)$/i)) {
         return true
       }

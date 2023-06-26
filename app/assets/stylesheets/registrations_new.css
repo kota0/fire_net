@@ -1,5 +1,6 @@
 .sing_up-wrapper {
   background-color: #eeeeee;
+  overflow: scroll
 }
 
 .sing_up-title {
@@ -62,9 +63,9 @@
   list-style-type: none;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
   .sing_up-wrapper {
-    padding: 50px;
+    padding: 40px;
   }
 
   .sing_up-title {
@@ -102,7 +103,7 @@
     padding : 6px 20px;
    }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .sing_up-wrapper {
     padding: 50px;
   }

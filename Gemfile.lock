@@ -148,6 +148,7 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.5)
+    prettier (2.1.0)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -295,6 +296,7 @@ DEPENDENCIES
   mini_magick
   mysql2 (~> 0.5)
   pg
+  prettier
   pry-rails
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)

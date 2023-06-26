@@ -1,5 +1,10 @@
 window.addEventListener('turbolinks:load', function() {
-  $('.post-media-images').slick({
+  applySlick('.post-media-images');
+  applySlick('.show-media-images');
+});
+
+function applySlick(selector) {
+  $(selector).slick({
     speed: 500,
     fade: true,
     arrows: true,
@@ -7,4 +12,4 @@ window.addEventListener('turbolinks:load', function() {
     infinite: true,
     cssEase: 'linear'
   });
-});
+}

@@ -1,113 +1,146 @@
 <%= render 'layouts/header' %>
 
-<div class="main-wrapper">
-  <div class="container">
-    <div class="area_box">
-      <pre><p>第<%= @post.state.direction_id %>方面 <%= @post.state.name %> ・ <%= @post.area.name %>  被害状況</p></pre>
+<section class="section-post">
 
-      <% if @post.images.attached? %>
-        <% if @post.images.length < 2 %>
-          <% @post.images.each do |image| %>
-            <%= image_tag image, class: "post-img" %>
+  <% post = @post %>
+  <div class="show">
+  
+    <div class="show-wrapper">
+    <%# 題名 %>
+    <div class="show-top">
+      <div class="show-area">
+        <%= link_to root_path do %>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="left-square" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+          </svg>
           <% end %>
+        <p class="show-area-title">第<%= post.state.direction_id %>方面 &ensp; <%= post.state.name %> <%= post.area.name %><span class="area-constant">&ensp;被害状況</span></p>
+        <span class="right-square"></span>
+      </div>
+          <%#ステータス %>
+      <div class="show-status">
+        <% if post.status == 3 %>
+          <div class="show-status-pending">未対応</div>
+        <% elsif post.status == 1 %>
+          <div  class="show-status-in-progress">対応中</div>
         <% else %>
-          <div class="previews">
-            <div class="slider">
-              <% @post.images.each do |image| %>
-                <div>
-                  <%= image_tag image, class: "slick-posts-img" %>
-                </div>
-              <% end %>
+        <% if post.status == 2 %>
+          <div class="show-status-completed">対応済み</div>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+
+  <%# 画像の表示 %>
+  <div class="show-body">
+    <div class="show-body-wrapper">
+       <div class="show-left-inner">
+          <div class="show-media">
+            <% if post.images.attached? %>
+              <% if post.images.length < 2 %>
+                <% post.images.each do |image| %>
+                  <div class="show-media-image">
+                      <%= image_tag image, class: "show-image" %>
+                    </div>
+                  <% end %>
+              <% else %>
+              <div class="post-media-images">
+                  <% post.images.each do |image| %>
+                    <%= image_tag image, class: "show-images-slick" %>
+                  <% end %>
+              </div>
+            <% end %>
+          <% end %>
+            <%# 動画の表示 %>
+          <% if post.video.attached? %>
+            <div class="post-media-video">
+              <video src="<%= rails_blob_path(post.video) %> " type="video/mp4" class= "show-video", muted: :true, controls></video>
+            </div>
+          <% end %>
+        </div>
+        <%# 詳細内容の表示 %>
+      <div class="show-detail">
+        <div class="show-detail-wrapper">
+          <div class="show-detail-title">
+            <p class="show-detail-info">被害状況</p>
+          </div>
+          <ul class="show-detail-list">
+            <li class="show-detail-item">
+              <span class="show-detail-label">・所在</span>
+              <span class="show-detail-value"><%= post.state.name %> <%= post.area.name %></span>
+            </li>
+            <li class="show-detail-item">
+              <span class="show-detail-label">・番地/目印</span>
+              <span class="show-detail-value"><%= post.mark %></span>
+            </li>
+            <li class="show-detail-item">
+              <span class="show-detail-label">・ケガ人</span>
+              <span class="show-detail-value"><%= post.escape.name %></span>
+            </li>
+            <li class="show-detail-item">
+              <span class="show-detail-label">・逃げ遅れ</span>
+              <span class="show-detail-value"><%= post.help.name %></span>
+            </li>
+            <li class="show-detail-item">
+              <span class="show-detail-label">・消防の要請</span>
+              <span class="show-detail-value"><%= post.injury.name %></span>
+            </li>
+            <li class="show-detail-item">
+              <span class="show-detail-text">・詳細内容&ensp;<span class="detail-btn">∨ すべて表示する</span></span>
+              
+            </li>
+              <div class="show-detail-comment"><%= post.content %></div>
+          </ul>
+           </div>
+         </div>
+      </div>
+      <div class="show-right-inner">
+        <div class=comment>
+          <div class="comment-wrapper">
+              <div class="comment-index">
+                <p class="comment-title">コメント一覧</p>
+                <% @comments.each do |comment| %>
+
+                <% if comment.user.user_type == 1 %>
+                  <div class="comment-1">
+                    <a><%=comment.user.name%></a><br>
+                    <a><%= comment.comment %></a><br>
+                    <a><%= comment.created_at.strftime("%m-%d %H:%M") %></a><br>
+                  </div>
+                <% end %> 
+
+                <% if comment.user.user_type == 2 %>
+                  <div class="comment-2">
+                      <a>管理</a><br>
+                      <a><%= comment.comment %></a><br>
+                      <a><%= comment.created_at.strftime("%m-%d %H:%M") %></a><br>
+                  </div>
+                <% end %>
+
+                <% end %>
+              </div>
+              <div class="comment-form">
+                <p>コメント入力フォーム</p>
+                  <% if user_signed_in? %>
+                    <%= form_with model: [@post, @comment] do |f| %>
+                      <%= f.text_area :comment, class: "comment-text" %><br>
+                      <%= f.submit "送信", class: "comment-submit" %>
+                    <% end %>
+                  <% end %>
+              </div>
             </div>
           </div>
-        <% end %>
-      <% end %>
-
-      <% if @post.video.attached? %>
-        <td>
-          <video src="<%= rails_blob_path(@post.video) %> " type="video/mp4" width="500" height="280" controls></video>
-        </td>
-      <% end %>
-    </div>
-
-    <div class="posts-box_show">
-      <h1><span>《被害状況》</span></h1>
-      <div>
-        <pre>・所在：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @post.state.name %> <%= @post.area.name %></pre>
+        </div>
       </div>
-      <div>
-        <pre>・番地/目印：&nbsp;<%= @post.mark %></pre>
-      </div>
-      <div>
-        <pre>・ケガ人の人数：&nbsp;&nbsp;&nbsp;&nbsp;<%= @post.escape.name %></pre>
-      </div>
-      <div>
-        <pre>・逃げ遅れの人数：&nbsp;&nbsp;&nbsp;<%= @post.help.name %></pre>
-      </div>
-      <div>
-        <pre>・消防隊の要請：&nbsp;&nbsp;&nbsp;&nbsp;<%= @post.injury.name %></pre>
-      </div>
-      <div>
-        <pre>・詳細内容：&nbsp;&nbsp;&nbsp;&nbsp;<%= @post.content %></pre>
-      </div>
-      <div>
-        <pre>・対応状況：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @status_name %></pre>
-      </div>
-
-      <div class="status_id">
-        <% if @post.status == 3 %>
-            <div class="status_nil">未対応</div>
-        <% elsif @post.status ==1 %>
-            <div  class="status_1">対応中</div>
-        <% else %>
-          <% if @post.status == 2 %>
-            <div  class="status_2">対応済み</div>
-          <% end %>
-        <% end %>
+      <div class="status-id">
+        <% if current_user.user_type == 1 %>
+          <p>《対応状況変更フォーム》</p>
+          <%= form_with model: @post do |f| %>
+            <%= f.select :status, [["未対応", 3 ],["対応中", 1], ["対応済み", 2]], class: "status-text", include_blank: "対応状況を選択してください" %><br>
+            <%= f.submit "送信", class: "comment-submit" %>
+          <% end %> 
+          <%end%>
       </div>
     </div>
-  </div>
-</div>
-
-<div class=comment-box>
-  <div class="comments">
-    <p>《コメント一覧》</p>
-    <% @comments.each do |comment| %>
-      <div class="comment">
-        <p><%= comment.comment %></p>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="comment-form">
-   <p>コメント入力フォーム</p>
-    <% if user_signed_in? %>
-      <%= form_with model: [@post, @comment] do |f| %>
-        <%= f.text_area :comment, class: "comment-text" %><br>
-        <%= f.submit "送信", class: "comment-submit" %>
-      <% end %>
-    <% end %>
-  </div>
-
-  <% if user_signed_in? %>
-  <p>ログイン中のユーザー: <%= current_user.user_type %></p>
-<% else %>
-  <p>ログインしていません</p>
-<% end %>
-
-
- <div class="status-id">
-  <% if current_user.user_type == 1 %>
-    <p>《対応状況変更フォーム》</p>
-    <%= form_with model: @post do |f| %>
-      <%= f.select :status, [["未対応", 3 ],["対応中", 1], ["対応済み", 2]], class: "status-text", include_blank: "対応状況を選択してください" %><br>
-      <%= f.submit "送信", class: "comment-submit" %>
-    <% end %> 
-    </div>
- <%end%>
-
- <%= link_to root_path do %>
- <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="left-square" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
- </svg>  
- <% end %>
+   </div>
+</section>

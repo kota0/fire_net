@@ -22,4 +22,6 @@ import '@fortawesome/fontawesome-free/js/all';
  import "./area"
  import "./slick"
  import "./video"
+ import "./detail"
+ import "./comment"
  

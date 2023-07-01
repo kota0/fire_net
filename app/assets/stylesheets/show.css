@@ -358,7 +358,9 @@
 .comment-form-text::-ms-input-placeholder { /* Microsoft Edge */
   color: gray;
 }
-
+.comment-submit {
+  margin: auto;
+}
 
 @media screen and (max-width: 599px) {
   .show {

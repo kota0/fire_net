@@ -3,6 +3,10 @@
   margin-top: 75px;
 }
 
+.notice {
+  margin: auto;
+}
+
 .post {
   background-color: #f6f6f6;
 }

@@ -35,6 +35,7 @@ class PostsController < ApplicationController
       state = State.find_by(id: state_id)
     if @post.save
       redirect_to root_path
+      flash[:notice] = '正常に投稿されました。'
     else
       render :new
     end

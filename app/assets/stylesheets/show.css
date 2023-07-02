@@ -6,8 +6,7 @@
 .show-wrapper {
   border-radius: 12px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.22);
-  height: auto;
-  border-radius: none;
+  /* height: auto; */
   background-color: white;
   margin: auto;
 }
@@ -172,7 +171,7 @@
 
 .show-detail-item {
   display: flex;
-  list-style:none;
+  list-style: none;
   font-size: 18px;
    column-gap: 50px;
 }
@@ -195,8 +194,8 @@
   letter-spacing: 0.2em;
   margin: auto;
 }
-.add-height {
-  height: 100%;
+.add-height-w {
+  height: auto !important;
 }
   /* コメントの実装 */
   .comment {
@@ -531,9 +530,6 @@
     margin: auto;
   }
 
-  .add-height {
-    height: 100%;
-  }
     /* コメントの実装 */
   .comment-index-inner {
   height: 380px;
@@ -689,9 +685,6 @@
     margin: auto;
   }
 
-  .add-height {
-    height: 100%;
-  }
   /* コメントの実装 */
   .comment-index {
     width: 75%;
@@ -821,6 +814,7 @@
   
   .show-detail-wrapper {
     height: 300px;
+    /* height: auto; */
   }
 
   .detail-btn {
@@ -832,9 +826,6 @@
     padding-left: 18px;
   }
 
-  .add-height {
-    height: 100%;
-  }
   /* コメントの実装 */
   .comment-index-inner {
   height: 522px;

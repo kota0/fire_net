@@ -351,6 +351,11 @@
   .post-status-completed {
     margin-top: 15px;
   }
+  
+  .detail-btn {
+      font-size: 8.5px;
+      opacity: 0.8;
+  }
 
 
 

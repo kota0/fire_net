@@ -1,5 +1,5 @@
   /* 全体 */
-  .show {
+.show {
   background-color: #f6f6f6;
 }
 
@@ -362,6 +362,61 @@
   margin: auto;
 }
 
+/* 対応状況変更フォーム */
+.show-status-management {
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.22);
+  border-radius: none;
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+}
+.show-status-wrapper {
+  margin: auto;
+  text-align: center;
+  max-width: 700px;
+}
+
+.status-change-title {
+  font-weight: 600;
+  opacity: 0.9;
+  color: rgb(255, 54, 54);
+}
+.change-form {
+  max-width: 600px;
+  margin: auto;
+}
+
+.change-submit {
+  text-align: center;
+}
+.show-status-delete {
+  display: flex;
+  margin: auto;
+}
+.change-delete-btn {
+  margin: auto;
+  font-size     : 22px;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 2px 36px;
+  background    : #ff3b3b;
+  transition    : .3s;
+  border:none;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 12px;
+}
+.change-delete-btn:hover .delete-link {
+  box-shadow    : none;
+  color: rgb(255, 255, 255);
+  opacity: 0.7; 
+}
+.delete-link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
 @media screen and (max-width: 599px) {
   .show {
     padding: 20px ;
@@ -486,6 +541,46 @@
   .comment-wrapper {
     padding: 10px 10px 5px 10px;
   }
+  /* 対応状況変更フォーム */
+  .status-change-title {
+  font-size: 18px;
+}
+.change-sp {
+  display: block;
+}
+.change-sp-none {
+  display: none;
+}
+ .show-status-management {
+  margin-top: 30px;
+}
+.change-form-text {
+  font-size: 18px;
+}
+
+.change-submit {
+  width: 40px;
+  font-size: 12px;
+  margin-top: 3px;
+}
+.change-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.show-status-delete {
+  flex-direction: column;
+  max-width: 480px;
+  text-align: center;
+  margin-top: 40px;
+}
+.change-delete-btn {
+  font-size     : 18px;
+  padding       : 1px 36px;
+  margin-top: 5px;
+}
+
+
 }
 @media screen and (min-width:600px) and ( max-width:1023px) {
     .show {
@@ -614,13 +709,36 @@
 .comment-wrapper {
     padding: 15px 15px 10px 15px;
   }
-
+  /* 対応状況変更フォーム */
+  .status-change-title {
+  font-size: 24px;
+}
+  .show-status-management {
+  margin-top: 30px;
+}
+.change-form-text {
+  font-size: 18px;
+}
+.change-submit {
+  width: 40px;
+  text-align: center;
+  font-size: 12px;
+}
+.show-status-delete {
+  max-width: 480px;
+  text-align: center;
+  margin-top: 30px;
+}
+.change-delete-btn {
+  font-size     : 18px;
+  padding       : 1px 36px;
+}
 
 }
 @media screen and (min-width: 1024px) {
   /* 全体 */
   .show {
-    padding: 20px 50px ;
+    padding: 30px 50px ;
   }
 
   .show-wrapper {
@@ -724,6 +842,28 @@
 .comment-wrapper {
     padding: 15px 15px 0px 15px;
   }
+  
+  /* 対応状況変更フォーム */
+  .show-status-management {
+  margin-top: 50px;
+}
+  .status-change-title {
+  font-size: 28px;
+}
+.change-form {
+  display: flex;
+  column-gap: 20px;
+}
+.change-submit {
+  width: 70px;
+}
+.change-form-text {
+  font-size: 22px;
+}
+.show-status-delete {
+  max-width: 600px;
+  margin-top: 30px;
+}
 }
 
 

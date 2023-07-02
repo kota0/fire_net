@@ -24,3 +24,4 @@ import '@fortawesome/fontawesome-free/js/all';
  import "./video"
  import "./detail"
  import './comment'
+

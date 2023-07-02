@@ -12,11 +12,18 @@
   margin: auto;
 }
 /* トップタイトル */
+.new-title-wrapper {
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+}
+
 .new-title {
   text-align: center;
-  max-width: 75%;
+  max-width: 100%;
   margin: auto;
-  padding: 0.2em 1em;
+  max-width: 100%;
+  padding: 0.2em 2em;
   color: black;
   color: #5d627b;
   background: rgb(250, 250, 250);
@@ -164,26 +171,21 @@
   opacity: 0.7; 
 }
 
-        /* 重要なので、最後に調整 */
-          .alert {
-            text-align: center;
-            margin: 0;
-            color: red;
-          }
+.alert {
+  text-align: center;
+  margin: 0;
+  color: red;
+}
 
-          .alert ul {
-            text-align: center;
-            list-style-type: none;
-            padding-left: 0;
-          }
-           .alert li {
-            text-align: center;
-            margin-top: 10px;
-          }
-        /* 重要なので、最後に調整 */
-
-
-
+.alert ul {
+  text-align: center;
+  list-style-type: none;
+  padding-left: 0;
+}
+  .alert li {
+  text-align: center;
+  margin-top: 10px;
+}
 
 /* スマホ */
 @media screen and (max-width: 599px) {
@@ -191,18 +193,22 @@
   .new {
   padding: 20px;
   }
+
   .new-wrapper {
   padding: 15px;
   }
+
   /* トップタイトル */
   .new-title {
   max-width: 95%;
   padding: 0.3em 0.5em;
-  font-size: 22px;
-}
+  font-size: 20px;
+  }
+
   .new-break-word {
     display: block;
   }
+
   /* 画像と動画 */
   .new-media-upload {
   max-width: 420px;
@@ -283,9 +289,6 @@
 .blue-btn {
   margin-top: 30px;
 }
-/* .error-message {
-  display: block;
-} */
 
 }
 /* タブレット */

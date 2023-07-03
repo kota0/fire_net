@@ -123,18 +123,18 @@
                   <% if user_signed_in? %>
                     <%= form_with model: [@post, @comment] do |f| %>
                     <div class="comment-form-inner">
-                      <div class="comment-form-text"><%= f.text_area :comment, class: "text-form", placeholder: "入力フォーム" %></div>
+                      <div class="comment-form-text"><%= f.text_area :comment, class: "text-form", placeholder: "入力フォーム", style: "height: 30px" %></div>
                       <div><%= f.submit "送信", class: "comment-submit" %></div>
                       <% end %>
-                    <% end %>
-                   </div>
-                </div>
+                  <% end %>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-   </div>
+  </div>
+ </div>
     <div class="show-status-management">
       <div class="show-status-wrapper">
         <div class="show-status-change">

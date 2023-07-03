@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: #f6f6f6;
+}
+
 .section-post {
   margin-top: 75px;
 }
@@ -26,7 +30,7 @@
   text-align: center;
   opacity: 0.8;
   position: absolute;
-  top: 75px;
+  top: 70px;
  }
 
 #notice-message {

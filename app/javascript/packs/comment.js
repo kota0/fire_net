@@ -1,9 +1,11 @@
 $(document).on('turbolinks:load', function() {
-  $('.comment-form-text').on('input', function() {
+  $('.text-form').on('input', function() {
     var text_length = $(this).val().length;
     if (text_length % 14 === 0) {
-      this.style.height = "";
+      var $container = $(this).parent();
+      this.style.height = '30px';
       this.style.height = this.scrollHeight + "px";
+      $container.height($(this)[0].scrollHeight);
     }
   });
 });

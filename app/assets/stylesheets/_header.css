@@ -1,4 +1,4 @@
-header {
+.header {
   position: fixed;
   top:0px;
   width: 100%;
@@ -8,22 +8,33 @@ header {
 }
 
 .header-wrapper {
-  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
-.title {
-  letter-spacing: 0.05rem;
+.header-title-wrapper {
   margin: auto;
-}
-
-.title a {
+  text-align: center;
+  height: 75px;
   font-size: 50px;
   font-weight: 500;
+  letter-spacing: 0.05rem;
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-} 
+}
+.header-title:hover {
+  opacity: 0.7;
+}
 
-.title a span {
+.header-title {
+  color: #151515;
+}
+
+.header-title-red {
   color: #F44336;
+}
+
+.header-link {
+  text-decoration: none;
 }
 
 /* ハンバーガーメニュー */
@@ -72,7 +83,7 @@ nav .inner {
 
 nav .inner ul {
   list-style: none;
-  margin-top: 50px;
+  margin-top: 35px;
   padding: 0;
 }
 
@@ -111,13 +122,18 @@ nav .inner ul li a:hover {
   cursor: pointer;
 }
 
+.toggle-btn:hover {
+  opacity: 0.5;
+}
+
+
 .toggle-btn span {
   position: absolute;
   display: block;
   left: 0;
   width: 35px;
   height: 2px;
-  background-color: #333;
+  background-color: #000000;
   transition: all 0.5s;
   border-radius: 4px;
 }
@@ -196,27 +212,81 @@ nav .inner ul li a:hover {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 } 
 
-.top_title {
+.top-title-wrapper {
   text-align: center;
   margin-top: 20px;
 }
 
-.top_title a {
+.top-title {
   font-size: 45px;
   font-weight: 500;
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 
-.top_title a span { 
+.top-title-red { 
   color: #F44336;
 }
 
-.out-btn{
-  margin-top: 40px;
+.header-button {
+  text-align: center;
+}
+.header-btn {
+  display: block;
+  position: fixed;
+  right: 20px;
+  top: 12px;
+  font-size: 16px;
+  text-align: center;
+  padding: 14px 6px;
+  background: #1e90ff;
+  color: #ffffff;
+  border:none;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 12px;
+  text-decoration: none;
+}
+.header-btn:hover {
+  box-shadow    : none;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  opacity: 0.6; 
 }
 
 .log_out_btn {
+  margin: auto;
   text-decoration: none ;
-  font-size: 20px;
-  color: #dc3545;
+  font-size     : 22px;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 6px 28px;
+  background    : #ff3b3b;
+  transition    : .3s;
+  border:none;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 12px;
+  color: #ffffff;
+}
+
+.out-btn .log_out_btn:hover  {
+  box-shadow    : none;
+  text-decoration: none ;
+  color: rgb(255, 255, 255);
+  opacity: 0.6; 
+}
+
+@media screen and (max-width: 599px) {
+  .header-title-wrapper {
+    height: 57px;
+    font-size: 38px;
+}
+  .toggle-btn {
+    left: 15px;
+    top: 14px;
+}
+  .header-btn {
+    right: 10px;
+    top: 10px;
+    font-size : 14px;
+    padding : 8px 4px;
+  }
 }

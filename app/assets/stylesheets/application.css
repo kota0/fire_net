@@ -13,4 +13,76 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: #f6f6f6;
+}
 
+.section-post {
+  margin-top: 75px;
+}
+
+ #notice-modal {
+  background-color:  #3e9fff;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.22);
+  height: 55px;
+  padding-top: 12.25px;
+  width: 100%;
+  text-align: center;
+  opacity: 0.8;
+  position: absolute;
+  top: 70px;
+ }
+
+#notice-message {
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+}
+.none-devise {
+  display: none;
+}
+
+@media screen and (max-width: 310px) {
+  .section-post {
+    display: none;
+  }
+  .header {
+    display: none;
+  }
+  .login {
+    display: none;
+  }
+  .sing-up {
+    display: none;
+  }
+
+  .none-devise {
+    display: block !important;
+    color: red;
+    font-size: clamp(4px, 5vw, 16px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+  .none-devise-br {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+   #notice-modal {
+  height: 45px;
+  padding-top: 12px;
+  }
+
+  #notice-message {
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  }
+}
+  @media screen and (max-width: 599px) {
+  .section-post {
+  margin-top: 57px;
+  }
+  }

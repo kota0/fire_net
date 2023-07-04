@@ -1,13 +1,11 @@
   /* 全体 */
-  .show {
+.show {
   background-color: #f6f6f6;
 }
 
 .show-wrapper {
   border-radius: 12px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.22);
-  height: auto;
-  border-radius: none;
   background-color: white;
   margin: auto;
 }
@@ -32,6 +30,7 @@
   background: white;
   border-top: solid 5px #5d627b;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 12px;
 }
 
@@ -42,6 +41,13 @@
 .left-square {
   text-align: left;
   color: rgb(109, 109, 109);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 6px;
+}
+
+.left-square:hover {
+  box-shadow    : none;
+  opacity: 0.7; 
 }
 .right-square {
   text-align: right;
@@ -61,6 +67,7 @@
   color: #01550d;
   background: #9afda7;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 8px;
 }
 
@@ -69,6 +76,7 @@
   color: #da1900;
   background: #ef9292;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 8px;
 }
 
@@ -77,6 +85,7 @@
   color: #0047b1;
   background: #c6e4ff;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 8px;
 }
 
@@ -164,6 +173,7 @@
 .show-detail-title {
   border: solid #000;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.22);
   width: 70%;
   padding: 3px;
   border-radius: 6px;
@@ -172,9 +182,10 @@
 
 .show-detail-item {
   display: flex;
-  list-style:none;
+  list-style: none;
   font-size: 18px;
-   column-gap: 50px;
+  column-gap: 50px;
+  text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.22);
 }
 
 .show-detail-comment{
@@ -195,8 +206,8 @@
   letter-spacing: 0.2em;
   margin: auto;
 }
-.add-height {
-  height: 100%;
+.add-height-w {
+  height: auto !important;
 }
   /* コメントの実装 */
   .comment {
@@ -214,6 +225,7 @@
   .comment-title {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
     background-color: rgb(255, 255, 255);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
     width: 70%;
     padding: 3px;
     border-radius: 6px;
@@ -335,6 +347,7 @@
 .comment-submit {
   width: 50px;
   height: 30px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
 }
 .comment-form-text {
   height: 30px;
@@ -358,7 +371,68 @@
 .comment-form-text::-ms-input-placeholder { /* Microsoft Edge */
   color: gray;
 }
+.comment-submit {
+  margin: auto;
+}
 
+/* 対応状況変更フォーム */
+.show-status-management {
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.22);
+  border-radius: none;
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+}
+.show-status-wrapper {
+  margin: auto;
+  text-align: center;
+  max-width: 700px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
+}
+
+.status-change-title {
+  font-weight: 600;
+  opacity: 0.9;
+  color: rgb(255, 54, 54);
+}
+.change-form {
+  max-width: 600px;
+  margin: auto;
+}
+
+.change-submit {
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
+}
+.show-status-delete {
+  display: flex;
+  margin: auto;
+}
+.change-delete-btn {
+  margin: auto;
+}
+
+.delete-link {
+  font-size     : 22px;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 2px 36px;
+  background    : #ff4444;
+  transition    : .3s;
+  border:none;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 12px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.change-delete-btn:hover .delete-link {
+  box-shadow    : none;
+  color: rgb(255, 255, 255);
+  opacity: 0.7; 
+}
 
 @media screen and (max-width: 599px) {
   .show {
@@ -474,9 +548,6 @@
     margin: auto;
   }
 
-  .add-height {
-    height: 100%;
-  }
     /* コメントの実装 */
   .comment-index-inner {
   height: 380px;
@@ -484,6 +555,46 @@
   .comment-wrapper {
     padding: 10px 10px 5px 10px;
   }
+  /* 対応状況変更フォーム */
+  .status-change-title {
+  font-size: 18px;
+}
+.change-sp {
+  display: block;
+}
+.change-sp-none {
+  display: none;
+}
+ .show-status-management {
+  margin-top: 30px;
+}
+.change-form-text {
+  font-size: 18px;
+}
+
+.change-submit {
+  width: 40px;
+  font-size: 12px;
+  margin-top: 3px;
+}
+.change-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.show-status-delete {
+  flex-direction: column;
+  max-width: 480px;
+  text-align: center;
+  margin-top: 40px;
+}
+.delete-link {
+  font-size     : 18px;
+  padding       : 1px 36px;
+  margin-top: 5px;
+}
+
+
 }
 @media screen and (min-width:600px) and ( max-width:1023px) {
     .show {
@@ -592,9 +703,6 @@
     margin: auto;
   }
 
-  .add-height {
-    height: 100%;
-  }
   /* コメントの実装 */
   .comment-index {
     width: 75%;
@@ -612,13 +720,36 @@
 .comment-wrapper {
     padding: 15px 15px 10px 15px;
   }
-
+  /* 対応状況変更フォーム */
+  .status-change-title {
+  font-size: 24px;
+}
+  .show-status-management {
+  margin-top: 30px;
+}
+.change-form-text {
+  font-size: 18px;
+}
+.change-submit {
+  width: 40px;
+  text-align: center;
+  font-size: 12px;
+}
+.show-status-delete {
+  max-width: 480px;
+  text-align: center;
+  margin-top: 30px;
+}
+.delete-link {
+  font-size     : 18px;
+  padding       : 1px 36px;
+}
 
 }
 @media screen and (min-width: 1024px) {
   /* 全体 */
   .show {
-    padding: 20px 50px ;
+    padding: 30px 50px ;
   }
 
   .show-wrapper {
@@ -701,6 +832,7 @@
   
   .show-detail-wrapper {
     height: 300px;
+    /* height: auto; */
   }
 
   .detail-btn {
@@ -712,9 +844,6 @@
     padding-left: 18px;
   }
 
-  .add-height {
-    height: 100%;
-  }
   /* コメントの実装 */
   .comment-index-inner {
   height: 522px;
@@ -722,27 +851,26 @@
 .comment-wrapper {
     padding: 15px 15px 0px 15px;
   }
+  
+  /* 対応状況変更フォーム */
+  .show-status-management {
+  margin-top: 50px;
 }
-
-
-
-
-/* これは参考の投稿削除時の参考コードです */
-/* .alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  .status-change-title {
+  font-size: 28px;
 }
-
-.alert-notice {
-  color: #3c763d;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
+.change-form {
+  display: flex;
+  column-gap: 20px;
 }
-
-.alert-alert {
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
-} */
+.change-submit {
+  width: 70px;
+}
+.change-form-text {
+  font-size: 22px;
+}
+.show-status-delete {
+  max-width: 600px;
+  margin-top: 30px;
+}
+}

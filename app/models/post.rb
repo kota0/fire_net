@@ -63,9 +63,9 @@ class Post < ApplicationRecord
 
     def video_type
       if video.attached?
-        if !video.blob.content_type.in?(%('video/mp4'))
-          video.attachments.clear
-          errors.add(:video, 'はmp4形式でアップロードしてください')
+        if !video.blob.content_type.in?(%('video/mp4'/quicktime'))
+          video.purge
+          errors.add(:video, 'はmp4またはmov形式でアップロードしてください')
         end
       end
     end

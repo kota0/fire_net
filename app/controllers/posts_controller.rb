@@ -35,6 +35,7 @@ class PostsController < ApplicationController
       state = State.find_by(id: state_id)
     if @post.save
       redirect_to root_path
+      flash[:notice] = '新たに1件の投稿が追加されました'
     else
       render :new
     end
@@ -69,10 +70,10 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     if @post.destroy
-      flash[:notice] = '投稿は正常に削除されました。'
+      flash[:notice] = '投稿は正常に削除されました'
       redirect_to posts_path
     else
-      flash[:alert] = '投稿の削除中にエラーが発生しました。'
+      flash[:alert] = '投稿の削除中にエラーが発生しました'
       render :show
     end
   end

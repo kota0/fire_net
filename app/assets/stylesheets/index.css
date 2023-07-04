@@ -1,6 +1,6 @@
 /* 全体 */
-.section-post {
-  margin-top: 75px;
+.notice {
+  margin: auto;
 }
 
 .post {
@@ -10,6 +10,7 @@
 .post-wrapper {
   border-radius: 12px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   height: auto;
   border-radius: none;
   background-color: white;
@@ -34,13 +35,17 @@
   background: white;
   border-top: solid 5px #5d627b;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 12px;
+}
+
+.area-title:hover {
+  opacity: 0.8; 
 }
 
 .post-path {
   text-decoration: none;
 }
-
 
 /* ステータス */
 .post-status {
@@ -55,7 +60,11 @@
   color: #01550d;
   background: #9afda7;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 8px;
+}
+.post-status-pending:hover {
+  opacity: 0.8; 
 }
 
 .post-status-in-progress {
@@ -63,7 +72,11 @@
   color: #da1900;
   background: #ef9292;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 8px;
+}
+.post-status-in-progress:hover {
+  opacity: 0.8; 
 }
 
 .post-status-completed {
@@ -71,7 +84,11 @@
   color: #0047b1;
   background: #c6e4ff;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 8px;
+}
+.post-status-completed:hover {
+  opacity: 0.8; 
 }
 
 .add-height {
@@ -148,6 +165,10 @@
   border-radius: 6px;
   background-color: rgb(222, 222, 222);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.22);
+}
+.post-detail-wrapper:hover {
+  opacity: 0.8;
 }
 
 .post-detail-list {
@@ -176,10 +197,6 @@
   margin-top: 10px;
 }
 
-.post-detail-label {
-  width: 110px;
-}
-
 .post-detail-info {
   width:fit-content;
   font-size: 20px;
@@ -189,16 +206,39 @@
 .add-height {
   height: 100%;
 }
+.post-path {
+  color: black;
+  text-decoration: none;
+}
+.post-path:hover {
+  color: black;
+  opacity: 0.8;
+}
+
+/* 新規投稿のボタン */
+.post-button {
+  margin: auto;
+  padding-top: 10px;
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+}
+/* ページネーション */
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
 
 
 /* スマホ */
 @media screen and (max-width: 599px) {
   /* 全体 */
   .post {
-    padding: 20px 30px 10px 30px;
+    padding: 25px ;
   }
   .post-wrapper {
-    padding: 30px;
+    padding: 25px;
   }
   .post-body-wrapper {
     margin-top: 15px;
@@ -222,89 +262,101 @@
   .post-status {
     font-size: 14px;
   }
-    /* ステータス */
-    .post-status-pending {
-      margin-top: 15px;
-    }
-    
-    .post-status-in-progress {
-      margin-top: 15px;
-    }
-    
-    .post-status-completed {
-      margin-top: 15px;
-    }
+  /* ステータス */
+  .post-status-pending {
+    margin-top: 15px;
+  }
+  
+  .post-status-in-progress {
+    margin-top: 15px;
+  }
+  
+  .post-status-completed {
+    margin-top: 15px;
+  }
 
-    /* メディア */
-    .post-media {
-      max-width: 450px;
-      margin: auto;
-    }
-  
-    .post-image {
-      width: 100%;
-      max-height: 255px;
-    }
-  
-    .post-images-slick {
-      width: 100%;
-      max-height: 255px;
-    }
-  
-    .post-video {
-      width: 100%;
-      max-height: 255px;
-    }
-  
-    /* 詳細 */
-    .post-detail {
-      margin-top: 15px;
-    }
-    
-    .post-detail-wrapper {
-      margin: auto;
-      padding: 12px;
-      max-width: 450px;
-      height: 265px;
-      overflow: scroll
-    }
+  /* メディア */
+  .post-media {
+    max-width: 450px;
+    margin: auto;
+  }
 
-    .post-detail-info {
-      font-size: 16px;
-    }
+  .post-image {
+    width: 100%;
+    max-height: 255px;
+  }
+
+  .post-images-slick {
+    width: 100%;
+    max-height: 255px;
+  }
+
+  .post-video {
+    width: 100%;
+    max-height: 255px;
+  }
+
+  /* 詳細 */
+  .post-detail {
+    margin-top: 15px;
+  }
   
-    .post-detail-list {
-     max-width: 300px;
-     padding-left: 15px;
-    }
+  .post-detail-wrapper {
+    margin: auto;
+    padding: 12px;
+    max-width: 450px;
+    height: 265px;
+    overflow: scroll
+  }
+
+  .post-detail-info {
+    font-size: 16px;
+  }
+
+  .post-detail-list {
+    max-width: 240px;
+    margin: auto;
+    margin-top: 15px;
+    padding-left: 0px;
+  }
+
+  .post-detail-item {
+    font-size: 14px;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+    column-gap: 5px;
+  }
+
+  .post-detail-label {
+    width: 90px;
+  }
+
+  .area-break-word {
+  display: block;
+  }
   
-    .post-detail-item {
-      font-size: 14px;
-      column-gap: 15px;
-    }
-    .area-break-word {
-    display: block;
-    }
+  .post-detail-comment{
+    width: 95%;
+    margin: auto;
+    margin-top: 5px;
+    padding-left: 14px;
+    font-size: 12.5px;
+    line-height: 1.2;
+  }
 
+  .detail-btn {
+    font-size: 8.5px;
+    opacity: 0.8;
+  }
 
-
-    .post-detail-comment{
-      width: 95%;
-      margin: auto;
-      margin-top: 5px;
-      padding-left: 14px;
-      font-size: 12.5px;
-      line-height: 1.2;
-    }
-
-    .detail-btn {
-      font-size: 8.5px;
-      opacity: 0.8;
-    }
-  
-    .add-height {
-      height: 100%;
-    }
+  .add-height {
+    height: 100%;
+  }
+  .post-button {
+    width: 50px;
+    height: 50px;
+}
 }
 
 /* タブレット */
@@ -351,8 +403,11 @@
   .post-status-completed {
     margin-top: 15px;
   }
-
-
+  
+  .detail-btn {
+      font-size: 8.5px;
+      opacity: 0.8;
+  }
 
   /* メディア */
   .post-media {
@@ -393,12 +448,21 @@
   }
 
   .post-detail-list {
-   max-width: 400px;
-   padding-left: 20px;
+    max-width: 360px;
+    margin: auto;
+    margin-top: 15px;
+    padding-left: 0px;
   }
 
   .post-detail-item {
-    column-gap: 50px;
+    font-size: 18px;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+  }
+
+  .post-detail-label {
+  width: 110px;
   }
 
   .post-detail-comment{
@@ -434,7 +498,6 @@
     margin-top: 35px;
   }
 
-
   /* 題名 */
   .post-area {
     max-width: 80%;
@@ -456,8 +519,6 @@
   .post-status-completed {
     margin-top: 30px;
   }
-
-
 
   /* メディア */
   .post-media {
@@ -483,10 +544,6 @@
     height: 310px;
   }
 
-
-
-
-
   /* 詳細 */
   .post-detail {
     width: 434px;
@@ -497,13 +554,16 @@
     overflow: scroll
   }
 
-
   .post-detail-list {
    max-width: 280px;
   }
   .post-detail-item {
    font-size: 18px;
    column-gap: 30px;
+  }
+
+  .post-detail-label {
+  width: 110px;
   }
 
   .detail-btn {

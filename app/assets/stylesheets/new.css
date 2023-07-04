@@ -1,178 +1,466 @@
-.new-box {
-  padding-top: 140px;  
+/* 全体 */
+.new {
+  background-color: #f6f6f6;
 }
 
-h1 {
-  text-align: center;
-  font-size: 40px;
-  font-weight: 100;
-  letter-spacing: 20px;
-  margin-bottom: 30px;
+.new-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.22);
+  height: auto;
+  border-radius: none;
+  background-color: white;
+  margin: auto;
 }
-
-.image .video {
-  display: inline-block;
-  vertical-align:middle;
-}
-
-.img-upload {
+/* トップタイトル */
+.new-title-wrapper {
   display: flex;
-  justify-content: center;
+  column-gap: 5px;
+  align-items: center;
+}
+
+.new-title {
   text-align: center;
-  padding-top: 0 0 50 0px;
+  max-width: 100%;
+  margin: auto;
+  max-width: 100%;
+  padding: 0.2em 2em;
+  color: black;
+  color: #5d627b;
+  background: rgb(250, 250, 250);
+  border-top: solid 5px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
+  border-radius: 12px;
 }
 
-.img-upload .image:hover{
-  box-shadow    : none;        /* カーソル時の影消去 */    
-  opacity: 0.7; 
+/* 画像と動画 */
+.new-media-upload {
+  margin: auto;
+  max-width: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
-  .img-upload .image .file {
-  font-size: 20px;
-  padding: 10px;
- }
+.new-image-text {
+  text-align: center;
+  opacity: 0.8;
+  text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.22);
+}
+
+.new-video-text {
+  text-align: center;
+  opacity: 0.8;
+  text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.22);
+}
+
+.bi:hover{
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+.hidden {
+  display: none;
+}
 
  #preview-images{
   text-align: center;
  }
 
-
   #preview-images img {
-    height:200px;
-    width: 400x;
-    padding: 20px;
+   margin: auto;
   }
 
-  #preview-videos video {
-    text-align: center;
-    height:200px;
-    width: 400x;
-    padding: 20px;
-  }
-
- .img-upload .video .file {
-  font-size: 20px;
-  padding: 10px;
- }
-
-.img-upload .video:hover{
-  box-shadow    : none;        /* カーソル時の影消去 */    
-  opacity: 0.7; 
-}
-
-.img-upload .hidden {
-  text-indent:100%;
-}
-
-h2 {
-  text-align: center;
-  font-size: 30px;
-  /* padding-top: 60px; */
-}
-
- table {
- display: flex;
- justify-content: center;
- margin-top: -80px;
- }
-
-
- table tr th {
-  font-size: 35px;
-  padding: 10px;
-  letter-spacing: 1px;
- 
-
-}
-
- table tr td {
-  text-align: left;
-  padding-left: 100px;
-}
-
- .select-box {
-  height: 30px;
-  width: 200px;
-  background-color: #f5f5f5;
-  padding-left: 20px;
-}
-
-.tokyo-area-box  {
-  height: 30px;
-  width: 200px;
-  background-color: #f5f5f5;
-  padding-left: 20px;
-  
-} 
-
-.tokyo-area-box option   {
-display: none;
-}
-
-.tokyo-state-box  {
-  height: 30px;
-  width: 200px;
-  background-color: #f5f5f5;
-  padding-left: 20px;
-} 
-
- 
-.submit-btn {
-  text-align: center;
-}
-
-
-.blue-btn {
-  text-align: center;
-  padding: 100px;
-  border:none ;
-}
-
-.blue-btn .post-btn {
-  border-radius : 50%;
-  font-size     : 22pt;
-  text-align    : center;
-  cursor        : pointer;
-  padding       : 30px 84px;
-  background    : #1e90ff;
-  color         : #ffffff;
-  line-height   : 1em;
-  transition    : .3s;
-  border:none;
-}
-.blue-btn .post-btn:hover {
-  box-shadow    : none;
-  opacity: 0.7; 
-}
-
-.mark_box {
-  width: 200px;
-}
-
-.contents-box {
-  text-align: center;
-}
-
-.contents-box .content_box {
-  height: 200px;
-  width: 630px;
-  border: 2px solid;
-  border-color:#808080 ;
-  border-radius: 30px 30px 30px 30px;
-}
-
-#msg {
+  #msg {
  text-align: center;
  padding: 10px;
  color: rgb(213, 96, 53);
  font-size: 20px;
 }
 
+/* 投稿の詳細状況 */
+.new-detail {
+  margin: auto;
+ }
+
+ .new-detail-title {
+  margin: auto;
+  text-align: center;
+  background: rgb(250, 250, 250);
+  color: #54586f;
+  font-size: 32px;
+  box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
+  border-radius: 12px;
+}
+
+.new-new-detail-wrapper {
+  width: 100%;
+  margin: auto;
+  margin-top: 30px;
+}
+/* 【左】プルダウンのテキスト */
+ .new-detail-text {
+  font-size: 32px;
+  color: #54586f;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
+}
+
+ .new-detail-pull {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 【右】プルダウンボックス */
+ .select-box {
+  height: 30px;
+  background-color: #f5f5f5;
+}
+
+.tokyo-area-box option   {
+  display: none;
+}
+
+.new-mark_box {
+  width: 200px;
+}
+
+/* 具体的な内容 */
+.new-detail-comment {
+  margin: auto;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.new-detail-box {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.new-comment {
+  margin: auto;
+  height: 150px;
+  width: 98%;
+  border: 3px solid;
+  border-color:#808080 ;
+  border-radius: 14px;
+  padding: 6px;
+}
+
+/* 投稿ボタン */
+.blue-btn {
+  text-align: center;
+}
+.blue-btn .post-btn {
+  margin: auto;
+  border-radius : 20px;
+  font-size     : 22pt;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 30px 80px;
+  background    : #1e90ff;
+  color         : #ffffff;
+  line-height   : 1em;
+  transition    : .3s;
+  border:none;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 12px;
+}
+.blue-btn .post-btn:hover {
+  box-shadow    : none;
+  opacity: 0.7; 
+}
+
 .alert {
   text-align: center;
+  margin: 0;
   color: red;
 }
 
-.alert ul {
+.alert-new ul {
+  text-align: center;
   list-style-type: none;
+  padding-left: 0;
+}
+  .alert-new li {
+  text-align: center;
+  color: red;
+  margin-top: 10px;
+}
+
+/* スマホ */
+@media screen and (max-width: 599px) {
+  /* 全体 */
+  .new {
+  padding: 20px;
+  }
+
+  .new-wrapper {
+  padding: 15px;
+  }
+
+  /* トップタイトル */
+  .new-title {
+  max-width: 95%;
+  padding: 0.3em 0.5em;
+  font-size: 20px;
+  }
+
+  .new-break-word {
+    display: block;
+  }
+
+  /* 画像と動画 */
+  .new-media-upload {
+  max-width: 420px;
+  column-gap: 30px;
+  padding: 5px;
+}
+ .bi {
+  max-width: 115px;
+  max-width: 115px;
+ }
+  #preview-images img {
+  max-height: auto;
+  max-width: 100%;
+  margin-top: 30px;
+}
+
+  /* 投稿の詳細状況 */
+  .new-detail {
+  margin: auto;
+ }
+  .new-detail-title {
+  font-size: 20px;
+  width:75%;
+  padding: 0.3em 0.5em;
+}
+ .new-detail-wrapper {
+  margin: auto;
+ }
+  .new-detail-inner {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 【左】プルダウンのテキスト */
+.new-pull-must {
+  display: none;
+}
+ .new-detail-text {
+  font-size: 22px;
+}
+/* 【右】プルダウンボックス */
+ .select-box {
+  text-align: center;
+  width: 200px;
+}
+.new-mark_box {
+  max-width: 200px;
+}
+
+.new-text-must {
+  font-size: 10px;
+  color: red;
+  opacity: 0.9;
+}
+/* 具体的な内容 */
+.new-detail-comment {
+  align-items: center;
+}
+
+.new-detail-box {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.new-comment {
+  margin: auto;
+  width: 80%;
+  height: 100px;
+  font-size: 14px;
+}
+/* 投稿ボタン */
+.blue-btn .post-btn {
+  font-size : 14pt;
+  padding : 15px 40px;
+}
+.blue-btn {
+  margin-top: 30px;
+}
+
+.alert-new li {
+  font-size: clamp(12px, 4vw, 18px);
+}
+
+}
+/* タブレット */
+@media screen and (min-width:600px) and ( max-width:895px) {
+  /* 全体 */
+  .new {
+  padding: 30px;
+  }
+  .new-wrapper {
+  padding: 30px;
+  }
+  /* トップタイトル */
+  .new-break-word {
+    display: block;
+  }
+  /* 画像と動画 */
+  .new-media-upload {
+  margin-top: 50px;
+  column-gap: 80px;
+  }
+  #preview-images img {
+  max-height:225px;
+  max-width: 400x;
+  padding: 15px;
+  }
+
+
+  /* 投稿の詳細状況 */
+  .new-detail {
+  padding: 0px 30px 30px 30px;
+  margin: auto;
+ }
+  .new-detail-title {
+  font-size: 32px;
+  padding: 0.2em 1em;
+  }
+ .new-detail-wrapper {
+  margin: auto;
+ }
+  .new-detail-inner {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 【左】プルダウンのテキスト */
+.new-pull-must {
+  display: none;
+}
+ .new-detail-text {
+  font-size: 30px;
+}
+/* 【右】プルダウンボックス */
+ .select-box {
+  text-align: center;
+  width: 250px;
+}
+.new-mark_box {
+  width: 250px;
+}
+
+.new-text-must {
+  font-size: 10px;
+  color: red;
+  opacity: 0.9;
+}
+/* 具体的な内容 */
+.new-detail-comment {
+  align-items: center;
+}
+
+.new-detail-box {
+  margin: auto;
+  text-align: center;
+  width: 80%;
+}
+
+.new-comment {
+  margin: auto;
+  height: 120px;
+  font-size: 18px;
+}
+/* 投稿ボタン */
+.blue-btn {
+  margin-top: 60px;
+}
+
+/* エラーメッセージ */
+.error-message {
+  display: block;
+}
+
+.alert-new li {
+  font-size: 18px
+}
+
+}
+/* パソコン */
+@media screen and (min-width: 896px) {
+  /* 全体 */
+  .new {
+  padding: 50px;
+}
+  .new-wrapper {
+  padding: 50px;
+}
+  /* トップタイトル */
+  /* 画像と動画 */
+  .new-media-upload {
+  margin-top: 50px;
+  column-gap: 80px;
+  }
+  #preview-images img {
+  max-height:225px;
+  max-width: 400x;
+  padding: 15px;
+  }
+  /* 投稿の詳細状況 */
+  .new-detail {
+  padding: 0px 30px 30px 30px;
+  max-width: 700px;
+ }
+  .new-detail-title {
+  font-size: 32px;
+  padding: 0.2em 1em;
+  }
+.new-detail-inner {
+  margin: auto;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  column-gap: 120px;
+  justify-content: space-between;
+}
+
+/* 【左】プルダウンのテキスト */
+.new-text-must {
+  display: none;
+}
+/* 【右】プルダウンボックス */
+ .new-detail-pull {
+  display: flex;
+  flex-direction: column;
+}
+.new-pull-must {
+  text-align: left;
+  font-size: 12px;
+  color: red;
+}
+ .select-box {
+  width: 200px;
+  padding-left: 20px;
+}
+  /* 具体的な内容 */
+.new-comment {
+  font-size: 22px;
+}
+/* 投稿ボタン */
+.blue-btn {
+  margin-top: 60px;
+}
+
+.alert-new li {
+  font-size: 18px
+}
 }

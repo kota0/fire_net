@@ -1,17 +1,15 @@
 <%= render 'layouts/header' %>
 
 <section class="section-post">
-
 <% @posts.each do |post| %>
   <div class="post">
-  <div class="post-wrapper">
+    <div class="post-wrapper">
   <%# 題名 %>
-    <%= link_to(post_path(post.id), method: :get, class: "post-path") do %>
+      <%= link_to(post_path(post.id), method: :get, class: "post-path") do %>
       <div class="post-area">
         <p class="area-title">第<%= post.state.direction_id %>方面 <span class="area-break-word"> &ensp; <%= post.state.name %> <%= post.area.name %> </span> <span class="area-constant">&ensp;被害状況</span></p>
       </div>
      
-  
   <%#ステータス %>
         <div class="post-status">
           <% if post.status == 3 %>
@@ -56,6 +54,7 @@
       </div>
 
        <%# 詳細内容の表示 %>
+    <%= link_to(post_path(post.id), method: :get, class: "post-path") do %>
     <div class="post-detail">
       <div class="post-detail-wrapper">
         <div class="post-detail-title">
@@ -64,7 +63,7 @@
         <ul class="post-detail-list">
           <li class="post-detail-item">
             <span class="post-detail-label">・所在</span>
-            <span class="post-detail-value"><%= post.state.name %> <%= post.area.name %></span>
+            <span class="post-detail-value"><%= post.state.name %>  <span class="area-break-word"> <%= post.area.name %> </span></span>
           </li>
           <li class="post-detail-item">
             <span class="post-detail-label">・番地/目印</span>
@@ -84,12 +83,12 @@
           </li>
           <li class="post-detail-item">
             <span class="post-detail-text">・詳細内容&ensp;<span class="detail-btn">∨ すべて表示する</span></span>
-            
           </li>
             <div class="post-detail-comment"><%= post.content %></div>
         </ul>
       </div>
     </div>
+    <% end %>
     </div>
     </div>
    </div>
@@ -101,12 +100,14 @@
 <%# 新規投稿のボタン %>
   <div class="post-button">
     <%= link_to(new_post_path, class: 'post-btn', data: { "turbolinks" => false }) do %>
-      <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#1e90ff" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#1e90ff" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
       </svg>
     <% end %>
   </div>
 </div>
+<div class="pagination-wrapper">
+  <%= paginate @posts %>
+</div>
 
-<%= paginate @posts %>
 </section>

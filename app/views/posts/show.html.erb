@@ -2,8 +2,8 @@
 
 <section class="section-post">
 
-  <% post = @post %>
-  <div class="show">
+<% post = @post %>
+<div class="show">
   <div class="show-wrapper">
     <%# 題名 %>
     <div class="show-top">
@@ -123,36 +123,42 @@
                   <% if user_signed_in? %>
                     <%= form_with model: [@post, @comment] do |f| %>
                     <div class="comment-form-inner">
-                      <div class="comment-form-text"><%= f.text_area :comment, class: "text-form", placeholder: "入力フォーム" %></div>
+                      <div class="comment-form-text"><%= f.text_area :comment, class: "text-form", placeholder: "入力フォーム", style: "height: 30px" %></div>
                       <div><%= f.submit "送信", class: "comment-submit" %></div>
                       <% end %>
-                    <% end %>
-                   </div>
-                </div>
+                  <% end %>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-   </div>
-         <div class="status-id">
-        <% if current_user.user_type == 1 %>
-          <p>《対応状況変更フォーム》</p>
-          <%= form_with model: @post do |f| %>
-            <%= f.select :status, [["未対応", 3 ],["対応中", 1], ["対応済み", 2]], class: "status-text", include_blank: "対応状況を選択してください" %><br>
-            <%= f.submit "変更", class: "comment-submit" %>
-          <% end %> 
+  </div>
+ </div>
+    <div class="show-status-management">
+      <div class="show-status-wrapper">
+        <div class="show-status-change">
+          <% if current_user.user_type == 1 %>
+            <p class="status-change-title">管理者専用<span class="change-sp-none" >：</span><span class="change-sp">ステータス変更&nbsp;&&nbsp;投稿削除</span></p>
+              <%= form_with model: @post do |f| %>
+              <div class="change-form">
+                <span class="change-form-text">対応状況変更フォーム<span class="change-sp-none" >：</span></span>
+                <%= f.select :status, [["未対応", 3 ],["対応中", 1], ["対応済み", 2]], class: "status-change-text", include_blank: "対応状況を選択してください" %>
+                <%= f.submit "変更", class: "change-submit" %>
+              </div>
+            <% end %> 
           <%end%>
-
-          <%= link_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: '投稿を削除しますか?' } %>
-
+        </div>
+        <div class="show-status-delete">
+          <span class="change-form-text">この投稿を削除する&emsp;<span class="change-sp-none" >：</span></span>
+          <span class="change-delete-btn"><%= link_to '投稿を削除', post_path(@post), method: :delete, data: { confirm: '投稿を削除しますか?' }, class: 'delete-link' %></span>
           <% flash.each do |message_type, message| %>
             <div class="alert alert-<%= message_type %>">
               <%= message %>
             </div>
           <% end %>
-
-
+        </div>
       </div>
    </div>
+</div>
 </section>

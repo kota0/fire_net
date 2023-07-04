@@ -40,7 +40,15 @@ body {
 .none-devise {
   display: none;
 }
-
+/* p {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
+}
+a {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
+}
+span {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
+} */
 @media screen and (max-width: 310px) {
   .section-post {
     display: none;
@@ -48,17 +56,22 @@ body {
   .header {
     display: none;
   }
+  .login {
+    display: none;
+  }
+  .sing-up {
+    display: none;
+  }
 
   .none-devise {
     display: block !important;
-    position: relative;
-    padding: 10px;
-    top: 300px;
-    height: 100%;
-    margin: auto;
-    text-align: center;
     color: red;
-    font-size: 16px;
+    font-size: clamp(4px, 5vw, 16px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
   }
   .none-devise-br {
     display: block;

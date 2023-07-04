@@ -1,31 +1,43 @@
-.login-content {
-  background-color: #eeeeee;
-  margin: auto;
-  overflow: scroll
+.login {
+  background-color: #f6f6f6;
 }
+
 .login-title {
   margin: auto;
 }
 
+.login-right {
+ background-color: #f6f6f6;
+}
+
 .login-right-wrapper {
   max-height: 100vh;
-  padding: 30px;
+  color: black;
+  color: #5d627b;
+  background: white;
+  border-top: solid 5px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 12px;
+  width: 90%;
   margin: auto;
-  overflow: scroll;
+  text-align: center;
+  padding: 15px;
 }
 
-.login-right-inner h2 {
-  font-size: 6rem;
+.login-title {
+  color: black;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 }
 
-.login-right-inner p {
-  margin-top: 30px;
-  font-size: 30px;
+.login-subtitle {
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  margin-top: 20px;
+  font-size: 28px;
   font-weight: 600;
   text-align: center;
 }
 
-.login-right-inner span{
+.login-title-red {
   color: red;
 }
 
@@ -51,14 +63,30 @@
   line-height   : 1em;
   opacity       : 1.2;
   transition    : .3s;
+  margin: auto;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 }
 
 .btn_btn:hover {
   opacity       : 0.5;
 }
 
-.actions input[name="commit"] {
+.login-button input[name="commit"] {
   border: none;
+}
+
+.login-button {
+  text-align: center;
+  height: auto;
+  width: auto;
+}
+
+.login-alert {
+  color: red;
+  text-align: center;
+  margin-top: 30px;
+  font-size: clamp(13.5px, 3vw, 18px);
 }
 
 @media screen and (max-width: 1023px) {
@@ -72,52 +100,86 @@
   }
 
   /* 右側のレイアウト */
-  .login-right-inner h2 {
-    margin-top: 30px;
-    font-size: 4rem;
+  .login-right {
+  padding: 40px 20px ;
+  }
+
+  .login-right-wrapper {
+    width: 80%;
+    max-width: 520px;
+  }
+
+
+  .login-title {
+    margin-top: 15px;
+    font-size: clamp(14px, 15vw, 96px);
+  }
+  
+  .login-field-wrapper {
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
   }
 
   .login-field {
     margin: auto;
-    width: 240px;
+    width: 75%;
+    max-width: 440px;
   }
 
-  .login-field #user_email {
-    height: 35px;
-    width: 240px;
+  .login-field-label {
+    width: 100%;
+    max-width: 440px;
   }
 
-  .login-field #user_password {
-    height: 35px;
-    width: 240px;
-  }
   .btn_btn {
-    margin-top: 30px;
+    margin-top: 50px;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .login-content {
+  .login-wrapper {
     display: flex;
   }
   
   /* 左側の画像 */
   .login-left-wrapper {
-    max-width: 700px;
-    width: 100%;
+    flex: 1.05;
+    height: auto;
     object-fit: cover;
+    position: relative;
   }
+
+  .login-left-wrapper::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 10.5px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+
   .login-image {
     height: 100vh;
     width: 100%;
     object-fit: cover;
     object-position: 80% 80%;
-    opacity: 0.8;
+    opacity: 0.85;
   }
 
   /* 右側のレイアウト */
+  .login-right {
+    flex: 0.95;
+    padding: 40px 40px 0px 40px;
+  }
+
   .login-right-wrapper {
-    width: 800px;
+    margin-top: 70px;
+  }
+
+  .login-title {
+   font-size: 5rem;
   }
 
   .login-field {
@@ -135,6 +197,6 @@
     width: 360px;
   }
   .btn_btn {
-    margin-top: 50px;
+    margin-top: 80px;
   }
 }

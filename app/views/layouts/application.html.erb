@@ -22,8 +22,6 @@
   </div>
   <%= yield %>
 
-  <span class="alert"><%= alert %></span>
-
   <%= javascript_tag do %>
   $(document).ready(function() {
     let message = "<%= escape_javascript(flash[:notice].to_s) %>";

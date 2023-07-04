@@ -76,7 +76,7 @@
   opacity       : 0.8;
   transition    : .3s;
   border: none;
-  margin-top: 30px;
+  margin-top: 50px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 }
@@ -134,7 +134,7 @@
 
 @media screen and (max-width: 599px) {
  .sing_up {
-    padding: 35px 20px 0px 20px;
+    padding: 20px ;
   }
 
   .sing_up-title {
@@ -201,7 +201,7 @@
 
 @media screen and (min-width:600px) and ( max-width:1023px) {
  .sing_up {
-    padding: 50px 50px 10px 50px;
+    padding: 50px ;
   }
 
   .sing_up-title {
@@ -256,8 +256,8 @@
   }
 
   .sing_in_btn {
-    font-size : 36px;
-    padding : 14px 44px;
+    font-size : 32px;
+    padding : 12px 44px;
    }
 
    .page_login {
@@ -267,7 +267,7 @@
 }
 @media screen and (min-width: 1024px) {
   .sing_up {
-    padding: 50px 50px 10px 50px;
+    padding: 50px ;
   }
 
   .sing_up-title {
@@ -325,8 +325,8 @@
   }
 
   .sing_in_btn {
-    font-size : 42px;
-    padding : 24px 66px;
+    font-size : 32px;
+    padding : 14px 54px;
    }
 
    .page_login {

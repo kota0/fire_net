@@ -177,13 +177,14 @@
   color: red;
 }
 
-.alert ul {
+.alert-new ul {
   text-align: center;
   list-style-type: none;
   padding-left: 0;
 }
-  .alert li {
+  .alert-new li {
   text-align: center;
+  color: red;
   margin-top: 10px;
 }
 
@@ -290,6 +291,10 @@
   margin-top: 30px;
 }
 
+.alert-new li {
+  font-size: clamp(12px, 4vw, 18px);
+}
+
 }
 /* タブレット */
 @media screen and (min-width:600px) and ( max-width:895px) {
@@ -381,6 +386,9 @@
   display: block;
 }
 
+.alert-new li {
+  font-size: 18px
+}
 
 }
 /* パソコン */
@@ -446,5 +454,9 @@
 /* 投稿ボタン */
 .blue-btn {
   margin-top: 60px;
+}
+
+.alert-new li {
+  font-size: 18px
 }
 }

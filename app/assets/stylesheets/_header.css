@@ -60,6 +60,7 @@ nav {
 nav .support {
  position: relative;
  top: 30px;
+ text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 nav .support ul {
@@ -79,6 +80,7 @@ nav .support ul li a button {
 nav .inner {
   padding: 25px;
   text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 nav .inner ul {
@@ -265,6 +267,7 @@ nav .inner ul li a:hover {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
   border-radius: 12px;
   color: #ffffff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .out-btn .log_out_btn:hover  {

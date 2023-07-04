@@ -96,8 +96,8 @@
         <div class=comment>
           <div class="comment-wrapper">
               <div class="comment-index">
-                  <p class="comment-title">コメント一覧</p>
-                  <div class="comment-index-inner">
+                <p class="comment-title">コメント一覧</p>
+                <div class="comment-index-inner">
                   <% @comments.each do |comment| %>
 
                   <% if comment.user.user_type == 1 %>
@@ -120,15 +120,15 @@
                 </div>
               </div>
               <div class="comment-form">
-                  <% if user_signed_in? %>
-                    <%= form_with model: [@post, @comment] do |f| %>
-                    <div class="comment-form-inner">
-                      <div class="comment-form-text"><%= f.text_area :comment, class: "text-form", placeholder: "入力フォーム", style: "height: 30px" %></div>
-                      <div><%= f.submit "送信", class: "comment-submit" %></div>
-                      <% end %>
-                  <% end %>
+                <% if user_signed_in? %>
+                <%= form_with model: [@post, @comment] do |f| %>
+                <div class="comment-form-inner">
+                  <div class="comment-form-text"><%= f.text_area :comment, class: "text-form", placeholder: "入力フォーム", style: "height: 30px" %></div>
+                  <div><%= f.submit "送信", class: "comment-submit" %></div>
+                <% end %>
+                <% end %>
+                </div>
               </div>
-            </div>
           </div>
         </div>
       </div>

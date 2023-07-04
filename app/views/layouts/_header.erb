@@ -1,12 +1,16 @@
 <header class="header">
+
   <div class="header-wrapper">
-    <div class="title">
-      <a><span>FIRE</span>.Net</a>
-    </div>
+      <div class="header-title-wrapper">
+        <%= link_to root_path, method: :get,class: "header-link" do %>
+          <span class="header-title"><span class="header-title-red">FIRE</span>.Net</span>
+        <% end %>
+      </div>
+
     <div class="nav-area", id="navArea" >
       <nav>
-        <div class="top_title">
-          <a><span>FIRE</span>.Net</a>
+        <div class="top-title-wrapper">
+          <span class="top-title"><span class="top-title-red">FIRE</span>.Net</span>
         </div>
 
         <div class="support">

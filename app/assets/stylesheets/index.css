@@ -10,6 +10,7 @@
 .post-wrapper {
   border-radius: 12px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   height: auto;
   border-radius: none;
   background-color: white;
@@ -34,7 +35,12 @@
   background: white;
   border-top: solid 5px #5d627b;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 12px;
+}
+
+.area-title:hover {
+  opacity: 0.8; 
 }
 
 .post-path {
@@ -54,7 +60,11 @@
   color: #01550d;
   background: #9afda7;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 8px;
+}
+.post-status-pending:hover {
+  opacity: 0.8; 
 }
 
 .post-status-in-progress {
@@ -62,7 +72,11 @@
   color: #da1900;
   background: #ef9292;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 8px;
+}
+.post-status-in-progress:hover {
+  opacity: 0.8; 
 }
 
 .post-status-completed {
@@ -70,7 +84,11 @@
   color: #0047b1;
   background: #c6e4ff;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 8px;
+}
+.post-status-completed:hover {
+  opacity: 0.8; 
 }
 
 .add-height {
@@ -147,6 +165,10 @@
   border-radius: 6px;
   background-color: rgb(222, 222, 222);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.22);
+}
+.post-detail-wrapper:hover {
+  opacity: 0.8;
 }
 
 .post-detail-list {
@@ -183,6 +205,29 @@
 }
 .add-height {
   height: 100%;
+}
+.post-path {
+  color: black;
+  text-decoration: none;
+}
+.post-path:hover {
+  color: black;
+  opacity: 0.8;
+}
+
+/* 新規投稿のボタン */
+.post-button {
+  margin: auto;
+  padding-top: 10px;
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+}
+/* ページネーション */
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
 }
 
 
@@ -308,6 +353,10 @@
   .add-height {
     height: 100%;
   }
+  .post-button {
+    width: 50px;
+    height: 50px;
+}
 }
 
 /* タブレット */

@@ -165,7 +165,7 @@
     width: 100%;
     object-fit: cover;
     object-position: 80% 80%;
-    opacity: 0.85;
+    opacity: 0.8;
   }
 
   /* 右側のレイアウト */
@@ -197,6 +197,6 @@
     width: 360px;
   }
   .btn_btn {
-    margin-top: 80px;
+    margin-top: 50px;
   }
 }

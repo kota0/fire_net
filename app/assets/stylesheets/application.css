@@ -40,15 +40,7 @@ body {
 .none-devise {
   display: none;
 }
-/* p {
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
-}
-a {
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
-}
-span {
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
-} */
+
 @media screen and (max-width: 310px) {
   .section-post {
     display: none;

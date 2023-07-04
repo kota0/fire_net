@@ -30,6 +30,7 @@
   background: white;
   border-top: solid 5px #5d627b;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 12px;
 }
 
@@ -40,6 +41,13 @@
 .left-square {
   text-align: left;
   color: rgb(109, 109, 109);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 6px;
+}
+
+.left-square:hover {
+  box-shadow    : none;
+  opacity: 0.7; 
 }
 .right-square {
   text-align: right;
@@ -59,6 +67,7 @@
   color: #01550d;
   background: #9afda7;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 8px;
 }
 
@@ -67,6 +76,7 @@
   color: #da1900;
   background: #ef9292;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 8px;
 }
 
@@ -75,6 +85,7 @@
   color: #0047b1;
   background: #c6e4ff;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   border-radius: 8px;
 }
 
@@ -162,6 +173,7 @@
 .show-detail-title {
   border: solid #000;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.22);
   width: 70%;
   padding: 3px;
   border-radius: 6px;
@@ -172,7 +184,8 @@
   display: flex;
   list-style: none;
   font-size: 18px;
-   column-gap: 50px;
+  column-gap: 50px;
+  text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.22);
 }
 
 .show-detail-comment{
@@ -212,6 +225,7 @@
   .comment-title {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
     background-color: rgb(255, 255, 255);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
     width: 70%;
     padding: 3px;
     border-radius: 6px;
@@ -333,6 +347,7 @@
 .comment-submit {
   width: 50px;
   height: 30px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
 }
 .comment-form-text {
   height: 30px;
@@ -374,6 +389,7 @@
   margin: auto;
   text-align: center;
   max-width: 700px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
 }
 
 .status-change-title {
@@ -388,6 +404,7 @@
 
 .change-submit {
   text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
 }
 .show-status-delete {
   display: flex;
@@ -395,24 +412,26 @@
 }
 .change-delete-btn {
   margin: auto;
+}
+
+.delete-link {
   font-size     : 22px;
   text-align    : center;
   cursor        : pointer;
   padding       : 2px 36px;
-  background    : #ff3b3b;
+  background    : #ff4444;
   transition    : .3s;
   border:none;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
   border-radius: 12px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
 }
+
 .change-delete-btn:hover .delete-link {
   box-shadow    : none;
   color: rgb(255, 255, 255);
   opacity: 0.7; 
-}
-.delete-link {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
 }
 
 @media screen and (max-width: 599px) {
@@ -569,7 +588,7 @@
   text-align: center;
   margin-top: 40px;
 }
-.change-delete-btn {
+.delete-link {
   font-size     : 18px;
   padding       : 1px 36px;
   margin-top: 5px;
@@ -721,7 +740,7 @@
   text-align: center;
   margin-top: 30px;
 }
-.change-delete-btn {
+.delete-link {
   font-size     : 18px;
   padding       : 1px 36px;
 }

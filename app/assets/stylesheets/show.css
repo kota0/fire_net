@@ -408,15 +408,17 @@
 }
 
 .status-change-text {
-   background-color: #f5f5f5;
+  background-color: #f5f5f5;
   border: #54586f solid 0.1px;
-  color: rgb(30, 30, 30);
   text-decoration: none;
+  color: rgb(30, 30, 30);
 }
 
 .change-form {
   max-width: 600px;
   margin: auto;
+  text-decoration: none;
+  color: rgb(30, 30, 30);
 }
 
 .change-submit {

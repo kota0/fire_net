@@ -167,9 +167,6 @@
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.22);
 }
-.post-detail-wrapper:hover {
-  opacity: 0.8;
-}
 
 .post-detail-list {
   display: flex;
@@ -186,6 +183,11 @@
   padding: 5px;
   border-radius: 6px;
   margin: auto;
+}
+
+.post-detail-title:hover {
+  box-shadow: none;
+  opacity: 0.5;
 }
 
 .post-detail-item {
@@ -212,7 +214,7 @@
 }
 .post-path:hover {
   color: black;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 /* 新規投稿のボタン */

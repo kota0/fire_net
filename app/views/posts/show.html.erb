@@ -135,10 +135,10 @@
     </div>
   </div>
  </div>
+   <% if current_user.user_type == 1 %>
     <div class="show-status-management">
       <div class="show-status-wrapper">
         <div class="show-status-change">
-          <% if current_user.user_type == 1 %>
             <p class="status-change-title">管理者専用<span class="change-sp-none" >：</span><span class="change-sp">ステータス変更&nbsp;&&nbsp;投稿削除</span></p>
               <%= form_with model: @post do |f| %>
               <div class="change-form">
@@ -147,7 +147,6 @@
                 <%= f.submit "変更", class: "change-submit" %>
               </div>
             <% end %> 
-          <%end%>
         </div>
         <div class="show-status-delete">
           <span class="change-form-text">この投稿を削除する&emsp;<span class="change-sp-none" >：</span></span>
@@ -160,5 +159,6 @@
         </div>
       </div>
    </div>
+  <%end%>
 </div>
 </section>

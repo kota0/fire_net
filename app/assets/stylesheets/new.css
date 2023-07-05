@@ -172,7 +172,7 @@
 }
 .blue-btn .post-btn:hover {
   box-shadow    : none;
-  opacity: 0.7; 
+  opacity: 0.5; 
 }
 
 .alert {

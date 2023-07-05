@@ -54,12 +54,13 @@
       </div>
 
        <%# 詳細内容の表示 %>
-    <%= link_to(post_path(post.id), method: :get, class: "post-path") do %>
     <div class="post-detail">
       <div class="post-detail-wrapper">
+      <%= link_to(post_path(post.id), method: :get, class: "post-path") do %>
         <div class="post-detail-title">
           <p class="post-detail-info">被害状況</p>
         </div>
+      <% end %>
         <ul class="post-detail-list">
           <li class="post-detail-item">
             <span class="post-detail-label">・所在</span>
@@ -88,7 +89,6 @@
         </ul>
       </div>
     </div>
-    <% end %>
     </div>
     </div>
    </div>

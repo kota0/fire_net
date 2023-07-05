@@ -13,13 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
-input, textarea, select, button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
 body {
   background-color: #f6f6f6;
 }

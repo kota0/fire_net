@@ -69,7 +69,8 @@
 }
 
 .btn_btn:hover {
-  opacity       : 0.5;
+  box-shadow    : none;
+  opacity: 0.5; 
 }
 
 .login-button input[name="commit"] {

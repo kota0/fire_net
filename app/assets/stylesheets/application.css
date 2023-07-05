@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+input, textarea, select, button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 body {
   background-color: #f6f6f6;
 }
@@ -85,4 +92,7 @@ body {
   .section-post {
   margin-top: 57px;
   }
+  #notice-modal {
+  top: 55px;
+ }
   }

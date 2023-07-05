@@ -345,11 +345,24 @@
   align-items: stretch;
 }
 .comment-submit {
-  width: 50px;
+  /* width: 50px;
   height: 30px;
   text-align: center;
   text-decoration: none;
   border:#262626 solid 0.2px;
+  border-radius: 2px;
+  color: rgb(15, 15, 15);
+  padding: 1px 2px;
+  background-color: rgb(246, 246, 246);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22); */
+  display: inline-block;
+  width: 50px; /* ここに適切な幅を設定 */
+  height: 50px; /* ここに適切な高さを設定 */
+  line-height: 50px; /* heightと同じ値に設定 */
+  text-align: center;
+  padding: 0; /* paddingを0に設定 */
+  text-decoration: none;
+  border: #262626 solid 0.2px;
   border-radius: 2px;
   color: rgb(15, 15, 15);
   background-color: rgb(246, 246, 246);
@@ -409,10 +422,22 @@
 }
 
 .change-submit {
-  text-align: center;
-  padding: auto;
+  /* text-align: center;
+  padding: 1px 2px;
   text-decoration: none;
   border:#262626 solid 0.2px;
+  border-radius: 2px;
+  color: rgb(15, 15, 15);
+  background-color: rgb(246, 246, 246);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22); */
+  display: inline-block;
+  width: 50px; /* ここに適切な幅を設定 */
+  height: 50px; /* ここに適切な高さを設定 */
+  line-height: 50px; /* heightと同じ値に設定 */
+  text-align: center;
+  padding: 0; /* paddingを0に設定 */
+  text-decoration: none;
+  border: #262626 solid 0.2px;
   border-radius: 2px;
   color: rgb(15, 15, 15);
   background-color: rgb(246, 246, 246);

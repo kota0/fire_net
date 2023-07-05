@@ -119,6 +119,7 @@
  .select-box {
   height: 30px;
   background-color: #f5f5f5;
+  border: #54586f solid 0.1px;
   color: rgb(30, 30, 30);
   text-decoration: none;
 }

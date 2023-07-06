@@ -2,19 +2,15 @@
 ---
 ## ◆ アプリケーション概要
 ---
-東京都の地震・台風などの災害発生時に画像や動画を通じて消防団と消防署の正確な情報を共有することができる。
+東京都の地震・台風などの災害発生時に画像や動画を通じて消防団と消防署の正確な情報を共有を可能にするアプリケーション。
 
 ## ◆ URl
 ---
-https://fire-net.herokuapp.com/ 
+https://fire-net.onrender.com 
 ## ◆ テスト用アカウント
 ---
-- メールアドレス: aaat@111  
-- パスワード: aaa111
-
-## ◆ Githubリポジトリ
----
-- https://git.heroku.com/fire-net.git
+- メールアドレス: admin@2222  
+- パスワード: admin2222
 
 ## ◆ 利用方法
 ---
@@ -48,7 +44,7 @@ https://docs.google.com/spreadsheets/d/1m9Ur0GMBWFAwdpKpjUSvRNd3u86QMEyXCN1fmaPm
 
 
 ---
-## ◆ 実装した機能についての画像やその説明
+<!-- ## ◆ 実装した機能についての画像やその説明
 ---
 ### **1.ログインページ**  
 #### ![alt](https://i.gyazo.com/860108382a32a4e6cb34a0a0ca996eb9.png)
@@ -74,7 +70,7 @@ https://docs.google.com/spreadsheets/d/1m9Ur0GMBWFAwdpKpjUSvRNd3u86QMEyXCN1fmaPm
 #### &ensp;・②ページ下部（消防職員ver）![alt](https://i.gyazo.com/ee6bc814f37042a8dfbfe9e282dba756.png)  
 #### &ensp;・②ページ下部（消防団員ver）![alt](https://gyazo.com/031e0d02ac2ce595cb644ee0a0c7aab1.png)  
 
----
+--- -->
 ## ◆ データベース設計
 ![alt](https://i.gyazo.com/c535c2106f71a8f5598e1b27a73869aa.png)
 
@@ -86,7 +82,7 @@ https://docs.google.com/spreadsheets/d/1m9Ur0GMBWFAwdpKpjUSvRNd3u86QMEyXCN1fmaPm
 ---
 ## ◆ 開発環境
 ・ Mac
-・Ruby/Ruby on Rails/JavaScript/jQuery/MySQL/Github/AWS/Visual Studio Code
+・Ruby/Ruby on Rails/JavaScript/jQuery/PostgreSQL/Github/AWS/Visual Studio Code
 
 ## ◆ 工夫したポイント・ポートフォリオ作成を通して感じたこと
  &ensp;ユーザー目線でいかに使いやすいアプリに実装できるかを考えて実装を進めました。特に私の考えてたアプリは災害時の情報共有に活用することを前提に制作したので、いかに簡単に早く活用できるかが重要だと考えました。  
